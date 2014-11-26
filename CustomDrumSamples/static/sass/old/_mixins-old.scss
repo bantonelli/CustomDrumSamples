@@ -1,0 +1,171 @@
+@mixin gridsys {
+
+$col-width: 6.5%;
+
+$size-names: ("xs", "sm", "md", "lg");
+$size-vals: (480px, 768px, 992px, 1200px);
+
+$counter: 1;
+
+  @while $counter < 5 {
+    @if $counter == 1 {
+      @for $i from 1 through 12 {
+        .gridsys-#{nth($size-names, $counter)}-#{$i} {
+          box-sizing: border-box;
+          float: left;
+          vertical-align: middle;
+          width: $col-width*$i + (2% * ($i - 1));
+          @if $i == 12 {
+            margin-right: 0;
+          }
+          @else {
+            margin-right: 2%;
+          }
+        }
+      }
+    }
+    @else {
+      @media screen and (min-width: nth($size-vals, $counter)) {
+        @for $i from 1 through 12 {
+          .gridsys-#{nth($size-names, $counter)}-#{$i} {
+            box-sizing: border-box;
+            float: left;
+            vertical-align: middle;
+            width: $col-width*$i + (2% * ($i - 1));
+            @if $i == 12 {
+              margin-right: 0;
+            }
+            @else {
+              margin-right: 2%;
+            }
+          }
+        }
+      }
+    }
+    $counter: $counter + 1;
+  }
+  .omega {
+    margin-right: 0%;
+  }
+
+  .main-container {
+    width: 100%; // width: 1000px;
+    height: 100%;
+    margin: 0 0 0 0;
+    background-color: nth($orange-list, 5);
+  }
+
+  .content-wrapper {
+    width: 90%; // width: 1000px;
+    max-width: 1500px;
+    margin: auto;
+  }
+
+  .row-container {
+    clear: both;
+    display: table;
+    width: 100%;
+    margin: 0;
+  }
+  .row-container:after {
+    clear: both;
+  }
+  .row-container:after {
+      clear: both;
+  }
+  .row-container:before, .row-container:after {
+      display: table;
+      content: " ";
+  }
+
+
+.grid-offset-1 {
+  margin-left: 8.5%;
+  vertical-align: middle;
+}
+
+
+.grid-offset-2 {
+  margin-left: 17%;
+  vertical-align: middle;
+}
+
+.grid-offset-3 {
+  margin-left: 25.5%;
+  vertical-align: middle;
+}
+
+.grid-offset-4 {
+  margin-left: 34%;
+  vertical-align: middle;
+}
+
+.grid-offset-5 {
+  margin-left: 42.5%;
+  vertical-align: middle;
+}
+
+.grid-offset-6 {
+  margin-left: 51%;
+  vertical-align: middle;
+}
+
+.grid-offset-7 {
+  margin-left: 59.5%;
+  vertical-align: middle;
+}
+
+
+.grid-offset-8 {
+  margin-left: 68%;
+  vertical-align: middle;
+}
+
+.grid-offset-9 {
+  margin-left: 76.5%;
+  vertical-align: middle;
+}
+
+.grid-offset-10 {
+  margin-left: 85%;
+  vertical-align: middle;
+}
+
+.grid-offset-11 {
+  margin-left: 93.5%;
+  vertical-align: middle;
+}
+
+.grid-offset-12 {
+  margin-left: 100%;
+  vertical-align: middle;
+}
+
+}
+
+$size-names: ("xs", "sm", "md", "lg");
+$size-vals: (480px, 768px, 992px, 1200px);
+
+@mixin xs {
+  @media screen and (max-width: nth($size-vals, 1)) {
+    @content
+  }
+}
+
+@mixin sm {
+  @media screen and (max-width: nth($size-vals, 2)) {
+    @content
+  }
+}
+
+@mixin md {
+  @media screen and (max-width: nth($size-vals, 3)) {
+    @content
+  }
+}
+
+@mixin lg {
+  @media screen and (max-width: nth($size-vals, 4)) {
+    @content
+  }
+}

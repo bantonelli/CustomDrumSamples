@@ -1,0 +1,180 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <!-- Meta Tags-->
+    <meta charset="UTF-8">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!--<meta name="viewport" content="width=device-width" initial-scale="1.5" user-scalable="no">-->
+	<!-- Links -->
+    <link href="{% static "css/styles.css" %}" rel="stylesheet" type="text/css">
+    <script src="{% static "js/vendor/jquery-1.9.1.min.js" %}"></script>
+    <script src="{% static "js/modernizr.custom.js" %}"></script>
+
+
+    <title>
+	{% block title %}
+	{{ title }}
+	{% endblock %}
+    </title>
+</head>
+<body class="main-container">
+<div id="st-container" class="st-container st-effect-4">
+    <!--
+        example menus
+        these menus will be on top of the push wrapper
+    -->
+    <!-- content push wrapper -->
+    <div class="st-pusher">
+        <!--
+            example menus
+            these menus will be under the push wrapper
+        -->
+
+        <nav class="st-menu st-effect-7" id="menu-7">
+            <ul>
+                <li><a class="icon" href="#">Data Management</a></li>
+                <li><a class="icon" href="#">Location</a></li>
+                <li><a class="icon" href="#">Study</a></li>
+                <li><a class="icon" href="#">Collections</a></li>
+                <li><a class="icon" href="#">Credits</a></li>
+            </ul>
+        </nav>
+    <!-- Nav Button to Trigger sidebar
+                            <div id="st-trigger-effects" class="col-xs-2">
+                                <button class="nav-button icon-menu" data-effect="st-effect-7"></button>
+                            </div>
+    -->
+        <div class="st-content"><!-- this is the wrapper for the content -->
+            <div class="st-content-inner"><!-- extra div for emulating position:fixed of the menu -->
+                <!-- Top Navigation -->
+                <header role="banner">
+                    <div id="cd-logo">
+                        <div id="st-trigger-effects" class="col-xs-2">
+                            <button class="nav-button icon-menu" data-effect="st-effect-7"></button>
+                        </div>
+                    </div>
+
+                    <nav class="main-nav">
+                        <ul>
+                            <!-- inser more links here -->
+                            <li><a class="cd-signin" href="#0">Sign in</a></li>
+                            <li><a class="cd-signup" href="#0">Sign up</a></li>
+                        </ul>
+                    </nav>
+                </header>
+
+                <div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->
+                    <div class="cd-user-modal-container"> <!-- this is the container wrapper -->
+                        <ul class="cd-switcher">
+                            <li><a href="#0">Sign in</a></li>
+                            <li><a href="#0">New account</a></li>
+                        </ul>
+
+                        <div id="cd-login"> <!-- log in form -->
+                            <form class="cd-form">
+                                <p class="fieldset">
+                                    <label class="image-replace cd-email" for="signin-email">E-mail</label>
+                                    <input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail">
+                                    <span class="cd-error-message">Error message here!</span>
+                                </p>
+
+                                <p class="fieldset">
+                                    <label class="image-replace cd-password" for="signin-password">Password</label>
+                                    <input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="Password">
+                                    <a href="#0" class="hide-password">Hide</a>
+                                    <span class="cd-error-message">Error message here!</span>
+                                </p>
+
+                                <p class="fieldset">
+                                    <input type="checkbox" id="remember-me" checked>
+                                    <label for="remember-me">Remember me</label>
+                                </p>
+
+                                <p class="fieldset">
+                                    <input class="full-width" type="submit" value="Login">
+                                </p>
+                            </form>
+
+                            <p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p>
+                            <!-- <a href="#0" class="cd-close-form">Close</a> -->
+                        </div> <!-- cd-login -->
+
+                        <div id="cd-signup"> <!-- sign up form -->
+                            <form class="cd-form">
+                                <p class="fieldset">
+                                    <label class="image-replace cd-username" for="signup-username">Username</label>
+                                    <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username">
+                                    <span class="cd-error-message">Error message here!</span>
+                                </p>
+
+                                <p class="fieldset">
+                                    <label class="image-replace cd-email" for="signup-email">E-mail</label>
+                                    <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
+                                    <span class="cd-error-message">Error message here!</span>
+                                </p>
+
+                                <p class="fieldset">
+                                    <label class="image-replace cd-password" for="signup-password">Password</label>
+                                    <input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Password">
+                                    <a href="#0" class="hide-password">Hide</a>
+                                    <span class="cd-error-message">Error message here!</span>
+                                </p>
+
+                                <p class="fieldset">
+                                    <input type="checkbox" id="accept-terms">
+                                    <label for="accept-terms">I agree to the <a href="#0">Terms</a></label>
+                                </p>
+
+                                <p class="fieldset">
+                                    <input class="full-width has-padding" type="submit" value="Create account">
+                                </p>
+                            </form>
+
+                            <!-- <a href="#0" class="cd-close-form">Close</a> -->
+                        </div> <!-- cd-signup -->
+
+                        <div id="cd-reset-password"> <!-- reset password form -->
+                            <p class="cd-form-message">Lost your password? Please enter your email address. You will receive a link to create a new password.</p>
+
+                            <form class="cd-form">
+                                <p class="fieldset">
+                                    <label class="image-replace cd-email" for="reset-email">E-mail</label>
+                                    <input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+                                    <span class="cd-error-message">Error message here!</span>
+                                </p>
+
+                                <p class="fieldset">
+                                    <input class="full-width has-padding" type="submit" value="Reset password">
+                                </p>
+                            </form>
+
+                            <p class="cd-form-bottom-message"><a href="#0">Back to log-in</a></p>
+                        </div> <!-- cd-reset-password -->
+                        <a href="#0" class="cd-close-form">Close</a>
+                    </div> <!-- cd-user-modal-container -->
+                </div> <!-- cd-user-modal -->
+
+                <div class="main-content">
+                    {% block content %}
+
+                    {% endblock %}
+                </div><!-- /main -->
+
+            </div><!-- /st-content-inner -->
+        </div><!-- /st-content -->
+    </div><!-- /st-pusher -->
+</div><!-- /st-container -->
+<script src="{% static "js/landing-page.js" %}"></script>
+<script src="{% static "js/classie.js" %}"></script>
+<script src="{% static "js/sidebarEffects.js" %}"></script>
+<script src="{% static "js/modal-login-nav.js" %}"></script>
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<script type="text/javascript" src="http://localhost:9090/livereload.js"></script>
+</body> <!-- End Main Container -->
+</html>

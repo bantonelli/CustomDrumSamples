@@ -1,0 +1,34 @@
+#header {
+
+  .banner {
+    height: 80px;
+    background-color: nth($purple-list, 2)
+  }
+
+  nav {
+    height: 50px;
+    background-color: nth($gray-list, 5);
+    a {
+      color: $offwhite;
+      font-family: "Helvetica Neue";
+      font-size: 1.1em;
+      font-weight: 300;
+      letter-spacing: 1px;
+      &:hover {
+        color: nth($orange-list, 6);
+      }
+      &:link {
+        color: nth($lightblue-list, 2);
+      }
+    }
+    .nav-link {
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      &:hover {
+        background-color: nth($lightblue-list, 2);
+      }
+    }
+  }
+}
+

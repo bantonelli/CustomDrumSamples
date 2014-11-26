@@ -1,0 +1,73 @@
+BUILD/DEPLOYMENT TO HEROKU:
+Heroku Zen:
+    Heroku enforces a strict separation of apps and their dependencies.
+    Strict separation of code and configuration, explicit dependency declaration,
+    tight development iterations and parity between environments.
+
+-Most of the application's codebase is stored in some VCS (Git).
+    The VCS keeps track of the many revisions of the codebase and coordinates
+    the modifications to the source code amongst development teams.
+
+-On deployment to Heroku your app will be transmitted via Git.
+
+-When developing an application it is often necessary to have more than one version
+of that application running at any one time.
+    Consider: Running a development branch locally,
+            a staging version with the latest features available to stakeholders,
+            a production version with only the approved, stable features for
+            your end-users.
+
+-On Heroku MAINTAIN MULTIPLE DEPLOYMENT ENVIRONMENTS: (Staging, QA, Production)
+    You can do this by creating a Heroku app for each environment.
+    Simply deploy the codebase revision appropriate for each environment to the
+    corresponding app on Heroku.
+        (myApp-staging, myApp-qa, myApp)
+
+-If there are multiple codebases that form a functioning system, each component should be
+deployed as an independent app (each with their own environment-specific deploys).
+    This will form a distributed system.
+
+-Complex systems that want to maintain high development velocity should follow this pattern
+and create independent but cooperative apps that work together to deliver the necessary functionality.
+    Example: myApp, myApp-admin, myApp-api
+    This establishes clearly-defined areas of responsibility and integration points between the
+    apps, which untangles the overall complexity often present in large monolithic apps.
+
+-Apps with a large number of components or environments can use tools like 'fork' and the Heroku
+API to manage this.
+
+DEPENDENCIES-------------------------------
+-There should be no reliance on packages already installed on the Heroku Runtime.
+    Dependencies should be in isolated environments.
+
+-When you deploy an app to Heroku dependencies are fetched and stored alongside your app to
+create an isolated, compressed, executable version of the app called a 'slug'.
+
+Non language-specific dependencies, such as binary executables, should be vendored or
+stored with the application codebase that is pushed.
+
+
+NODEJS------------------------------------------------------
+Activation:
+    The Heroku Node.js buildpack is employed only when the application has a package.json file
+    in the root directory.
+
+
+
+---------MY THOUGHTS----------------------------------------------------------
+Inside of the Django Project:
+    - backend (rest api)
+    - site_folder (has project's name and contains settings.py)
+    - frontend (angularjs stuff) - basically ng-boilerplate.
+    - manage.py
+    - .gitignore
+    - heroku Procfile
+    - requirements.txt
+    - etc.
+
+
+
+
+
+
+

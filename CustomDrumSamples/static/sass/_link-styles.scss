@@ -1,0 +1,7 @@
+.link-lb-background {
+  color: nth($orange-list, 6);
+  &:hover {
+    color: nth($orange-list, 3);
+    text-decoration: none;
+  }
+}
