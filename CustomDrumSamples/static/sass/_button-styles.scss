@@ -2,7 +2,7 @@
   display: inline-block;
   width: 100%;
   height: 100px;
-  background-color: nth($purple-list, 4);
+  background-image: linear-gradient(0deg, nth($purple-list, 4), nth($purple-list, 3));
   color: nth($lightblue-list, 3);
   font-size: 2.5em;
   border-radius: 100px;
