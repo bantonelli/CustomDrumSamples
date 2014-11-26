@@ -50,20 +50,21 @@
         <div class="st-content"><!-- this is the wrapper for the content -->
             <div class="st-content-inner"><!-- extra div for emulating position:fixed of the menu -->
                 <!-- Top Navigation -->
-                <header role="banner">
-                    <div id="cd-logo">
-                        <div id="st-trigger-effects" class="col-xs-2">
-                            <button class="nav-button icon-menu" data-effect="st-effect-7"></button>
+                <header role="banner" class="cds-navbar">
+                    <div class="container cds-nav-container">
+                        <div class="row">
+                            <div id="st-trigger-effects" class="col-xs-2">
+                                <button class="nav-button icon-menu" data-effect="st-effect-7"></button>
+                            </div>
+                            <nav class="main-nav col-xs-4 col-xs-offset-6">
+                                <ul class="row">
+                                    <!-- inser more links here -->
+                                    <li><a class="col-xs-6 cd-signin" href="#0">Sign in</a></li>
+                                    <li><a class="col-xs-6 cd-signup" href="#0">Sign up</a></li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
-
-                    <nav class="main-nav">
-                        <ul>
-                            <!-- inser more links here -->
-                            <li><a class="cd-signin" href="#0">Sign in</a></li>
-                            <li><a class="cd-signup" href="#0">Sign up</a></li>
-                        </ul>
-                    </nav>
                 </header>
 
                 <div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->
