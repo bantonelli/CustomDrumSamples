@@ -13,7 +13,6 @@
   height: 100%;
   padding-top: 50px;
   position: absolute;
-  background-color: nth($lightblue-list, 4);
   overflow: auto;
 }
 
@@ -21,12 +20,19 @@
   height: 1000px;
 }
 
-#slide-1 {
+.on-top {
   z-index: 30;
 }
 
-#slide-2 {
+.below {
   z-index: 20;
+}
+
+#slide-1 {
+  background-color: nth($lightblue-list, 4);
+}
+
+#slide-2 {
   background-color: nth($purple-list, 3);
 }
 
@@ -40,7 +46,7 @@
   }
   .logo {
     height: 120px;
-    background-image: url("/assets/images/Mini-Blocks.png");
+    background-image: url("/assets/images/New-Logo.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -84,3 +90,17 @@
   margin: 5% 0;
 }
 
+.frontpage-arrow {
+  text-align: center;
+  a {
+      display: inline-block;
+      height: 100px;
+      width: 100px;
+      &::before {
+        height: 100px;
+        line-height: 100px;
+        font-family: icomoon;
+        font-size: 2.3em;
+      }
+  }
+}
