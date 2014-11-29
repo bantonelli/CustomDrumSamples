@@ -35,6 +35,9 @@ module.exports = function(grunt) {
             },
             html: {
                 files:['templates/KitBuilder/*.html', 'templates/*.html']
+            },
+            javascript: {
+                files:['CustomDrumSamples/static/js/*.js', 'CustomDrumSamples/static/js/vendor/*.js']
             }
         }
     });
