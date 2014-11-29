@@ -18,6 +18,7 @@ urlpatterns = patterns('',
     url(r'^about/$', views.AboutUs.as_view()),
     url(r'^team/$', views.TeamProfile.as_view()),
     url(r'^legal/$', views.Legal.as_view()),
+    url(r'^contact/$', views.Contact.as_view()),
     url(r'^colorway/$', views.ResponsiveSiteColorway.as_view()),
 
 

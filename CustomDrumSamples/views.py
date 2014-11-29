@@ -23,6 +23,14 @@ class TeamProfile(View):
         return render_to_response('teamprofile.html')
 
 
+class Contact(View):
+
+    #Privacy Policies
+    #Terms of Usage
+    def get(self, request):
+        return render_to_response('contact.html')
+
+
 class Legal(View):
 
     #Privacy Policies
