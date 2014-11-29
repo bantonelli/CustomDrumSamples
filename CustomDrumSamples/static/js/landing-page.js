@@ -13,28 +13,46 @@ landingRow2.removeClass("down-low");
     landingRow1.addClass("below");
 */
 
-$('.frontpage-arrow a').on("click", function() {
+$('.frontpage-arrow a.icon-arrow-right').on("click", function() {
 
     var landingRow1 = $("#slide-1");
     var landingRow2 = $("#slide-2");
 
     if (landingRow1.hasClass("on-top")) {
-        landingRow2.animate({ top: "0", opacity: "1"}, 0, "linear", function() {
-            landingRow1.animate({top: "100%", opacity: "0.2"}, 750, "linear", function () {
+        landingRow2.animate({ left: "0", opacity: "1"}, 0, "linear", function() {
+            landingRow1.animate({left: "100%", opacity: ".70"}, 850, "easeInOutQuad", function () {
                 landingRow2.removeClass("below").addClass("on-top");
                 landingRow1.removeClass("on-top").addClass("below");
             });
         });
     } else {
-        landingRow1.animate({ top: "0", opacity: "1"}, 0, "linear", function() {
-            landingRow2.animate({top: "100%", opacity: "0.2"}, 750, "linear", function () {
+        landingRow1.animate({ left: "0", opacity: "1"}, 0, "linear", function() {
+            landingRow2.animate({left: "100%", opacity: ".70"}, 850, "easeInOutQuad", function () {
                 landingRow1.removeClass("below").addClass("on-top");
                 landingRow2.removeClass("on-top").addClass("below");
             });
         });
     }
-
 });
 
-// Morphing buttons
-//
+$('.frontpage-arrow a.icon-arrow-left').on("click", function() {
+
+    var landingRow1 = $("#slide-1");
+    var landingRow2 = $("#slide-2");
+
+    if (landingRow1.hasClass("on-top")) {
+        landingRow2.animate({ left: "0", opacity: "1"}, 0, "linear", function() {
+            landingRow1.animate({left: "-100%", opacity: ".70"}, 850, "easeInOutQuad", function () {
+                landingRow2.removeClass("below").addClass("on-top");
+                landingRow1.removeClass("on-top").addClass("below");
+            });
+        });
+    } else {
+        landingRow1.animate({ left: "0", opacity: "1"}, 0, "linear", function() {
+            landingRow2.animate({left: "-100%", opacity: ".70"}, 850, "easeInOutQuad", function () {
+                landingRow1.removeClass("below").addClass("on-top");
+                landingRow2.removeClass("on-top").addClass("below");
+            });
+        });
+    }
+});
