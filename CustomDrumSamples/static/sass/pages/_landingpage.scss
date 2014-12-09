@@ -2,16 +2,16 @@
 
 .main-content {
   width: 100%;
-  height: 100%;
+  height: 110%;
   position: relative;
   overflow: hidden;
-//  margin-top: -100px; Can make the top nav see-through
+  margin-top: -100px; // Can make the top nav see-through
 }
 
 .slide {
   width: 100%;
   height: 100%;
-  padding-top: 50px;
+  padding-top: 150px; // see through nav
   position: absolute;
   overflow: auto;
 }

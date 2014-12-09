@@ -13,6 +13,18 @@ landingRow2.removeClass("down-low");
     landingRow1.addClass("below");
 */
 
+var tb = $('.cds-navbar');
+var tbs = "top-bar-scrolled";
+
+$('.slide').scroll(function() {
+  if($(this).scrollTop()) {
+    tb.addClass(tbs);
+  } else {
+    tb.removeClass(tbs);
+  }
+});
+
+
 $('.frontpage-arrow a.icon-arrow-right').on("click", function() {
 
     var landingRow1 = $("#slide-1");

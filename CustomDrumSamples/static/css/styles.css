@@ -51,8 +51,8 @@
 ==================*/
 @font-face {
   font-family: 'icomoon';
-  src: url("../fonts/icomoon/fonts/icomoon.eot?-obh9ii");
-  src: url("../fonts/icomoon/fonts/icomoon.eot?#iefix-obh9ii") format("embedded-opentype"), url("../fonts/icomoon/fonts/icomoon.woff?-obh9ii") format("woff"), url("../fonts/icomoon/fonts/icomoon.ttf?-obh9ii") format("truetype"), url("../fonts/icomoon/fonts/icomoon.svg?-obh9ii#icomoon") format("svg");
+  src: url("../fonts/icomoon/fonts/icomoon.eot?-v4jysq");
+  src: url("../fonts/icomoon/fonts/icomoon.eot?#iefix-v4jysq") format("embedded-opentype"), url("../fonts/icomoon/fonts/icomoon.woff?-v4jysq") format("woff"), url("../fonts/icomoon/fonts/icomoon.ttf?-v4jysq") format("truetype"), url("../fonts/icomoon/fonts/icomoon.svg?-v4jysq#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -215,6 +215,38 @@
 
 .icon-youtube:before {
   content: "\e622";
+}
+
+.icon-arrow-left2:before {
+  content: "\e625";
+}
+
+.icon-arrow-down2:before {
+  content: "\e626";
+}
+
+.icon-arrow-up2:before {
+  content: "\e627";
+}
+
+.icon-arrow-right2:before {
+  content: "\e628";
+}
+
+.icon-arrow-left3:before {
+  content: "\e629";
+}
+
+.icon-arrow-down3:before {
+  content: "\e62a";
+}
+
+.icon-arrow-up3:before {
+  content: "\e62b";
+}
+
+.icon-arrow-right3:before {
+  content: "\e62c";
 }
 
 /*!
@@ -1898,9 +1930,21 @@ header[role=banner] {
   }
 }
 .cds-navbar {
+  position: fixed;
+  top: 0;
+  z-index: 300;
   background-color: #363636;
   color: #f7eeec;
   text-shadow: 0px 1px 1px black;
+  transition: box-shadow 0.2s;
+}
+
+.top-bar-scrolled {
+  box-shadow: 0 6px 4px -4px rgba(0, 0, 0, 0.3);
+}
+
+.main {
+  margin: 90px auto 0;
 }
 
 #st-trigger-effects {
@@ -1915,7 +1959,7 @@ header[role=banner] {
   color: #f7eeec;
 }
 .nav-button::before {
-  font-size: 2.5em;
+  font-size: 2.3em;
   line-height: 75px;
 }
 .nav-button:hover {
@@ -1928,14 +1972,15 @@ header[role=banner] {
 
 .main-nav a {
   display: inline-block;
-  height: 80px;
-  line-height: 78px;
   background-color: transparent;
-  text-shadow: 0px 1px 1px black;
+  margin-top: 30px;
+  text-align: center;
+  text-shadow: 0px 1px 1px rgba(25, 25, 25, 0.8);
   color: #f7eeec;
   text-decoration: none;
-  font-size: 1em;
-  font-weight: 600;
+  font-size: 0.8em;
+  font-family: quicksandbold;
+  font-weight: 400;
 }
 .main-nav a:hover {
   color: #1ec4d7;
@@ -2487,7 +2532,6 @@ body,
   display: block;
   padding: 1em 1em 1em 1.2em;
   outline: none;
-  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.2);
   color: #f3efe0;
   text-transform: uppercase;
   text-shadow: 0 0 1px rgba(255, 255, 255, 0.1);
@@ -2497,8 +2541,10 @@ body,
   transition: background 0.3s, box-shadow 0.3s;
 }
 
-.st-menu ul li:first-child a {
-  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.2), inset 0 1px rgba(0, 0, 0, 0.2);
+.st-menu > ul > li {
+  border-style: solid;
+  border-width: 0 0 1px 0;
+  border-color: #c13b23;
 }
 
 .st-menu ul li a:hover {
@@ -2933,6 +2979,35 @@ body,
   padding-left: 300px;
 }
 
+.multilink label {
+  display: inline-block;
+  height: 100%;
+  width: 300px;
+  cursor: pointer;
+}
+.multilink label::after {
+  position: absolute;
+  right: 1.2em;
+  font-family: icomoon;
+  content: "\e62a";
+}
+.multilink #menu-toggle {
+  display: none;
+  /* hide the checkbox */
+}
+.multilink #menu {
+  display: none;
+  box-shadow: 0px -1px rgba(0, 0, 0, 0.2) inset, 0px 1px rgba(0, 0, 0, 0.2) inset;
+}
+.multilink #menu li {
+  box-shadow: none;
+  border-style: none;
+  border-width: 0;
+}
+.multilink #menu-toggle:checked + #menu {
+  display: block;
+}
+
 /* Pages */
 body {
   background-color: #ffffff;
@@ -3081,15 +3156,16 @@ div.color-scheme {
 
 .main-content {
   width: 100%;
-  height: 100%;
+  height: 110%;
   position: relative;
   overflow: hidden;
+  margin-top: -100px;
 }
 
 .slide {
   width: 100%;
   height: 100%;
-  padding-top: 50px;
+  padding-top: 150px;
   position: absolute;
   overflow: auto;
 }
