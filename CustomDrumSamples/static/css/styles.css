@@ -3215,7 +3215,7 @@ div.color-scheme {
   position: absolute;
   text-align: center;
   white-space: nowrap;
-  bottom: -10px;
+  bottom: -28px;
 }
 .three-steps .step p {
   margin-top: 30%;
@@ -3243,7 +3243,7 @@ div.color-scheme {
 
 .step-container {
   /* entire container, keeps perspective */
-  perspective: 900;
+  perspective: 800;
   height: 300px;
   /* front pane, placed above back */
   /* back, initially hidden pane */
@@ -3253,16 +3253,24 @@ div.color-scheme {
   transform-style: preserve-3d;
   position: relative;
 }
-.step-container:hover {
-  /* flip the pane when hovered */
+.step-container:hover .front, .step-container .flipper:hover .front {
+  -webkit-transform: perspective(800px) rotateY(-179.9deg);
+  -moz-transform: perspective(800px) rotateY(-179.9deg);
+  transform: perspective(800px) rotateY(-179.9deg);
 }
-.step-container:hover .flipper {
-  transform: rotateY(180deg);
+.step-container:hover .back, .step-container .flipper:hover .back {
+  -moz-transform: perspective(800px) rotateY(0);
+  -webkit-transform: perspective(800px) rotateY(0);
+  transform: perspective(800px) rotateY(0);
 }
 .step-container .front, .step-container .back {
   /* hide back of pane during swap */
-  backface-visibility: hidden;
   position: absolute;
+  -webkit-transition: 0.7s ease-in-out;
+  -moz-transition: 0.7s ease-in-out;
+  -ms-transition: 0.7s ease-in-out;
+  -o-transition: 0.7s ease-in-out;
+  transition: 0.7s ease-in-out;
   top: 0;
   left: 0;
   width: 100%;
@@ -3272,13 +3280,20 @@ div.color-scheme {
   z-index: 2;
   /* for firefox 31 */
   transform: rotateY(0deg);
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-transform: perspective(800px) rotateY(0deg);
+  -webkit-transform: perspective(800px) rotateY(0deg);
+  transform: perspective(800px) rotateY(0deg);
 }
 .step-container .back {
-  transform: rotateY(180deg);
-}
-
-.step-container.hover .flipper {
-  transform: rotateY(180deg);
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-transform: perspective(800px) rotateY(180deg);
+  -webkit-transform: perspective(800px) rotateY(180deg);
+  transform: perspective(800px) rotateY(180deg);
 }
 
 #lp-slide-section-1 .title-tagline-logo .title-tagline {
@@ -3287,7 +3302,7 @@ div.color-scheme {
 }
 #lp-slide-section-1 .sales-pitch {
   color: #1d0e32;
-  text-shadow: 0 -1px 0px #83729a;
+  text-shadow: 0px 0px 1px #c4bccf;
 }
 #lp-slide-section-1 .sales-pitch a {
   font-family: quicksandbold;
@@ -3303,7 +3318,7 @@ div.color-scheme {
 }
 #lp-slide-section-1 .three-steps .step p {
   color: #1d0e32;
-  text-shadow: 0 -1px 0px #83729a;
+  text-shadow: 0px 0px 1px #c4bccf;
 }
 #lp-slide-section-1 #step-1 {
   background-image: url("/assets/images/Step-1.png");
@@ -3327,7 +3342,7 @@ div.color-scheme {
 }
 #lp-slide-section-2 .sales-pitch {
   color: #1d0e32;
-  text-shadow: 0 -1px 0px #83729a;
+  text-shadow: 0px 0px 1px #aa9fba;
 }
 #lp-slide-section-2 .sales-pitch a {
   font-family: quicksandbold;
@@ -3343,7 +3358,7 @@ div.color-scheme {
 }
 #lp-slide-section-2 .three-steps .step p {
   color: #1d0e32;
-  text-shadow: 0 -1px 0px #83729a;
+  text-shadow: 0px 0px 1px #aa9fba;
 }
 #lp-slide-section-2 #step-1-b {
   background-image: url("/assets/images/Step-1b.png");

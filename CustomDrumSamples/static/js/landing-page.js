@@ -69,14 +69,14 @@ $('.slide').scroll(function() {
 //    }
 //});
 
-
-
-$('.step-container').live('touchstart', function(e){
-    $(this).addClass('hover');
-    //alert('alert');
-});
-
-$('.step-container').live('touchend', function(e){
-    $(this).removeClass('hover');
-    //alert('alert');
-});
+//
+//
+//$('.step-container').live('touchstart', function(e){
+//    $(this).addClass('hover');
+//    //alert('alert');
+//});
+//
+//$('.step-container').live('touchend', function(e){
+//    $(this).removeClass('hover');
+//    //alert('alert');
+//});
