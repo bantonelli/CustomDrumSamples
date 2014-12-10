@@ -23,6 +23,7 @@ var init = function () {
 
 $(document).ready(function () {
     if (jQuery.browser.mobile == true) {
+        init();
         $('.st-content').removeClass('z-index-fix');
     }
 });
