@@ -1923,9 +1923,7 @@ header[role=banner] {
   }
 }
 .cds-navbar {
-  position: fixed;
-  top: 0;
-  z-index: 50;
+  z-index: 1000;
   background-color: rgba(28, 28, 28, 0.9);
   color: #f7eeec;
   text-shadow: 0px 1px 1px black;
@@ -3019,11 +3017,11 @@ body,
 }
 
 .on-top {
-  z-index: 30;
+  z-index: 200;
 }
 
 .below {
-  z-index: 20;
+  z-index: 190;
 }
 
 body {
