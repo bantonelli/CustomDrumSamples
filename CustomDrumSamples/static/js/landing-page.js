@@ -22,8 +22,8 @@ var init = function () {
 }
 
 $(document).ready(function () {
-    if (jQuery.browser.mobile) {
-        $('.st-content-inner').removeClass('z-index-fix');
+    if (jQuery.browser.mobile == true) {
+        $('.st-content').removeClass('z-index-fix');
     }
 });
 

@@ -22,7 +22,7 @@ var init = function () {
 }
 
 $(document).ready(function () {
-    if (jQuery.browser.mobile) {
+    if (jQuery.browser.mobile == true) {
         $('.st-content-inner').removeClass('z-index-fix');
     }
 });
