@@ -89,6 +89,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'kitbuilder',
+    'custom_quote',
     'rest_framework',
 )
 
