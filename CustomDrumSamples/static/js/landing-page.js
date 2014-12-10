@@ -3,16 +3,6 @@
  */
 
 
-
-/*
-landingRow2.removeClass("down-low");
-    landingRow1.addClass("down-low");
-    landingRow2.removeClass("below");
-    landingRow2.addClass("on-top");
-    landingRow1.removeClass("on-top");
-    landingRow1.addClass("below");
-*/
-
 var tb = $('.cds-navbar');
 var tbs = "top-bar-scrolled";
 
@@ -30,6 +20,13 @@ $('.flipper').on('tap', function(e) {
 });
 
 
+// Code for Changing slides
+//    landingRow2.removeClass("down-low");
+//    landingRow1.addClass("down-low");
+//    landingRow2.removeClass("below");
+//    landingRow2.addClass("on-top");
+//    landingRow1.removeClass("on-top");
+//    landingRow1.addClass("below");
 //
 //
 //$('.frontpage-arrow a.icon-arrow-right').on("click", function() {
