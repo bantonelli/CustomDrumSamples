@@ -1853,23 +1853,8 @@ button {
   width: 970px;
 }
 
+/* Mixins */
 /* Links, Buttons, etc. */
-.link-lb-background {
-  color: #f7eeec;
-}
-.link-lb-background:hover {
-  color: #e37a67;
-  text-decoration: none;
-}
-
-.link-ow-background {
-  color: #e37a67;
-}
-.link-ow-background:hover {
-  color: #0ea3b4;
-  text-decoration: none;
-}
-
 .cds-button {
   display: inline-block;
   width: 300px;
@@ -3187,12 +3172,8 @@ div.color-scheme {
 }
 
 #lp-slide-1 {
-  height: 100%;
   background-color: #dddddc;
-}
-
-.lp-section {
-  padding-top: 50px;
+  height: 100%;
 }
 
 #lp-slide-section-1 {
@@ -3203,13 +3184,11 @@ div.color-scheme {
 
 #lp-slide-section-2 {
   background-color: #b5b5b5;
-  padding: 100px 0;
   height: auto;
+  padding: 100px 0;
 }
 
 .title-tagline-logo .title-tagline {
-  color: #351f54;
-  text-shadow: 1px 1px 1px rgba(221, 221, 220, 0.9);
   white-space: nowrap;
 }
 .title-tagline-logo .logo {
@@ -3234,14 +3213,32 @@ div.color-scheme {
 }
 .three-steps .step h3 {
   position: absolute;
-  bottom: -10px;
   text-align: center;
   white-space: nowrap;
-  color: #351f54;
+  bottom: -10px;
 }
 .three-steps .step p {
   margin-top: 30%;
   text-align: center;
+}
+
+.try-it {
+  margin: 10% 0;
+}
+
+.frontpage-arrow {
+  text-align: center;
+}
+.frontpage-arrow a {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+}
+.frontpage-arrow a::before {
+  height: 100px;
+  line-height: 100px;
+  font-family: icomoon;
+  font-size: 2.3em;
 }
 
 .step-container {
@@ -3284,51 +3281,79 @@ div.color-scheme {
   transform: rotateY(180deg);
 }
 
-#step-1 {
+#lp-slide-section-1 .title-tagline-logo .title-tagline {
+  color: #351f54;
+  text-shadow: 1px 1px 1px rgba(221, 221, 220, 0.9);
+}
+#lp-slide-section-1 .sales-pitch {
+  color: #1d0e32;
+  text-shadow: 0 -1px 0px #83729a;
+}
+#lp-slide-section-1 .sales-pitch a {
+  font-family: quicksandbold;
+  color: #e74c30;
+  text-shadow: none;
+}
+#lp-slide-section-1 .sales-pitch a:hover {
+  color: #1ec4d7;
+  text-decoration: none;
+}
+#lp-slide-section-1 .three-steps .step h3 {
+  color: #351f54;
+}
+#lp-slide-section-1 .three-steps .step p {
+  color: #1d0e32;
+  text-shadow: 0 -1px 0px #83729a;
+}
+#lp-slide-section-1 #step-1 {
   background-image: url("/assets/images/Step-1.png");
 }
-
-#step-2 {
+#lp-slide-section-1 #step-2 {
   background-image: url("/assets/images/Step-2.png");
 }
-#step-2 h3 {
+#lp-slide-section-1 #step-2 h3 {
   margin-left: 15%;
 }
-
-#step-3 {
+#lp-slide-section-1 #step-3 {
   background-image: url("/assets/images/Step-3.png");
 }
 
-#step-1-b {
+#lp-slide-section-2 .title-tagline-logo .title-tagline {
+  color: #351f54;
+  text-shadow: 1px 1px 1px rgba(221, 221, 220, 0.9);
+}
+#lp-slide-section-2 .title-tagline-logo .logo {
+  background-image: url("/assets/images/Step-3.png");
+}
+#lp-slide-section-2 .sales-pitch {
+  color: #1d0e32;
+  text-shadow: 0 -1px 0px #83729a;
+}
+#lp-slide-section-2 .sales-pitch a {
+  font-family: quicksandbold;
+  color: #e74c30;
+  text-shadow: none;
+}
+#lp-slide-section-2 .sales-pitch a:hover {
+  color: #0ea3b4;
+  text-decoration: none;
+}
+#lp-slide-section-2 .three-steps .step h3 {
+  color: #351f54;
+}
+#lp-slide-section-2 .three-steps .step p {
+  color: #1d0e32;
+  text-shadow: 0 -1px 0px #83729a;
+}
+#lp-slide-section-2 #step-1-b {
   background-image: url("/assets/images/Step-1b.png");
 }
-
-#step-2-b {
+#lp-slide-section-2 #step-2-b {
   background-image: url("/assets/images/Step-2b.png");
 }
-#step-2-b h3 {
+#lp-slide-section-2 #step-2-b h3 {
   margin-left: 15%;
 }
-
-#step-3-b {
+#lp-slide-section-2 #step-3-b {
   background-image: url("/assets/images/Step-3b.png");
-}
-
-.try-it {
-  margin: 10% 0;
-}
-
-.frontpage-arrow {
-  text-align: center;
-}
-.frontpage-arrow a {
-  display: inline-block;
-  height: 100px;
-  width: 100px;
-}
-.frontpage-arrow a::before {
-  height: 100px;
-  line-height: 100px;
-  font-family: icomoon;
-  font-size: 2.3em;
 }

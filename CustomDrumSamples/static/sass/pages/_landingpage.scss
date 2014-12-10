@@ -1,32 +1,21 @@
 // Landing Page has 1 slide
 
 #lp-slide-1 {
-  height: 100%;
-  background-color: $offwhite;
-}
-
-.lp-section {
-  padding-top: 50px;
+  @include slide-mixin($offwhite);
 }
 
 #lp-slide-section-1 {
-  background-color: $offwhite;
-  height: auto;
-  padding: 100px 0;
+  @include slide-section-mixin($offwhite);
 }
 
 #lp-slide-section-2 {
-  background-color: lighten(nth($gray-list, 6), 10%);
-  padding: 100px 0;
-  height: auto;
+  @include slide-section-mixin($gray-bg);
 }
 
-// Title Tagline and Logo
+// General Section Styles
 
 .title-tagline-logo {
   .title-tagline {
-    color: nth($purple-list, 3);
-    text-shadow: 1px 1px 1px transparentize(#DDDDDC, .1);
     white-space: nowrap;
   }
   .logo {
@@ -37,6 +26,7 @@
     background-repeat: no-repeat;
   }
 }
+
 
 .sales-pitch {
   margin: 5% 0;
@@ -52,10 +42,9 @@
     background-size: contain;
     h3 {
       position: absolute;
-      bottom: -10px;
       text-align: center;
       white-space: nowrap;
-      color: nth($purple-list, 3);
+      bottom: -10px;
     }
     p {
       margin-top: 30%;
@@ -64,7 +53,27 @@
   }
 }
 
-// Flip Effect
+.try-it {
+  margin: 10% 0;
+}
+
+.frontpage-arrow {
+  text-align: center;
+  a {
+      display: inline-block;
+      height: 100px;
+      width: 100px;
+      &::before {
+        height: 100px;
+        line-height: 100px;
+        font-family: icomoon;
+        font-size: 2.3em;
+      }
+  }
+}
+
+
+// Flip Effect General Styles
 .step-container {
   /* entire container, keeps perspective */
 	perspective: 900;
@@ -110,50 +119,100 @@
 }
 
 
-// First section pics
-#step-1 {
-  background-image: url("/assets/images/Step-1.png");
-}
-#step-2 {
-  background-image: url("/assets/images/Step-2.png");
-  h3 {
-    margin-left: 15%;
+// First section Styles
+#lp-slide-section-1 {
+
+  .title-tagline-logo {
+    .title-tagline {
+      @include h1-ow-background;
+    }
+    .logo {
+    }
   }
-}
-#step-3 {
-  background-image: url("/assets/images/Step-3.png");
-}
 
-// Second Section pics
+  .sales-pitch {
+    @include p-ow-background;
 
-#step-1-b {
-  background-image: url("/assets/images/Step-1b.png");
-}
-#step-2-b {
-  background-image: url("/assets/images/Step-2b.png");
-  h3 {
-    margin-left: 15%;
+    a {
+      @include link-ow-background;
+    }
   }
-}
-#step-3-b {
-  background-image: url("/assets/images/Step-3b.png");
-}
 
-.try-it {
-  margin: 10% 0;
-}
+  .three-steps {
 
-.frontpage-arrow {
-  text-align: center;
-  a {
-      display: inline-block;
-      height: 100px;
-      width: 100px;
-      &::before {
-        height: 100px;
-        line-height: 100px;
-        font-family: icomoon;
-        font-size: 2.3em;
+    .step {
+      h3 {
+        @include h3-ow-background;
       }
+      p {
+        @include p-ow-background;
+      }
+    }
+  }
+
+  #step-1 {
+  background-image: url("/assets/images/Step-1.png");
+  }
+  #step-2 {
+    background-image: url("/assets/images/Step-2.png");
+    h3 {
+      margin-left: 15%;
+    }
+  }
+  #step-3 {
+    background-image: url("/assets/images/Step-3.png");
   }
 }
+
+
+// Second Section Styles (Gray Background)
+#lp-slide-section-2 {
+
+  .title-tagline-logo {
+    .title-tagline {
+      @include h1-g-background;
+    }
+    .logo {
+      background-image: url("/assets/images/Step-3.png");
+    }
+  }
+
+  .sales-pitch {
+    @include p-g-background;
+
+    a {
+      @include link-g-background;
+    }
+
+  }
+
+  .three-steps {
+    .step {
+      h3 {
+        @include h3-g-background;
+      }
+      p {
+        @include p-g-background;
+      }
+    }
+  }
+
+  // Second Section pics
+  #step-1-b {
+    background-image: url("/assets/images/Step-1b.png");
+  }
+  #step-2-b {
+    background-image: url("/assets/images/Step-2b.png");
+    h3 {
+      margin-left: 15%;
+    }
+  }
+  #step-3-b {
+    background-image: url("/assets/images/Step-3b.png");
+  }
+
+}
+
+
+
+

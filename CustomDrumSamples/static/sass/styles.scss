@@ -6,8 +6,12 @@
 @import "normalize";
 @import "globals";
 
+/* Mixins */
+@import "mixins/layout-mixins";
+@import "mixins/text-color-mixins";
+
 /* Links, Buttons, etc. */
-@import "link-styles";
+
 @import "button-styles";
 
 /* Sections */

@@ -1,0 +1,62 @@
+// Offwhite Backgrounds
+
+@mixin h1-ow-background {
+  color: nth($purple-list, 3);
+  text-shadow: 1px 1px 1px transparentize(#DDDDDC, .1);
+}
+
+@mixin h3-ow-background {
+  color: nth($purple-list, 3);
+}
+
+@mixin p-ow-background {
+  color: nth($purple-list, 2);
+  text-shadow: 0 -1px 0px nth($purple-list, 6);
+}
+
+@mixin link-ow-background {
+  font-family: quicksandbold;
+  color: nth($orange-list, 2);
+  text-shadow: none;
+  &:hover {
+    color: nth($lightblue-list, 4);
+    text-decoration: none;
+  }
+}
+
+
+
+// Gray Backgrounds
+@mixin h1-g-background {
+  color: nth($purple-list, 3);
+  text-shadow: 1px 1px 1px transparentize(#DDDDDC, .1);
+}
+
+@mixin h3-g-background {
+  color: nth($purple-list, 3);
+}
+
+@mixin p-g-background {
+  color: nth($purple-list, 2);
+  text-shadow: 0 -1px 0px nth($purple-list, 6);
+}
+
+@mixin link-g-background {
+  font-family: quicksandbold;
+  color: nth($orange-list, 2);
+  text-shadow: none;
+  &:hover {
+    color: nth($lightblue-list, 3);
+    text-decoration: none;
+  }
+}
+
+// Light Blue Background
+
+@mixin link-lb-background {
+  color: nth($orange-list, 6);
+  &:hover {
+    color: nth($orange-list, 3);
+    text-decoration: none;
+  }
+}
