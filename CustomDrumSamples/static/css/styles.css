@@ -3253,12 +3253,12 @@ div.color-scheme {
   transform-style: preserve-3d;
   position: relative;
 }
-.step-container:hover .front, .step-container .flipper:hover .front {
+.step-container:hover .front, .step-container .flipper:hover .front, .step-container .flipper.hover .front {
   -webkit-transform: perspective(800px) rotateY(-179.9deg);
   -moz-transform: perspective(800px) rotateY(-179.9deg);
   transform: perspective(800px) rotateY(-179.9deg);
 }
-.step-container:hover .back, .step-container .flipper:hover .back {
+.step-container:hover .back, .step-container .flipper:hover .back, .step-container .flipper.hover .back {
   -moz-transform: perspective(800px) rotateY(0);
   -webkit-transform: perspective(800px) rotateY(0);
   transform: perspective(800px) rotateY(0);

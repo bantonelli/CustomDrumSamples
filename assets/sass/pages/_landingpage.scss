@@ -44,7 +44,7 @@
       position: absolute;
       text-align: center;
       white-space: nowrap;
-      bottom: -10px;
+      bottom: -28px;
     }
     p {
       margin-top: 30%;
@@ -75,7 +75,7 @@
 // Flip Effect General Styles
 .step-container {
   /* entire container, keeps perspective */
-	perspective: 900;
+	perspective: 800;
     height: 300px;
     .flipper {
       transition: 0.6s;
@@ -83,7 +83,7 @@
       position: relative;
     }
 
-    &:hover, .flipper:hover{
+    &:hover, .flipper:hover, .flipper.hover {
       .front {
         -webkit-transform: perspective(800px) rotateY(-179.9deg);
         -moz-transform: perspective(800px) rotateY(-179.9deg);
@@ -100,11 +100,11 @@
       /* hide back of pane during swap */
       position:absolute;
 
-      -webkit-transition: 1.5s ease-in-out;
-      -moz-transition: 1.5s ease-in-out;
-      -ms-transition: 1.5s ease-in-out;
-      -o-transition: 1.5s ease-in-out;
-      transition: 1.5s ease-in-out;
+      -webkit-transition: 0.7s ease-in-out;
+      -moz-transition: 0.7s ease-in-out;
+      -ms-transition: 0.7s ease-in-out;
+      -o-transition: 0.7s ease-in-out;
+      transition: 0.7s ease-in-out;
 
       top: 0;
       left: 0;

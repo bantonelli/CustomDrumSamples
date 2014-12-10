@@ -1923,9 +1923,7 @@ header[role=banner] {
   }
 }
 .cds-navbar {
-  position: fixed;
-  top: 0;
-  z-index: 50;
+  z-index: 1000;
   background-color: rgba(28, 28, 28, 0.9);
   color: #f7eeec;
   text-shadow: 0px 1px 1px black;
@@ -2429,6 +2427,8 @@ body,
   position: relative;
   height: 100%;
   overflow: hidden;
+  -webkit-transform: translateY(0px);
+  transform: translateY(0px);
 }
 
 .main {
@@ -3019,11 +3019,11 @@ body,
 }
 
 .on-top {
-  z-index: 30;
+  z-index: 200;
 }
 
 .below {
-  z-index: 20;
+  z-index: 190;
 }
 
 body {
@@ -3215,7 +3215,7 @@ div.color-scheme {
   position: absolute;
   text-align: center;
   white-space: nowrap;
-  bottom: -10px;
+  bottom: -28px;
 }
 .three-steps .step p {
   margin-top: 30%;
@@ -3243,7 +3243,7 @@ div.color-scheme {
 
 .step-container {
   /* entire container, keeps perspective */
-  perspective: 900;
+  perspective: 800;
   height: 300px;
   /* front pane, placed above back */
   /* back, initially hidden pane */
@@ -3253,12 +3253,12 @@ div.color-scheme {
   transform-style: preserve-3d;
   position: relative;
 }
-.step-container:hover .front, .step-container .flipper:hover .front {
+.step-container:hover .front, .step-container .flipper:hover .front, .step-container .flipper.hover .front {
   -webkit-transform: perspective(800px) rotateY(-179.9deg);
   -moz-transform: perspective(800px) rotateY(-179.9deg);
   transform: perspective(800px) rotateY(-179.9deg);
 }
-.step-container:hover .back, .step-container .flipper:hover .back {
+.step-container:hover .back, .step-container .flipper:hover .back, .step-container .flipper.hover .back {
   -moz-transform: perspective(800px) rotateY(0);
   -webkit-transform: perspective(800px) rotateY(0);
   transform: perspective(800px) rotateY(0);
@@ -3266,11 +3266,11 @@ div.color-scheme {
 .step-container .front, .step-container .back {
   /* hide back of pane during swap */
   position: absolute;
-  -webkit-transition: 1.5s ease-in-out;
-  -moz-transition: 1.5s ease-in-out;
-  -ms-transition: 1.5s ease-in-out;
-  -o-transition: 1.5s ease-in-out;
-  transition: 1.5s ease-in-out;
+  -webkit-transition: 0.7s ease-in-out;
+  -moz-transition: 0.7s ease-in-out;
+  -ms-transition: 0.7s ease-in-out;
+  -o-transition: 0.7s ease-in-out;
+  transition: 0.7s ease-in-out;
   top: 0;
   left: 0;
   width: 100%;

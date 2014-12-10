@@ -23,6 +23,13 @@ $('.slide').scroll(function() {
     tb.removeClass(tbs);
   }
 });
+
+// direct event
+$('.flipper').on('tap', function(e) {
+    $(this).toggleClass("hover");
+});
+
+
 //
 //
 //$('.frontpage-arrow a.icon-arrow-right').on("click", function() {

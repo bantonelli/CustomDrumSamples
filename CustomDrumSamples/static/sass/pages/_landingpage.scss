@@ -83,7 +83,7 @@
       position: relative;
     }
 
-    &:hover, .flipper:hover{
+    &:hover, .flipper:hover, .flipper.hover {
       .front {
         -webkit-transform: perspective(800px) rotateY(-179.9deg);
         -moz-transform: perspective(800px) rotateY(-179.9deg);
