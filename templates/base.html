@@ -15,6 +15,7 @@
     <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
     <script src="//rawgit.com/ngryman/jquery.finger/v0.1.2/dist/jquery.finger.js"></script>
     <script src="{% static "js/modernizr.custom.js" %}"></script>
+    <script src="{% static "js/vendor/detectmobilebrowser.js" %}"></script>
 
 
     <title>
@@ -60,7 +61,7 @@
                             </div>
     -->
         <div class="st-content"><!-- this is the wrapper for the content -->
-            <div class="st-content-inner"><!-- extra div for emulating position:fixed of the menu -->
+            <div class="st-content-inner z-index-fix"><!-- extra div for emulating position:fixed of the menu -->
                 <!-- Top Navigation -->
                 <header role="banner" class="cds-navbar">
                     <div class="container cds-nav-container">

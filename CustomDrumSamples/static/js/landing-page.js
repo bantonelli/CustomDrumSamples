@@ -14,9 +14,17 @@ $('.slide').scroll(function() {
   }
 });
 
-// direct event
-$('.flipper').on('tap', function(e) {
-    $(this).toggleClass("hover");
+
+var init = function () {
+    $('.flipper').on('tap', function(e) {
+        $(this).toggleClass("hover");
+    });
+}
+
+$(document).ready(function () {
+    if (jQuery.browser.mobile) {
+        $('.st-content-inner').removeClass('z-index-fix');
+    }
 });
 
 

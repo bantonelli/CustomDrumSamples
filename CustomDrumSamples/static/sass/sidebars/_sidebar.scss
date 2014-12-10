@@ -28,7 +28,11 @@ body,
 	position: relative;
     height: 100%; // I added this
     overflow: hidden;
-  // Lines added below for keeping z indexes in webkit
+}
+
+.z-index-fix {
+    // Lines added below for keeping z indexes in webkit
+    // Only for desktop Remove on mobile
     -webkit-transform: translateY(0px);
     transform: translateY(0px);
 }

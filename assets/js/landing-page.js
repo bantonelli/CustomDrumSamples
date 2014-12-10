@@ -3,16 +3,6 @@
  */
 
 
-
-/*
-landingRow2.removeClass("down-low");
-    landingRow1.addClass("down-low");
-    landingRow2.removeClass("below");
-    landingRow2.addClass("on-top");
-    landingRow1.removeClass("on-top");
-    landingRow1.addClass("below");
-*/
-
 var tb = $('.cds-navbar');
 var tbs = "top-bar-scrolled";
 
@@ -24,12 +14,27 @@ $('.slide').scroll(function() {
   }
 });
 
-// direct event
-$('.flipper').on('tap', function(e) {
-    $(this).toggleClass("hover");
+
+var init = function () {
+    $('.flipper').on('tap', function(e) {
+        $(this).toggleClass("hover");
+    });
+}
+
+$(document).ready(function () {
+    if (jQuery.browser.mobile) {
+        $('.st-content-inner').removeClass('z-index-fix');
+    }
 });
 
 
+// Code for Changing slides
+//    landingRow2.removeClass("down-low");
+//    landingRow1.addClass("down-low");
+//    landingRow2.removeClass("below");
+//    landingRow2.addClass("on-top");
+//    landingRow1.removeClass("on-top");
+//    landingRow1.addClass("below");
 //
 //
 //$('.frontpage-arrow a.icon-arrow-right').on("click", function() {

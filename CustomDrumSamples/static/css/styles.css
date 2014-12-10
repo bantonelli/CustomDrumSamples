@@ -2427,6 +2427,9 @@ body,
   position: relative;
   height: 100%;
   overflow: hidden;
+}
+
+.z-index-fix {
   -webkit-transform: translateY(0px);
   transform: translateY(0px);
 }
