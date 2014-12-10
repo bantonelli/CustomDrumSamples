@@ -28,6 +28,8 @@ body,
 	position: relative;
     height: 100%; // I added this
     overflow: hidden;
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
 }
 
 .main {
