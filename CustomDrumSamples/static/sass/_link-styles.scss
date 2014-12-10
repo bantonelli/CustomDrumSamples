@@ -5,3 +5,11 @@
     text-decoration: none;
   }
 }
+
+.link-ow-background {
+  color: nth($orange-list, 3);
+  &:hover {
+    color: nth($lightblue-list, 3);
+    text-decoration: none;
+  }
+}

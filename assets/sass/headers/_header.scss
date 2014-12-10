@@ -52,9 +52,21 @@ header[role=banner] {
 //    color: nth($orange-list, 6);
 //    text-shadow: 0px 1px 1px black;
 //  }
+  position: fixed;
+  top: 0;
+  z-index: 50;
   background-color: nth($gray-list, 2);
   color: nth($orange-list, 6);
   text-shadow: 0px 1px 1px black;
+  transition: box-shadow 0.2s;
+}
+
+.top-bar-scrolled {
+  box-shadow: 0 6px 4px -4px rgba(0,0,0,.3);
+}
+
+.main {
+ margin: 90px auto 0;
 }
 
 #st-trigger-effects {
@@ -68,7 +80,7 @@ header[role=banner] {
   text-shadow: 0px 1px 1px black;
   color: nth($orange-list, 6);
   &::before {
-    font-size: 2.5em;
+    font-size: 2.3em;
     line-height: 75px;
   }
   &:hover {
@@ -82,14 +94,15 @@ header[role=banner] {
 
 .main-nav a {
   display: inline-block;
-  height: 80px;
-  line-height: 78px;
   background-color: rgba(0, 0, 0, 0);
-  text-shadow: 0px 1px 1px black;
+  margin-top: 30px;
+  text-align: center;
+  text-shadow: 0px 1px 1px rgba(25, 25, 25, .8);
   color: nth($orange-list, 6);
   text-decoration: none;
-  font-size: 1em;
-  font-weight: 600;
+  font-size: 0.8em;
+  font-family: quicksandbold;
+  font-weight: 400;
   &:hover {
     color: nth($lightblue-list, 4);
     text-decoration: none;
