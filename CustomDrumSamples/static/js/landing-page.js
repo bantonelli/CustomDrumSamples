@@ -3,30 +3,12 @@
  */
 
 
-var tb = $('.cds-navbar');
-var tbs = "top-bar-scrolled";
-
-$('.slide').scroll(function() {
-  if($(this).scrollTop()) {
-    tb.addClass(tbs);
-  } else {
-    tb.removeClass(tbs);
-  }
-});
-
-
-var init = function () {
+var tapToTouch = function () {
     $('.flipper').on('tap', function(e) {
         $(this).toggleClass("hover");
     });
 }
 
-$(document).ready(function () {
-    if (jQuery.browser.mobile == true) {
-        init();
-        $('.st-content').removeClass('z-index-fix');
-    }
-});
 
 
 // Code for Changing slides
