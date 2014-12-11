@@ -1,0 +1,7 @@
+#kb-slide-1 {
+  @include slide-mixin($offwhite);
+}
+
+#kb-slide-section-1 {
+  @include slide-section-mixin($offwhite);
+}

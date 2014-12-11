@@ -41,9 +41,10 @@
             <ul>
                 <li><a href="/" class="" href="#">Home</a></li>
                 <li><a href="/about" class="" href="#">About Us</a></li>
-                <li><a href="/team" class="" href="#">Team Profile</a></li>
                 <li><a href="/contact" class="" href="#">Contact</a></li>
                 <li><a href="/legal" class="" href="#">Legal</a></li>
+                <li><a href="/team" class="" href="#">Team Profile</a></li>
+
                 <li class="multilink">
                     <a><label for="menu-toggle">Community</label></a>
                     <input type="checkbox" id="menu-toggle"/>
@@ -85,6 +86,9 @@
                             </nav>
                         </div>
                     </div>
+                    {% block appnav %}
+
+                    {% endblock %}
                 </header>
 
                 <div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->

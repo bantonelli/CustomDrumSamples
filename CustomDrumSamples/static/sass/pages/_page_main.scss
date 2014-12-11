@@ -25,3 +25,67 @@
 .below {
   z-index: 190;
 }
+
+// Static Page Style Classes
+
+.paragraph-text {
+  @include p-ow-background;
+}
+
+// App Template Styling
+.slide-navigation {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  background-color: transparentize(nth($lightblue-list, 3), 0.1);
+}
+
+.item-holder {
+  list-style: none;
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  overflow: visible;
+  height: 80px;
+  padding: 0;
+}
+
+.slide-nav-item {
+  position: absolute;
+  display: inline-block;
+  font-family: quicksandbold;
+  font-size: .7em;
+  height: 80px;
+  width: 100%;
+  line-height: 80px;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  @include link-lb-background-2;
+  &::before {
+      content: "";
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      display: inline-block;
+      width: inherit;
+      height: inherit;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      border-style: solid;
+      border-width: 0px 0 0 0;
+      transition: .14s all ease-in;
+  }
+  &:hover {
+    text-decoration: none;
+    background-color: nth($lightblue-list, 5);
+    &::before {
+      border-color: #ffffff;
+      border-width: 3px 0 0px 0;
+    }
+  }
+}

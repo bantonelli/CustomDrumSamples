@@ -1,5 +1,6 @@
 from django.shortcuts import render_to_response
 from django.views.generic.base import View
+from django.http.response import HttpResponseRedirect
 # Create your views here.
 
 
