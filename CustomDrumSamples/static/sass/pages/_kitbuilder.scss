@@ -2,6 +2,10 @@
   @include slide-mixin($offwhite);
 }
 
-#kb-slide-section-1 {
+#kb-slide-1-section-1 {
+  @include slide-section-mixin($offwhite);
+}
+
+#kb-slide-1-section-2 {
   @include slide-section-mixin($offwhite);
 }

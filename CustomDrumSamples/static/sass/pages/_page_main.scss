@@ -33,11 +33,34 @@
 }
 
 // App Template Styling
-.slide-navigation {
+
+.appnav {
   width: 100%;
   height: auto;
   box-sizing: border-box;
-  background-color: transparentize(nth($lightblue-list, 3), 0.1);
+}
+
+.app-id {
+  background-color: nth($lightblue-list, 3);
+  height: auto;
+  h5 {
+    box-sizing: padding-box;
+    @include h1-g-background;
+    margin-left: -2%;
+    width: 109%;
+    text-align: center;
+    line-height: 40px;
+    border-bottom: 2px solid nth($lightblue-list, 5);
+  }
+}
+
+
+.slide-navigation {
+  height: auto;
+  box-sizing: border-box;
+  background-color: nth($lightblue-list, 2);
+  border-left: 2px solid nth($lightblue-list, 5);
+  border-bottom: 2px solid nth($lightblue-list, 5);
 }
 
 .item-holder {
@@ -46,18 +69,18 @@
   position: relative;
   vertical-align: top;
   overflow: visible;
-  height: 80px;
+  height: 40px;
   padding: 0;
 }
 
 .slide-nav-item {
   position: absolute;
   display: inline-block;
-  font-family: quicksandbold;
   font-size: .7em;
-  height: 80px;
+  font-family: quicksandbold;
+  height: 40px;
   width: 100%;
-  line-height: 80px;
+  line-height: 40px;
   padding: 0;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -65,7 +88,8 @@
   text-align: center;
   text-transform: uppercase;
   cursor: pointer;
-  @include link-lb-background-2;
+  color: nth($lightblue-list, 6);
+  text-shadow: none;
   &::before {
       content: "";
       -moz-box-sizing: border-box;
@@ -83,6 +107,7 @@
   &:hover {
     text-decoration: none;
     background-color: nth($lightblue-list, 5);
+    color: white;
     &::before {
       border-color: #ffffff;
       border-width: 3px 0 0px 0;
