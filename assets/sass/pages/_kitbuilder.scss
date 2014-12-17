@@ -28,9 +28,32 @@
   }
   form {
     margin: 0;
+    margin-left: 0px;
+    .select2-container {
+      margin-left: 10px;
+      margin-top: 10px;
+      height: 50px;
+      width: 110%;
+      background-image: none;
+      background-color: nth($orange-list, 2);
+      .select2-choice, .select2-choice > .select2-chosen {
+        background-image: none;
+        background-color: nth($orange-list, 2);
+        margin-top: -1px;
+        border: none;
+        border-radius: 0px;
+        margin-top: -1px;
+        padding-right: 17px;
+        font-size: 16px;
+        font-family: $paragraph;
+        text-align: center;
+        color: #ffffff;
+      }
+    }
   }
   ul {
     margin: 0;
+    margin-left: 10px;
     padding: 0;
     overflow: hidden;
     :first-child {

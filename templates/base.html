@@ -9,6 +9,7 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <!--<meta name="viewport" content="width=device-width" initial-scale="1.5" user-scalable="no">-->
 	<!-- Links -->
+    <link href="{% static "css/select2.css" %}" rel="stylesheet"/>
     <link href="{% static "css/styles.css" %}" rel="stylesheet" type="text/css">
     <script src="{% static "js/vendor/jquery-1.9.1.min.js" %}"></script>
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -16,8 +17,10 @@
     <script src="//rawgit.com/ngryman/jquery.finger/v0.1.2/dist/jquery.finger.js"></script>
     <script src="{% static "js/modernizr.custom.js" %}"></script>
     <script src="{% static "js/vendor/detectmobilebrowser.js" %}"></script>
-
-
+    <script src="{% static "js/vendor/select2.min.js" %}"></script>
+    <script>
+    $(document).ready(function() { $("#e1").select2(); $("#e2").select2();});
+    </script>
     <title>
 	{% block title %}
 	{{ title }}

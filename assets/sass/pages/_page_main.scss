@@ -54,10 +54,12 @@
   h5 {
     box-sizing: padding-box;
     @include h1-g-background;
+    text-shadow: 0 0 1px white;
     width: 100%;
     text-align: center;
     line-height: 40px;
     border-bottom: 2px solid nth($lightblue-list, 5);
+    border-top: 2px solid nth($lightblue-list, 5);
     white-space: nowrap;
     overflow: auto;
     text-overflow: clip;
@@ -69,8 +71,9 @@
   height: auto;
   box-sizing: border-box;
   background-color: nth($lightblue-list, 2);
-  border-left: 2px solid nth($lightblue-list, 5);
+  border-left: 0px solid nth($lightblue-list, 5);
   border-bottom: 2px solid nth($lightblue-list, 5);
+  border-top: 2px solid nth($lightblue-list, 5);
 }
 
 .item-holder {
@@ -119,8 +122,8 @@
     background-color: nth($lightblue-list, 5);
     color: white;
     &::before {
-      border-color: #ffffff;
-      border-width: 3px 0 0px 0;
+      background-color: transparentize(nth($lightblue-list, 6), .8);
+      //border-width: 2px 0 0px 0;
     }
   }
 }
