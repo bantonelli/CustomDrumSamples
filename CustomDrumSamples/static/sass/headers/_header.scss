@@ -102,6 +102,7 @@ header[role=banner] {
   font-size: 0.7em;
   font-family: quicksandbold;
   font-weight: 400;
+  white-space: nowrap;
   &:hover {
     color: nth($lightblue-list, 4);
     text-decoration: none;

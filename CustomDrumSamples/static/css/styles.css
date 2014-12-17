@@ -2015,6 +2015,7 @@ header[role=banner] {
   font-size: 0.7em;
   font-family: quicksandbold;
   font-weight: 400;
+  white-space: nowrap;
 }
 .main-nav a:hover {
   color: #1ec4d7;
