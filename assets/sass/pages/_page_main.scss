@@ -18,10 +18,109 @@
   -webkit-overflow-scrolling: touch;
 }
 
+.slide-container {
+  margin: 0 auto;
+  max-width: 1400px !important;
+  width: 1400px;
+}
+
+
 .on-top {
   z-index: 200;
 }
 
 .below {
   z-index: 190;
+}
+
+// Static Page Style Classes
+
+.paragraph-text {
+  @include p-ow-background;
+}
+
+// App Template Styling
+
+.appnav {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+
+.app-id {
+  background-color: nth($lightblue-list, 3);
+  height: auto;
+  padding: 0;
+  h5 {
+    box-sizing: padding-box;
+    @include h1-g-background;
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+    border-bottom: 2px solid nth($lightblue-list, 5);
+    white-space: nowrap;
+    overflow: auto;
+    text-overflow: clip;
+  }
+}
+
+
+.slide-navigation {
+  height: auto;
+  box-sizing: border-box;
+  background-color: nth($lightblue-list, 2);
+  border-left: 2px solid nth($lightblue-list, 5);
+  border-bottom: 2px solid nth($lightblue-list, 5);
+}
+
+.item-holder {
+  list-style: none;
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  overflow: visible;
+  height: 40px;
+  padding: 0;
+}
+
+.slide-nav-item {
+  position: absolute;
+  display: inline-block;
+  font-size: .7em;
+  font-family: quicksandbold;
+  height: 40px;
+  width: 100%;
+  line-height: 40px;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: nth($lightblue-list, 6);
+  text-shadow: none;
+  &::before {
+      content: "";
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      display: inline-block;
+      width: inherit;
+      height: inherit;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      border-style: solid;
+      border-width: 0px 0 0 0;
+      transition: .14s all ease-in;
+  }
+  &:hover {
+    text-decoration: none;
+    background-color: nth($lightblue-list, 5);
+    color: white;
+    &::before {
+      border-color: #ffffff;
+      border-width: 3px 0 0px 0;
+    }
+  }
 }

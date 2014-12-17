@@ -2016,6 +2016,8 @@ header[role=banner] {
   font-family: quicksandbold;
   font-weight: 400;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
 }
 .main-nav a:hover {
   color: #1ec4d7;
@@ -2681,6 +2683,12 @@ body,
   -webkit-overflow-scrolling: touch;
 }
 
+.slide-container {
+  margin: 0 auto;
+  max-width: 1400px !important;
+  width: 1400px;
+}
+
 .on-top {
   z-index: 200;
 }
@@ -2703,16 +2711,19 @@ body,
 .app-id {
   background-color: #0ea3b4;
   height: auto;
+  padding: 0;
 }
 .app-id h5 {
   box-sizing: padding-box;
   color: #351f54;
   text-shadow: 1px 1px 1px rgba(221, 221, 220, 0.9);
-  margin-left: -2%;
-  width: 109%;
+  width: 100%;
   text-align: center;
   line-height: 40px;
   border-bottom: 2px solid #4eccda;
+  white-space: nowrap;
+  overflow: auto;
+  text-overflow: clip;
 }
 
 .slide-navigation {
@@ -3147,15 +3158,81 @@ div.color-scheme {
   background-color: #dddddc;
   height: 100%;
 }
+#kb-slide-1 > .row {
+  height: 100%;
+  margin: 0;
+}
 
 #kb-slide-1-section-1 {
   background-color: #dddddc;
-  height: auto;
+  height: 100%;
   padding: 100px 0;
 }
 
 #kb-slide-1-section-2 {
   background-color: #dddddc;
-  height: auto;
+  height: 100%;
   padding: 100px 0;
+}
+
+.filter-row {
+  background-color: #ffffff;
+  height: 70px;
+  width: 100%;
+  margin-left: -15px;
+}
+.filter-row > div, .filter-row > a, .filter-row > form {
+  height: 50px;
+  margin-top: 10px;
+}
+.filter-row form {
+  margin: 0;
+}
+.filter-row ul {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.filter-row ul :first-child {
+  background-color: #ffffff;
+  color: #1d0e32;
+}
+.filter-row ul :nth-child(n + 2) {
+  background-color: #e74c30;
+}
+.filter-row ul li {
+  display: inline-block;
+  list-style: none;
+  color: white;
+  height: 50px;
+  font-size: 16px;
+  font-family: "quicksandregular";
+  text-align: center;
+  white-space: nowrap;
+  line-height: 50px;
+  margin-right: 3px;
+}
+
+.kit-row {
+  background-color: #dddddc;
+  width: 100%;
+  padding: 0%;
+  height: 90%;
+  overflow: auto;
+}
+.kit-row .sound-kit {
+  position: relative;
+  max-height: 226px;
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
+.kit-row .sound-kit img {
+  width: 100%;
+  height: 100%;
+}
+
+.kb-slide-section-container {
+  width: 95%;
+  height: 800px;
+  overflow: hidden;
 }

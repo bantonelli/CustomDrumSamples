@@ -18,6 +18,13 @@
   -webkit-overflow-scrolling: touch;
 }
 
+.slide-container {
+  margin: 0 auto;
+  max-width: 1400px !important;
+  width: 1400px;
+}
+
+
 .on-top {
   z-index: 200;
 }
@@ -43,14 +50,17 @@
 .app-id {
   background-color: nth($lightblue-list, 3);
   height: auto;
+  padding: 0;
   h5 {
     box-sizing: padding-box;
     @include h1-g-background;
-    margin-left: -2%;
-    width: 109%;
+    width: 100%;
     text-align: center;
     line-height: 40px;
     border-bottom: 2px solid nth($lightblue-list, 5);
+    white-space: nowrap;
+    overflow: auto;
+    text-overflow: clip;
   }
 }
 
