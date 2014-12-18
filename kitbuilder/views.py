@@ -6,5 +6,6 @@ from django.views.generic.base import View
 class KitBuilder(View):
     # Main Kit builder AngularJS/Ember App
     def get(self, request):
-        return render_to_response('KitBuilder/kitbuilder.html')
+        li_list = [x for x in range(40)]
+        return render_to_response('KitBuilder/kitbuilder.html', locals())
 

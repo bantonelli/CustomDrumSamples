@@ -30,7 +30,7 @@ Main components
 -------------------------------- */
 header[role=banner] {
   position: relative;
-  height: 40px;
+  height: 60px;
 //  z-index: 70; can make the top nav see-through
 //  background: #343642;
 }
@@ -41,7 +41,7 @@ header[role=banner] {
 
 @media screen and (min-width:767px) {
   .cds-nav-container {
-    width: 80%;
+    width: 87%;
     margin: 0 auto;
   }
 }
@@ -69,7 +69,7 @@ header[role=banner] {
 
 #st-trigger-effects {
   display: inline-block;
-  height: 40px;
+  height: 60px;
 }
 
 .nav-button {
@@ -79,7 +79,7 @@ header[role=banner] {
   color: nth($orange-list, 6);
   &::before {
     font-size: 2.0em;
-    line-height: 35px;
+    line-height: 58px;
   }
   &:hover {
     color: nth($lightblue-list, 4);
@@ -93,8 +93,8 @@ header[role=banner] {
 .main-nav a {
   display: inline-block;
   background-color: rgba(0, 0, 0, 0);
-  height: 40px;
-  line-height: 35px;
+  height: 60px;
+  line-height: 58px;
   text-align: center;
   text-shadow: 0px 1px 1px rgba(25, 25, 25, .8);
   color: nth($orange-list, 6);

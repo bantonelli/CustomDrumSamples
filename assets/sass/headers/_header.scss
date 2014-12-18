@@ -30,7 +30,7 @@ Main components
 -------------------------------- */
 header[role=banner] {
   position: relative;
-  height: 80px;
+  height: 60px;
 //  z-index: 70; can make the top nav see-through
 //  background: #343642;
 }
@@ -41,7 +41,7 @@ header[role=banner] {
 
 @media screen and (min-width:767px) {
   .cds-nav-container {
-    width: 80%;
+    width: 87%;
     margin: 0 auto;
   }
 }
@@ -52,9 +52,7 @@ header[role=banner] {
 //    color: nth($orange-list, 6);
 //    text-shadow: 0px 1px 1px black;
 //  }
-  position: fixed;
-  top: 0;
-  z-index: 50;
+  z-index: 1000;
   background-color: transparentize(nth($gray-list, 1), 0.1);
   color: nth($orange-list, 6);
   text-shadow: 0px 1px 1px black;
@@ -71,7 +69,7 @@ header[role=banner] {
 
 #st-trigger-effects {
   display: inline-block;
-  height: 80px;
+  height: 60px;
 }
 
 .nav-button {
@@ -80,8 +78,8 @@ header[role=banner] {
   text-shadow: 0px 1px 1px black;
   color: nth($orange-list, 6);
   &::before {
-    font-size: 2.3em;
-    line-height: 75px;
+    font-size: 2.0em;
+    line-height: 58px;
   }
   &:hover {
     color: nth($lightblue-list, 4);
@@ -95,14 +93,18 @@ header[role=banner] {
 .main-nav a {
   display: inline-block;
   background-color: rgba(0, 0, 0, 0);
-  margin-top: 30px;
+  height: 60px;
+  line-height: 58px;
   text-align: center;
   text-shadow: 0px 1px 1px rgba(25, 25, 25, .8);
   color: nth($orange-list, 6);
   text-decoration: none;
-  font-size: 0.8em;
+  font-size: 0.7em;
   font-family: quicksandbold;
   font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
   &:hover {
     color: nth($lightblue-list, 4);
     text-decoration: none;

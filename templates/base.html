@@ -19,7 +19,20 @@
     <script src="{% static "js/vendor/detectmobilebrowser.js" %}"></script>
     <script src="{% static "js/vendor/select2.min.js" %}"></script>
     <script>
-    $(document).ready(function() { $("#e1").select2(); $("#e2").select2();});
+    $(document).ready(function() {
+        $("#e1").select2({
+            formatNoMatches: function (term) {
+                return "Whoops!! <br> Genre Not Found!";
+            }
+        });
+
+        $("#e2").select2({
+            formatNoMatches: function (term) {
+                return "Whoops!! <br> Instrument Not Found!";
+            }
+        });
+
+    });
     </script>
     <title>
 	{% block title %}
@@ -76,8 +89,8 @@
                             <nav class="main-nav col-xs-4 col-xs-offset-3">
                                 <ul class="row">
                                     <!-- insert more links here -->
-                                    <li><a class="col-xs-6" href="/kit-builder">Kit Builder</a></li>
-                                    <li><a class="col-xs-6" href="/custom-quote">Custom Samples</a></li>
+                                    <li><a class="col-xs-5" href="/kit-builder">Kit Builder</a></li>
+                                    <li><a class="col-xs-7" href="/custom-quote">Custom Samples</a></li>
                                 </ul>
                             </nav>
                             <nav id="main-nav" class="main-nav col-xs-3">
