@@ -145,13 +145,13 @@
     width: 100%;
     background-color: transparentize(nth($purple-list, 1), 0.2);
     z-index: 2;
-    transition: all .45s ease-out;
+    transform: translateY(0%);
+    transition: all .25s ease;
   }
   .tag-selection.ng-hide, .kit-description.ng-hide {
     display: block !important;
-    transition: all .45s ease-in;
-    top: -100%;
-    opacity: 0;
+    transition: all .25s ease;
+    transform: translateY(-100%);
   }
 }
 

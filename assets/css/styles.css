@@ -3411,13 +3411,13 @@ div.color-scheme {
   width: 100%;
   background-color: rgba(6, 3, 10, 0.8);
   z-index: 2;
-  transition: all .45s ease-out;
+  transform: translateY(0%);
+  transition: all .25s ease;
 }
 .kit-row .tag-selection.ng-hide, .kit-row .kit-description.ng-hide, .selection-row .tag-selection.ng-hide, .selection-row .kit-description.ng-hide {
   display: block !important;
-  transition: all .45s ease-in;
-  top: -100%;
-  opacity: 0;
+  transition: all .25s ease;
+  transform: translateY(-100%);
 }
 
 .tag-list {
