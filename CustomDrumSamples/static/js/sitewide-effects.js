@@ -7,13 +7,16 @@ $(document).ready(function () {
 
 
     var tb = $('.cds-navbar');
+    var apptb = $('.appnav');
     var tbs = "top-bar-scrolled";
 
     $('.slide').scroll(function() {
       if($(this).scrollTop()) {
         tb.addClass(tbs);
+        apptb.addClass(tbs);
       } else {
         tb.removeClass(tbs);
+        apptb.removeClass(tbs);
       }
     });
 
