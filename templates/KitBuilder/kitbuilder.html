@@ -8,17 +8,19 @@
 {% endblock %}
 
 {% block slide-navigation %}
-    <div class="row">
-        <div class="col-xs-4 item-holder">
-            <a href="#" class="slide-nav-item">Sound Selection</a>
+    {% verbatim %}
+    <div class="row" ng-controller="TabController as tabs">
+        <div class="col-xs-4 item-holder" ng-click="tabs.tabSelect(1)">
+            <a href="#soundselection" class="slide-nav-item" ng-class="{ active: tabs.isSelected(1) }" >Sound Selection</a>
         </div>
-        <div class="col-xs-4 item-holder">
-            <a href="#" class="slide-nav-item">Your Custom Kit</a>
+        <div class="col-xs-4 item-holder" ng-click="tabs.tabSelect(2)">
+            <a href="#yourkit" class="slide-nav-item" ng-class="{ active: tabs.isSelected(2) }">Your Custom Kit</a>
         </div>
-        <div class="col-xs-4 item-holder">
-            <a href="#" class="slide-nav-item">Checkout</a>
+        <div class="col-xs-4 item-holder" ng-click="tabs.tabSelect(3)">
+            <a href="#checkout" class="slide-nav-item" ng-class="{ active: tabs.isSelected(3) }">Checkout</a>
         </div>
     </div>
+    {% endverbatim %}
 {% endblock %}
 
 
@@ -26,14 +28,17 @@
 
 
 {% block content %}
-    <div id="kb-slide-1" class="slide on-top">
-        <div class="slide-container">
-            <div class="row">
-                <section id="kb-slide-1-section-1" class="col-xs-6">
-                    <div class="kb-slide-section-container">
 
-                        <div class="row filter-row">
-                            <form class="col-xs-3">
+    <div class="main-content" ng-controller="SlideController as slideshow">
+        <div id="kb-slide-1" class="slide slide-start" ng-class="{ontop:slideshow.isSelected(1)}" ng-show="slideshow.isSelected(1)">
+
+            <div class="slide-container">
+                <div class="row">
+                    <section id="kb-slide-1-section-1" class="col-xs-6">
+                        <div class="kb-slide-section-container">
+
+                            <div class="row filter-row">
+                                <form class="col-xs-3">
                                     <select id="e1" data-placeholder="Select Genre">
                                         <option value=""></option>
                                         <option value="1">Hip Hop</option>
@@ -47,99 +52,99 @@
                                         <option value="9">Acoustic</option>
                                         <option value="10">Rock</option>
                                     </select>
-                            </form>
+                                </form>
 
-                            <div class="col-xs-9 filters">
-                                <ul class="row">
-                                    <li class="col-xs-2 filter-word">Filters:</li>
-                                    <li class="col-xs-2">New</li>
-                                    <li class="col-xs-2">A-Z</li>
-                                    <li class="col-xs-3">On Sale</li>
-                                    <li class="col-xs-2">Tags</li>
-                                </ul>
+                                <div class="col-xs-9 filters">
+                                    <ul class="row">
+                                        <li class="col-xs-2 filter-word">Filters:</li>
+                                        <li class="col-xs-2">New</li>
+                                        <li class="col-xs-2">A-Z</li>
+                                        <li class="col-xs-3">On Sale</li>
+                                        <li class="col-xs-2">{{ slideshow.tab }}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row kit-row">
+                                <div class="col-xs-4 sound-kit">
+                                    <img src="{% static "images/Drumkit Mock Images/808-Essentials-Art1.jpg" %}" alt="Name of Kit">
+                                </div>
+                                <div class="col-xs-4 sound-kit">
+                                    <img src="{% static "images/Drumkit Mock Images/ATTACK-OF-THE-808S-3.jpg" %}" alt="Name of Kit">
+                                </div>
+                                <div class="col-xs-4 sound-kit">
+                                    <img src="{% static "images/Drumkit Mock Images/Chillstrumental-Drum-Kit.jpg" %}" alt="Name of Kit">
+                                </div>
+                                <div class="col-xs-4 sound-kit">
+                                    <img src="{% static "images/Drumkit Mock Images/Deep-Percussion-Art.jpg" %}" alt="Name of Kit">
+                                </div>
+                                <div class="col-xs-4 sound-kit">
+                                    <img src="{% static "images/Drumkit Mock Images/High-Impact-1-2-3-Bundle.jpg" %}" alt="Name of Kit">
+                                </div>
+                                <div class="col-xs-4 sound-kit">
+                                    <img src="{% static "images/Drumkit Mock Images/SHD-Patient-Zero-Cover.jpg" %}" alt="Name of Kit">
+                                </div>
+                                <div class="col-xs-4 sound-kit">
+                                    <img src="{% static "images/Drumkit Mock Images/808-Essentials-Art1.jpg" %}" alt="Name of Kit">
+                                </div>
+                                <div class="col-xs-4 sound-kit">
+                                    <img src="{% static "images/Drumkit Mock Images/ATTACK-OF-THE-808S-3.jpg" %}" alt="Name of Kit">
+                                </div>
+                                <div class="col-xs-4 sound-kit">
+                                    <img src="{% static "images/Drumkit Mock Images/Chillstrumental-Drum-Kit.jpg" %}" alt="Name of Kit">
+                                </div>
+                                <div class="col-xs-4 sound-kit">
+                                    <img src="{% static "images/Drumkit Mock Images/Deep-Percussion-Art.jpg" %}" alt="Name of Kit">
+                                </div>
+                                <div class="col-xs-4 sound-kit">
+                                    <img src="{% static "images/Drumkit Mock Images/High-Impact-1-2-3-Bundle.jpg" %}" alt="Name of Kit">
+                                </div>
+                                <div class="col-xs-4 sound-kit">
+                                    <img src="{% static "images/Drumkit Mock Images/SHD-Patient-Zero-Cover.jpg" %}" alt="Name of Kit">
+                                </div>
+                                <div class="col-xs-4 sound-kit">
+                                    <img src="{% static "images/Drumkit Mock Images/808-Essentials-Art1.jpg" %}" alt="Name of Kit">
+                                </div>
+                                <div class="col-xs-4 sound-kit">
+                                    <img src="{% static "images/Drumkit Mock Images/ATTACK-OF-THE-808S-3.jpg" %}" alt="Name of Kit">
+                                </div>
+                                <div class="col-xs-4 sound-kit">
+                                    <img src="{% static "images/Drumkit Mock Images/Chillstrumental-Drum-Kit.jpg" %}" alt="Name of Kit">
+                                </div>
+                                <div class="col-xs-4 sound-kit">
+                                    <img src="{% static "images/Drumkit Mock Images/Deep-Percussion-Art.jpg" %}" alt="Name of Kit">
+                                </div>
+                                <div class="col-xs-4 sound-kit">
+                                    <img src="{% static "images/Drumkit Mock Images/High-Impact-1-2-3-Bundle.jpg" %}" alt="Name of Kit">
+                                </div>
+                                <div class="col-xs-4 sound-kit">
+                                    <img src="{% static "images/Drumkit Mock Images/SHD-Patient-Zero-Cover.jpg" %}" alt="Name of Kit">
+                                </div>
+                                <div class="col-xs-4 sound-kit">
+                                    <img src="{% static "images/Drumkit Mock Images/808-Essentials-Art1.jpg" %}" alt="Name of Kit">
+                                </div>
+                                <div class="col-xs-4 sound-kit">
+                                    <img src="{% static "images/Drumkit Mock Images/ATTACK-OF-THE-808S-3.jpg" %}" alt="Name of Kit">
+                                </div>
+                                <div class="col-xs-4 sound-kit">
+                                    <img src="{% static "images/Drumkit Mock Images/Chillstrumental-Drum-Kit.jpg" %}" alt="Name of Kit">
+                                </div>
+                                <div class="col-xs-4 sound-kit">
+                                    <img src="{% static "images/Drumkit Mock Images/Deep-Percussion-Art.jpg" %}" alt="Name of Kit">
+                                </div>
+                                <div class="col-xs-4 sound-kit">
+                                    <img src="{% static "images/Drumkit Mock Images/High-Impact-1-2-3-Bundle.jpg" %}" alt="Name of Kit">
+                                </div>
+                                <div class="col-xs-4 sound-kit">
+                                    <img src="{% static "images/Drumkit Mock Images/SHD-Patient-Zero-Cover.jpg" %}" alt="Name of Kit">
+                                </div>
                             </div>
                         </div>
-                        <div class="row kit-row">
-                            <div class="col-xs-4 sound-kit">
-                                <img src="{% static "images/Drumkit Mock Images/808-Essentials-Art1.jpg" %}" alt="Name of Kit">
-                            </div>
-                            <div class="col-xs-4 sound-kit">
-                                <img src="{% static "images/Drumkit Mock Images/ATTACK-OF-THE-808S-3.jpg" %}" alt="Name of Kit">
-                            </div>
-                            <div class="col-xs-4 sound-kit">
-                                <img src="{% static "images/Drumkit Mock Images/Chillstrumental-Drum-Kit.jpg" %}" alt="Name of Kit">
-                            </div>
-                            <div class="col-xs-4 sound-kit">
-                                <img src="{% static "images/Drumkit Mock Images/Deep-Percussion-Art.jpg" %}" alt="Name of Kit">
-                            </div>
-                            <div class="col-xs-4 sound-kit">
-                                <img src="{% static "images/Drumkit Mock Images/High-Impact-1-2-3-Bundle.jpg" %}" alt="Name of Kit">
-                            </div>
-                            <div class="col-xs-4 sound-kit">
-                                <img src="{% static "images/Drumkit Mock Images/SHD-Patient-Zero-Cover.jpg" %}" alt="Name of Kit">
-                            </div>
-                            <div class="col-xs-4 sound-kit">
-                                <img src="{% static "images/Drumkit Mock Images/808-Essentials-Art1.jpg" %}" alt="Name of Kit">
-                            </div>
-                            <div class="col-xs-4 sound-kit">
-                                <img src="{% static "images/Drumkit Mock Images/ATTACK-OF-THE-808S-3.jpg" %}" alt="Name of Kit">
-                            </div>
-                            <div class="col-xs-4 sound-kit">
-                                <img src="{% static "images/Drumkit Mock Images/Chillstrumental-Drum-Kit.jpg" %}" alt="Name of Kit">
-                            </div>
-                            <div class="col-xs-4 sound-kit">
-                                <img src="{% static "images/Drumkit Mock Images/Deep-Percussion-Art.jpg" %}" alt="Name of Kit">
-                            </div>
-                            <div class="col-xs-4 sound-kit">
-                                <img src="{% static "images/Drumkit Mock Images/High-Impact-1-2-3-Bundle.jpg" %}" alt="Name of Kit">
-                            </div>
-                            <div class="col-xs-4 sound-kit">
-                                <img src="{% static "images/Drumkit Mock Images/SHD-Patient-Zero-Cover.jpg" %}" alt="Name of Kit">
-                            </div>
-                            <div class="col-xs-4 sound-kit">
-                                <img src="{% static "images/Drumkit Mock Images/808-Essentials-Art1.jpg" %}" alt="Name of Kit">
-                            </div>
-                            <div class="col-xs-4 sound-kit">
-                                <img src="{% static "images/Drumkit Mock Images/ATTACK-OF-THE-808S-3.jpg" %}" alt="Name of Kit">
-                            </div>
-                            <div class="col-xs-4 sound-kit">
-                                <img src="{% static "images/Drumkit Mock Images/Chillstrumental-Drum-Kit.jpg" %}" alt="Name of Kit">
-                            </div>
-                            <div class="col-xs-4 sound-kit">
-                                <img src="{% static "images/Drumkit Mock Images/Deep-Percussion-Art.jpg" %}" alt="Name of Kit">
-                            </div>
-                            <div class="col-xs-4 sound-kit">
-                                <img src="{% static "images/Drumkit Mock Images/High-Impact-1-2-3-Bundle.jpg" %}" alt="Name of Kit">
-                            </div>
-                            <div class="col-xs-4 sound-kit">
-                                <img src="{% static "images/Drumkit Mock Images/SHD-Patient-Zero-Cover.jpg" %}" alt="Name of Kit">
-                            </div>
-                            <div class="col-xs-4 sound-kit">
-                                <img src="{% static "images/Drumkit Mock Images/808-Essentials-Art1.jpg" %}" alt="Name of Kit">
-                            </div>
-                            <div class="col-xs-4 sound-kit">
-                                <img src="{% static "images/Drumkit Mock Images/ATTACK-OF-THE-808S-3.jpg" %}" alt="Name of Kit">
-                            </div>
-                            <div class="col-xs-4 sound-kit">
-                                <img src="{% static "images/Drumkit Mock Images/Chillstrumental-Drum-Kit.jpg" %}" alt="Name of Kit">
-                            </div>
-                            <div class="col-xs-4 sound-kit">
-                                <img src="{% static "images/Drumkit Mock Images/Deep-Percussion-Art.jpg" %}" alt="Name of Kit">
-                            </div>
-                            <div class="col-xs-4 sound-kit">
-                                <img src="{% static "images/Drumkit Mock Images/High-Impact-1-2-3-Bundle.jpg" %}" alt="Name of Kit">
-                            </div>
-                            <div class="col-xs-4 sound-kit">
-                                <img src="{% static "images/Drumkit Mock Images/SHD-Patient-Zero-Cover.jpg" %}" alt="Name of Kit">
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section id="kb-slide-1-section-2" class="col-xs-6">
-                   <div class="kb-slide-section-container">
+                    </section>
+                    <section id="kb-slide-1-section-2" class="col-xs-6">
+                        <div class="kb-slide-section-container">
 
-                        <div class="row filter-row">
-                            <form class="col-xs-4">
+                            <div class="row filter-row">
+                                <form class="col-xs-4">
                                     <select id="e2" data-placeholder="Select Sample Type">
                                         <option value=""></option>
                                         <option value="1">Kick Drums</option>
@@ -149,36 +154,36 @@
                                         <option value="5">Percussion</option>
                                         <option value="6">Sound FX</option>
                                     </select>
-                            </form>
+                                </form>
 
-                            <div class="col-xs-4 filters">
-                                <ul class="row">
-                                    <li class="col-xs-12">Kit Description</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="row selection-row">
-                            <div class="col-xs-6 selected-kit-media">
-                                <div class="row">
-                                    <div class="col-xs-12 sound-kit-selection">
-                                        <h4>Chillstrumentals</h4>
-                                        <img src="{% static "images/Drumkit Mock Images/Chillstrumental-Drum-Kit.jpg" %}" alt="Name of Kit">
-                                    </div>
+                                <div class="col-xs-4 filters">
+                                    <ul class="row">
+                                        <li class="col-xs-12">Kit Description</li>
+                                    </ul>
                                 </div>
-                                <div class="row">
-                                    <div class="col-xs-12 sound-kit-soundcloud">
-                                        <iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/160710007&amp;color=ff5500&amp;auto_play=false&amp;hide_related=true&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_artwork=false"></iframe>
-                                    </div>
-                                </div>
-
                             </div>
-                            <div class="col-xs-6 selected-kit-sounds">
-                                <div class="row">
-                                    <div class="col-xs-12 sound-kit-selection">
-                                        <h4>Kick Drums</h4>
-                                        <ul class="sample-list">
-                                            {% for o in li_list %}
+
+                            <div class="row selection-row">
+                                <div class="col-xs-6 selected-kit-media">
+                                    <div class="row">
+                                        <div class="col-xs-12 sound-kit-selection">
+                                            <h4>Chillstrumentals</h4>
+                                            <img src="{% static "images/Drumkit Mock Images/Chillstrumental-Drum-Kit.jpg" %}" alt="Name of Kit">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 sound-kit-soundcloud">
+                                            <iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/160710007&amp;color=ff5500&amp;auto_play=false&amp;hide_related=true&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_artwork=false"></iframe>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-xs-6 selected-kit-sounds">
+                                    <div class="row">
+                                        <div class="col-xs-12 sound-kit-selection">
+                                            <h4>Kick Drums</h4>
+                                            <ul class="sample-list">
+                                                {% for o in li_list %}
                                                 <li class="row">
                                                     <span class="col-xs-8">Sample_Name-{{ forloop.counter }}</span>
                                                     <div class="col-xs-2 play-sound icon-play"></div>
@@ -192,19 +197,73 @@
                                                     </div>
                                                 </li>
 
-                                            {% endfor %}
+                                                {% endfor %}
 
 
 
 
-                                        </ul>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div id="kb-slide-2" class="slide slide-start" ng-class="{ontop:slideshow.isSelected(2)}" ng-show="slideshow.isSelected(2)">
+            <div class="slide-container">
+                <div class="row">
+                    <section id="kb-slide-1-section-1" class="col-xs-6">
+                        <div class="kb-slide-section-container">
+
+                            <div class="row filter-row">
+                                 <h2>SOME STUFF</h2>
+                                <div class="col-xs-9 filters">
+                                </div>
+                            </div>
+                            <div class="row kit-row">
+
+                            </div>
+                        </div>
+                    </section>
+                    <section id="kb-slide-1-section-2" class="col-xs-6">
+                        <h2>SOME STUFF</h2>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div id="kb-slide-3" class="slide slide-start" ng-class="{ontop:slideshow.isSelected(3)}" ng-show="slideshow.isSelected(3)">
+            <div class="slide-container">
+                <div class="row">
+                    <section id="kb-slide-1-section-1" class="col-xs-6">
+                        <div class="kb-slide-section-container">
+
+                            <div class="row filter-row">
+
+                                <div class="col-xs-9 filters">
+                                </div>
+                            </div>
+                            <div class="row kit-row">
+
+                            </div>
+                        </div>
+                    </section>
+                    <section id="kb-slide-1-section-2" class="col-xs-6">
+                        <div class="kb-slide-section-container">
+
+                            <div class="row filter-row">
+
+                            </div>
+
+                            <div class="row selection-row">
+                            </div>
+                        </div>
+                    </section>
+                </div>
             </div>
         </div>
     </div>
+
 {% endblock %}

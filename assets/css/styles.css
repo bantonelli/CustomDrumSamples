@@ -2795,6 +2795,7 @@ body,
   padding-top: 100px;
   position: absolute;
   overflow-y: scroll;
+  z-index: 190;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -2806,10 +2807,6 @@ body,
 
 .on-top {
   z-index: 200;
-}
-
-.below {
-  z-index: 190;
 }
 
 .paragraph-text {
@@ -3276,6 +3273,24 @@ div.color-scheme {
   height: 100%;
 }
 #kb-slide-1 > .row {
+  height: 100%;
+  margin: 0;
+}
+
+#kb-slide-2 {
+  background-color: #dddddc;
+  height: 100%;
+}
+#kb-slide-2 > .row {
+  height: 100%;
+  margin: 0;
+}
+
+#kb-slide-3 {
+  background-color: #dddddc;
+  height: 100%;
+}
+#kb-slide-3 > .row {
   height: 100%;
   margin: 0;
 }

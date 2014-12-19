@@ -1927,7 +1927,7 @@ CHECK BOX STYLES
   border-right: none;
   background: transparent;
   opacity: 0;
-  transition: .3s all ease-out;
+  transition: .15s all ease-out;
 }
 .squaredThree input[type=checkbox] {
   visibility: hidden;
@@ -2787,6 +2787,7 @@ body,
   position: relative;
   overflow: hidden;
   margin-top: -100px;
+  background-color: #dddddc;
 }
 
 .slide {
@@ -2795,7 +2796,22 @@ body,
   padding-top: 100px;
   position: absolute;
   overflow-y: scroll;
+  z-index: 190;
   -webkit-overflow-scrolling: touch;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition: .5s all ease-in-out;
+}
+
+.slide.ng-hide {
+  display: block !important;
+  opacity: 0;
+  transition: .5s all ease-in-out;
+}
+
+.slide-start {
+  right: -200%;
 }
 
 .slide-container {
@@ -2804,12 +2820,10 @@ body,
   width: 1400px;
 }
 
-.on-top {
+.ontop {
+  opacity: 1;
+  right: 0;
   z-index: 200;
-}
-
-.below {
-  z-index: 190;
 }
 
 .paragraph-text {
@@ -3280,6 +3294,24 @@ div.color-scheme {
   margin: 0;
 }
 
+#kb-slide-2 {
+  background-color: #dddddc;
+  height: 100%;
+}
+#kb-slide-2 > .row {
+  height: 100%;
+  margin: 0;
+}
+
+#kb-slide-3 {
+  background-color: #dddddc;
+  height: 100%;
+}
+#kb-slide-3 > .row {
+  height: 100%;
+  margin: 0;
+}
+
 #kb-slide-1-section-1 {
   background-color: #dddddc;
   height: 100%;
@@ -3293,10 +3325,11 @@ div.color-scheme {
 }
 
 .filter-row {
-  background-color: #ffffff;
+  background-color: #685089;
   height: 70px;
   width: 100%;
   margin-left: -15px;
+  font-family: quicksandbold;
 }
 .filter-row > div, .filter-row > a, .filter-row > form {
   height: 50px;
@@ -3312,11 +3345,11 @@ div.color-scheme {
   height: 50px;
   width: 110%;
   background-image: none;
-  background-color: #e74c30;
+  background-color: #351f54;
 }
 .filter-row form .select2-container .select2-choice, .filter-row form .select2-container .select2-choice > .select2-chosen {
   background-image: none;
-  background-color: #e74c30;
+  background-color: #351f54;
   margin-top: -1px;
   border: none;
   border-radius: 0px;
@@ -3325,7 +3358,7 @@ div.color-scheme {
   font-size: 16px;
   font-family: "quicksandregular";
   text-align: center;
-  color: #ffffff;
+  color: #685089;
 }
 .filter-row ul {
   margin: 0;
@@ -3335,12 +3368,12 @@ div.color-scheme {
 }
 .filter-row ul li {
   display: inline-block;
-  background-color: #e74c30;
+  background-color: #351f54;
   list-style: none;
-  color: white;
+  color: #685089;
   height: 50px;
   font-size: 16px;
-  font-family: "quicksandregular";
+  font-family: quicksandbold;
   text-align: center;
   white-space: nowrap;
   line-height: 50px;
@@ -3348,14 +3381,13 @@ div.color-scheme {
   cursor: pointer;
 }
 .filter-row ul li:hover, .filter-row ul li:focus {
-  background-color: #037e8c;
+  background-color: #e74c30;
 }
 .filter-row ul li.active {
   background-color: #037e8c;
 }
 .filter-row ul :first-child.filter-word {
-  background-color: #ffffff;
-  color: #1d0e32;
+  color: #685089;
 }
 
 .kit-row, .selection-row {
@@ -3377,7 +3409,7 @@ div.color-scheme {
 
 .kb-slide-section-container {
   width: 95%;
-  height: 800px;
+  height: 780px;
   overflow: hidden;
 }
 

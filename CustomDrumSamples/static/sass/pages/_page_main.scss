@@ -6,6 +6,7 @@
   position: relative;
   overflow: hidden;
   margin-top: -100px; // Can make the top nav see-through
+  background-color: $offwhite;
 }
 
 .slide {
@@ -15,7 +16,22 @@
 //  padding-top: 50px;
   position: absolute;
   overflow-y: scroll;
+  z-index: 190;
   -webkit-overflow-scrolling: touch;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition: .5s all ease-in-out;
+}
+
+.slide.ng-hide {
+  display: block !important;
+  opacity: 0;
+  transition: .5s all ease-in-out;
+}
+
+.slide-start {
+  right: -200%;
 }
 
 .slide-container {
@@ -25,13 +41,12 @@
 }
 
 
-.on-top {
+.ontop {
+  opacity: 1;
+  right: 0;
   z-index: 200;
 }
 
-.below {
-  z-index: 190;
-}
 
 // Static Page Style Classes
 
