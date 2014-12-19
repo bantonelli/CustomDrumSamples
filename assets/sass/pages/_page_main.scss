@@ -20,6 +20,7 @@
   left: 0;
   right: 0;
   top: 0;
+  -webkit-transition: .55s all ease;
   transition: .55s all ease;
 }
 
@@ -29,6 +30,7 @@
 }
 
 .slide-start {
+  -webkit-transform: translateX(100%);
   transform: translateX(100%);
 }
 
@@ -40,6 +42,7 @@
 
 
 .ontop {
+  -webkit-transform: translateX(0%);
   transform: translateX(0%);
   opacity: 1;
 }

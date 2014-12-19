@@ -145,12 +145,16 @@
     width: 100%;
     background-color: transparentize(nth($purple-list, 1), 0.2);
     z-index: 2;
+    -webkit-transform: translateY(0%);
     transform: translateY(0%);
+    -webkit-transition: all .25s ease;
     transition: all .25s ease;
   }
   .tag-selection.ng-hide, .kit-description.ng-hide {
     display: block !important;
+    -webkit-transition: all .25s ease;
     transition: all .25s ease;
+    -webkit-transform: translateY(-100%);
     transform: translateY(-100%);
   }
 }
