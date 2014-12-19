@@ -36,10 +36,17 @@
 }
 
 .filter-row {
-  background-color: #ffffff;
+  //background-color: rgba(255, 255, 255, 0.2);
+  //background-color: $offwhite;
   height: 70px;
   width: 100%;
   margin-left: -15px;
+  font-family: $paragraph;
+  position: relative;
+  overflow: visible;
+  border-style: solid;
+  border-color: transparentize(nth($purple-list, 5), 0.7);
+  border-width: 0 0 2px 0;
   > div, > a, > form {
     height: 50px;
     margin-top: 10px;
@@ -48,15 +55,17 @@
     margin: 0;
     margin-left: 0px;
     .select2-container {
-      margin-left: 10px;
+      color: $offwhite;
+      font-family: $paragraph;
+      margin-left: 0px;
       margin-top: 10px;
       height: 50px;
-      width: 110%;
+      width: 115%;
       background-image: none;
-      background-color: nth($orange-list, 2);
+      background-color: nth($purple-list, 4);
       .select2-choice, .select2-choice > .select2-chosen {
         background-image: none;
-        background-color: nth($orange-list, 2);
+        background-color: nth($purple-list, 4);
         margin-top: -1px;
         border: none;
         border-radius: 0px;
@@ -65,7 +74,7 @@
         font-size: 16px;
         font-family: $paragraph;
         text-align: center;
-        color: #ffffff;
+        color: $offwhite;
       }
     }
   }
@@ -76,9 +85,11 @@
     overflow: hidden;
     li {
       display: inline-block;
-      background-color: nth($orange-list, 2);
+      //background-color: nth($orange-list, 2);
+      background-color: nth($purple-list, 4);
       list-style: none;
-      color: white;
+      //color: white;
+      color: $offwhite;
       height: 50px;
       font-size: 16px;
       font-family: $paragraph;
@@ -88,28 +99,34 @@
       margin-right: 3px;
       cursor: pointer;
       &:hover, &:focus {
-        background-color: nth($lightblue-list, 2);
+        background-color: nth($lightblue-list, 3);
       }
     }
     li.active {
-      background-color: nth($lightblue-list, 2);
+      background-color: nth($lightblue-list, 3);
     }
     :first-child.filter-word {
-      background-color: #ffffff;
+      background-color: transparent;
       color: nth($purple-list, 2);
+      cursor: default;
+    }
+    :last-child {
+      &::before {
+        font-family: icomoon;
+        font-size: 30px;
+      }
     }
   }
 }
 
 .kit-row, .selection-row {
+  position: relative;
   background-color: $offwhite;
   width: 100%;
   padding: 0%;
   height: 90%;
   overflow: auto;
   .sound-kit, .sound-kit-selection {
-    position: relative;
- //   max-height: 226px;
     margin-top: 2%;
     margin-bottom: 3%;
     img {
@@ -117,11 +134,56 @@
       height: 100%;
     }
   }
+  .tag-selection, .kit-description {
+    position: absolute;
+    padding: 1.5%;
+    top: 0px;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    height: auto;
+    width: 100%;
+    background-color: transparentize(nth($purple-list, 1), 0.2);
+    z-index: 2;
+    transition: all .45s ease-out;
+  }
+  .tag-selection.ng-hide, .kit-description.ng-hide {
+    display: block !important;
+    transition: all .45s ease-in;
+    top: -100%;
+    opacity: 0;
+  }
+}
+
+.tag-list {
+  padding: 0;
+  margin: 0;
+  li {
+    height: 40px;
+  }
+  .tag-name {
+    font-family: $paragraph;
+    font-size: 16px;
+    color: $offwhite;
+    margin-top: 14px;
+    text-align: center;
+  }
+}
+
+.kit-description {
+  p {
+    font-family: $paragraph;
+    font-size: 20px;
+    text-indent: 50px;
+    color: $offwhite;
+    width: 80%;
+    margin: 0 auto;
+  }
 }
 
 .kb-slide-section-container {
   width: 95%;
-  height: 800px;
+  height: 780px;
   overflow: hidden;
 }
 
@@ -150,11 +212,11 @@
       padding: 0;
       margin: 0;
       li {
-        color: nth($lightblue-list, 1);
+        color: nth($orange-list, 3);
       }
       li span {
-        color: nth($lightblue-list, 2);
-        font-family: $paragraph;
+        color: nth($orange-list, 2);
+        font-family: quicksandbold;
         font-size: 18px;
         display: inline-block;
         margin-top: 15px;

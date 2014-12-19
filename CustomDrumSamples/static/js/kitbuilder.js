@@ -26,4 +26,37 @@
         };
     });
 
+    app.controller("KitFilterController", function () {
+        this.tags = false;
+        this.newKits = false;
+        this.alphabetical = false;
+        this.onSale = false;
+
+        this.showNewKits = function () {
+            this.newKits = !(this.newKits);
+        };
+
+        this.showAlphabetical = function () {
+            this.alphabetical = !(this.alphabetical);
+        };
+
+        this.showOnSale = function () {
+            this.onSale = !(this.onSale);
+        };
+
+        this.showTags = function () {
+            this.tags = !(this.tags);
+        };
+
+    });
+
+    app.controller("SampleFilterController", function (){
+        this.description = false;
+
+        this.showDescription = function () {
+            this.description = !(this.description);
+        };
+
+    });
+
 })();

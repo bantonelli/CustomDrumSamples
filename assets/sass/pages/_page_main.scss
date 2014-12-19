@@ -6,17 +6,30 @@
   position: relative;
   overflow: hidden;
   margin-top: -100px; // Can make the top nav see-through
+  background-color: $offwhite;
 }
 
 .slide {
   width: 100%;
   height: 100%;
   padding-top: 100px; // see through nav
-//  padding-top: 50px;
   position: absolute;
   overflow-y: scroll;
-  z-index: 190;
+  z-index: 200;
   -webkit-overflow-scrolling: touch;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition: .55s all ease;
+}
+
+.slide.ng-hide {
+  display: block !important;
+  opacity: 0;
+}
+
+.slide-start {
+  transform: translateX(100%);
 }
 
 .slide-container {
@@ -26,9 +39,11 @@
 }
 
 
-.on-top {
-  z-index: 200;
+.ontop {
+  transform: translateX(0%);
+  opacity: 1;
 }
+
 
 // Static Page Style Classes
 
@@ -45,18 +60,20 @@
 }
 
 .app-id {
-  background-color: nth($lightblue-list, 3);
+//  background-color: #302243;
+  background-color: nth($purple-list, 4);
   height: auto;
   padding: 0;
   h5 {
     box-sizing: padding-box;
-    @include h1-g-background;
-    text-shadow: 0 0 1px white;
+    color: $offwhite;
+    text-shadow: 0px 0px 0px white;
+    letter-spacing: 1px;
     width: 100%;
     text-align: center;
     line-height: 40px;
-    border-bottom: 2px solid nth($lightblue-list, 5);
-    border-top: 2px solid nth($lightblue-list, 5);
+    border-bottom: 2px solid nth($purple-list, 4);
+    border-top: 2px solid nth($purple-list, 4);
     white-space: nowrap;
     overflow: auto;
     text-overflow: clip;
@@ -67,10 +84,11 @@
 .slide-navigation {
   height: auto;
   box-sizing: border-box;
-  background-color: nth($lightblue-list, 2);
-  border-left: 0px solid nth($lightblue-list, 5);
-  border-bottom: 2px solid nth($lightblue-list, 5);
-  border-top: 2px solid nth($lightblue-list, 5);
+//  background-color: nth($purple-list, 2);
+  background-color: #302243;
+  border-left: 0px solid nth($purple-list, 4);
+  border-bottom: 2px solid nth($purple-list, 4);
+  border-top: 2px solid nth($purple-list, 4);
 }
 
 .item-holder {
@@ -98,29 +116,11 @@
   text-align: center;
   text-transform: uppercase;
   cursor: pointer;
-  color: nth($lightblue-list, 6);
+  color: $offwhite;
   text-shadow: none;
-  &::before {
-      content: "";
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
-      display: inline-block;
-      width: inherit;
-      height: inherit;
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      border-style: solid;
-      border-width: 0px 0 0 0;
-      transition: .14s all ease-in;
-  }
-  &:hover {
+  &:hover, &.active {
     text-decoration: none;
-    background-color: nth($lightblue-list, 5);
-    color: white;
-    &::before {
-      background-color: transparentize(nth($lightblue-list, 6), .8);
-      //border-width: 2px 0 0px 0;
-    }
+    background-color: nth($purple-list, 4);
+    color: $offwhite;
   }
 }

@@ -3,17 +3,58 @@
  */
 
 ( function () {
+
     var app = angular.module("kitbuilder", []);
 
-    app.controller("SlideController", function () {
+    var tabController = app.controller("TabController", function ($rootScope) {
 
-        this.tab = 1;
+        $rootScope.tab = 1;
         this.isSelected = function (tab) {
-            return tab === this.tab;
+            return tab === $rootScope.tab;
         };
 
         this.tabSelect = function (tab){
-            this.tab = tab;
+            $rootScope.tab = tab;
+        };
+
+    });
+
+    app.controller("SlideController", function ($rootScope){
+
+        this.isSelected = function (tab) {
+            return $rootScope.tab === tab;
+        };
+    });
+
+    app.controller("KitFilterController", function () {
+        this.tags = false;
+        this.newKits = false;
+        this.alphabetical = false;
+        this.onSale = false;
+
+        this.showNewKits = function () {
+            this.newKits = !(this.newKits);
+        };
+
+        this.showAlphabetical = function () {
+            this.alphabetical = !(this.alphabetical);
+        };
+
+        this.showOnSale = function () {
+            this.onSale = !(this.onSale);
+        };
+
+        this.showTags = function () {
+            this.tags = !(this.tags);
+        };
+
+    });
+
+    app.controller("SampleFilterController", function (){
+        this.description = false;
+
+        this.showDescription = function () {
+            this.description = !(this.description);
         };
 
     });
