@@ -1898,7 +1898,6 @@ CHECK BOX STYLES
 .squaredThree {
   width: 20px;
   position: relative;
-  margin: 8px 0 0 auto;
 }
 .squaredThree label {
   width: 30px;
@@ -2810,12 +2809,12 @@ body,
   opacity: 0;
 }
 
-.slide-start {
+.slideshow-starting-pos {
   -webkit-transform: translateX(100%);
   transform: translateX(100%);
 }
 
-.slide-container {
+.slide-width-container {
   margin: 0 auto;
   max-width: 1400px !important;
   width: 1400px;
@@ -3270,6 +3269,9 @@ div.color-scheme {
   padding: 0 10%;
 }
 
+/*===================
+General Slide Styles
+*/
 #kb-slide-1 {
   background-color: #dddddc;
   height: 100%;
@@ -3297,6 +3299,15 @@ div.color-scheme {
   margin: 0;
 }
 
+.kb-slide-section-container {
+  width: 95%;
+  height: 780px;
+  overflow: hidden;
+}
+
+/*===================
+Slide 1 Styles
+*/
 #kb-slide-1-section-1 {
   background-color: #dddddc;
   height: 100%;
@@ -3309,6 +3320,8 @@ div.color-scheme {
   padding: 100px 0;
 }
 
+/* Styling for the row with the filters
+This is on both of Slide1's sections */
 .filter-row {
   height: 70px;
   width: 100%;
@@ -3387,11 +3400,13 @@ div.color-scheme {
   font-size: 30px;
 }
 
-.top-bar-scrolled-2 {
+.filter-row-pocket-effect {
   box-shadow: 0px 4px 4px -4px rgba(0, 0, 0, 0.1);
   z-index: 3;
 }
 
+/* Styling for the main body of kit selection
+and sound selection sections */
 .kit-row, .selection-row {
   position: relative;
   background-color: #dddddc;
@@ -3456,14 +3471,14 @@ div.color-scheme {
   margin: 0 auto;
 }
 
-.kb-slide-section-container {
-  width: 95%;
-  height: 780px;
-  overflow: hidden;
-}
-
+/* Sound Selection styles
+Broken down into two subsections (Left and Right)
+*/
 .selection-row {
   overflow: hidden;
+  /* Styles for Left and Right */
+  /* Styles for Left Part of Section */
+  /* Styles for Right Part of Section */
 }
 .selection-row .selected-kit-media, .selection-row .selected-kit-sounds {
   height: 100%;
@@ -3479,26 +3494,131 @@ div.color-scheme {
 .selection-row .selected-kit-media .sound-kit-soundcloud .image, .selection-row .selected-kit-media .sound-kit-soundcloud .artwork_image, .selection-row .selected-kit-media .sound-kit-soundcloud img {
   display: none;
 }
-.selection-row .selected-kit-sounds .sample-list {
+.selection-row .selected-kit-sounds .sample-list .sample-sound {
+  color: #e37a67;
+  height: 30px;
+  margin: 4px auto;
+}
+.selection-row .selected-kit-sounds .sample-list .sample-sound > .sample-name {
   padding: 0;
   margin: 0;
-}
-.selection-row .selected-kit-sounds .sample-list li {
-  color: #e37a67;
-}
-.selection-row .selected-kit-sounds .sample-list li span {
   color: #e74c30;
   font-family: quicksandbold;
   font-size: 18px;
   display: inline-block;
-  margin-top: 15px;
-  width: 190px;
-  height: 30px;
+  line-height: 30px;
+  height: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.selection-row .selected-kit-sounds .sample-list li .play-sound {
-  margin-top: 10px;
-  font-size: 30px;
+.selection-row .selected-kit-sounds .sample-list .sample-sound .sample-play {
+  font-size: 30.6px;
+  line-height: 30px;
 }
+.selection-row .selected-kit-sounds .sample-list .select-sound {
+  font-size: 30.6px;
+  line-height: 30px;
+}
+.selection-row .selected-kit-sounds .sample-list .select-sound > div {
+  height: 30px;
+  width: 30px;
+}
+.selection-row .selected-kit-sounds .sample-list .select-sound > div::before {
+  font-family: icomoon;
+  font-size: 30.6px;
+}
+
+.sample-list {
+  padding: 0;
+  margin: 0;
+}
+
+/*===================
+Slide 2 Styles
+*/
+.kit-choices {
+  border-style: solid;
+  border-color: rgba(104, 80, 137, 0.3);
+  border-width: 0 0px 4px 4px;
+  overflow-x: auto;
+  white-space: nowrap;
+  width: 100%;
+  height: 780px;
+  padding: 30px;
+  margin-top: 100px;
+}
+
+.kb-slide-2-section {
+  height: 100%;
+  overflow-y: scroll;
+  width: 378px;
+  display: inline-block;
+  white-space: normal;
+  margin-right: 50px;
+  padding: 0;
+  background-color: #dddddc;
+  height: 100%;
+  padding: 0;
+}
+.kb-slide-2-section h3 {
+  color: #351f54;
+  text-indent: 10px;
+}
+.kb-slide-2-section .instrument-choice {
+  margin: 0;
+}
+.kb-slide-2-section .instrument-choice > span {
+  font-family: quicksandbold;
+  font-size: 25px;
+  display: inline-block;
+  margin: 8px 0;
+  color: #1d0e32;
+  text-shadow: 0px 0px 1px #c4bccf;
+}
+.kb-slide-2-section .sample-list {
+  /*fontcolor, playcolor, ft-size, ht, margin*/
+}
+.kb-slide-2-section .sample-list .sample-sound {
+  color: #e37a67;
+  height: 30px;
+  margin: 4px auto;
+}
+.kb-slide-2-section .sample-list .sample-sound > .sample-name {
+  padding: 0;
+  margin: 0;
+  color: #e74c30;
+  font-family: quicksandbold;
+  font-size: 20px;
+  display: inline-block;
+  line-height: 30px;
+  height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.kb-slide-2-section .sample-list .sample-sound .sample-play {
+  font-size: 34px;
+  line-height: 30px;
+}
+.kb-slide-2-section .sample-list .select-sound {
+  font-size: 34px;
+  line-height: 30px;
+}
+.kb-slide-2-section .sample-list .select-sound > div {
+  height: 30px;
+  width: 30px;
+}
+.kb-slide-2-section .sample-list .select-sound > div::before {
+  font-family: icomoon;
+  font-size: 34px;
+}
+.kb-slide-2-section .sample-list .select-sound {
+  cursor: pointer;
+}
+.kb-slide-2-section .sample-list .select-sound > div::before {
+  color: #037e8c;
+}
+
+/* Styling for the row with the filters
+This is on both of Slide1's sections */

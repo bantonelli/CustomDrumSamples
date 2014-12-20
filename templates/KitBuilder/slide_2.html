@@ -1,23 +1,75 @@
+<!--
+- We are in the kitbuilder app.
+- Also within the SlideController aliased as "slideshow
+-->
+
 {% load static %}
-        <div id="kb-slide-2" class="slide slide-start" ng-class="{ontop:slideshow.isSelected(2)}" ng-show="slideshow.isSelected(2)">
-            <div class="slide-container">
-                <div class="row">
-                    <section id="kb-slide-1-section-1" class="col-xs-6">
-                        <div class="kb-slide-section-container">
+<div id="kb-slide-2" class="slide slideshow-starting-pos" ng-class="{ontop:slideshow.isSelected(2)}" ng-show="slideshow.isSelected(2)">
+    <div class="slide-width-container">
+        <div class="kit-choices">
 
-                            <div class="row filter-row">
-                                 <h2>SOME STUFF</h2>
-                                <div class="col-xs-9 filters">
+            {% for index in section_list %}
+            <section class="kb-slide-2-section">
+                <h3>Kit Name</h3>
+                <div class="row instrument-choice">
+                    <span>Instrument Group</span>
+                    <ul class="sample-list col-xs-12">
+                        {% for o in li_list2 %}
+                            <li class="row sample-sound">
+                                <span class="col-xs-8 sample-name">Sample_Name-{{ forloop.counter }}</span>
+                                <div class="col-xs-2 sample-play icon-play"></div>
+                                <div class="col-xs-2 select-sound">
+                                    <div class="icon-remove"></div>
                                 </div>
-                            </div>
-                            <div class="row kit-row">
-
-                            </div>
-                        </div>
-                    </section>
-                    <section id="kb-slide-1-section-2" class="col-xs-6">
-                        <h2>SOME STUFF</h2>
-                    </section>
+                            </li>
+                        {% endfor %}
+                    </ul>
                 </div>
-            </div>
+                <div class="row instrument-choice">
+                    <span>Instrument Group</span>
+                    <ul class="sample-list col-xs-12">
+                        {% for o in li_list2 %}
+                            <li class="row sample-sound">
+                                <span class="col-xs-8 sample-name">Sample_Name-{{ forloop.counter }}</span>
+                                <div class="col-xs-2 sample-play icon-play"></div>
+                                <div class="col-xs-2 select-sound">
+                                    <div class="icon-remove"></div>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="row instrument-choice">
+                    <span>Instrument Group</span>
+                    <ul class="sample-list col-xs-12">
+                        {% for o in li_list2 %}
+                            <li class="row sample-sound">
+                                <span class="col-xs-8 sample-name">Sample_Name-{{ forloop.counter }}</span>
+                                <div class="col-xs-2 sample-play icon-play"></div>
+                                <div class="col-xs-2 select-sound">
+                                    <div class="icon-remove"></div>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="row instrument-choice">
+                    <span>Instrument Group</span>
+                    <ul class="sample-list col-xs-12">
+                        {% for o in li_list2 %}
+                            <li class="row sample-sound">
+                                <span class="col-xs-8 sample-name">Sample_Name-{{ forloop.counter }}</span>
+                                <div class="col-xs-2 sample-play icon-play"></div>
+                                <div class="col-xs-2 select-sound">
+                                    <div class="icon-remove"></div>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </section>
+            {% endfor %}
+
         </div>
+    </div>
+</div>

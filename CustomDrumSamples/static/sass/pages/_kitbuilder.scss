@@ -1,3 +1,7 @@
+/*===================
+General Slide Styles
+*/
+
 #kb-slide-1 {
   @include slide-mixin($offwhite);
 
@@ -25,6 +29,17 @@
   }
 }
 
+.kb-slide-section-container {
+  width: 95%;
+  height: 780px;
+  overflow: hidden;
+}
+
+
+/*===================
+Slide 1 Styles
+*/
+
 #kb-slide-1-section-1 {
   @include slide-section-mixin($offwhite, $height: 100%);
   .filter-row {
@@ -34,6 +49,9 @@
 #kb-slide-1-section-2 {
   @include slide-section-mixin($offwhite, $height: 100%);
 }
+
+/* Styling for the row with the filters
+This is on both of Slide1's sections */
 
 .filter-row {
   //background-color: rgba(255, 255, 255, 0.2);
@@ -119,11 +137,15 @@
   }
 }
 
-.top-bar-scrolled-2 {
+.filter-row-pocket-effect {
   box-shadow: 0px 4px 4px -4px rgba(0, 0, 0, 0.1);
   z-index: 3;
 }
 
+
+
+/* Styling for the main body of kit selection
+and sound selection sections */
 .kit-row, .selection-row {
   position: relative;
   background-color: $offwhite;
@@ -190,15 +212,14 @@
   }
 }
 
-.kb-slide-section-container {
-  width: 95%;
-  height: 780px;
-  overflow: hidden;
-}
 
 
+/* Sound Selection styles
+Broken down into two subsections (Left and Right)
+*/
 .selection-row {
   overflow: hidden;
+/* Styles for Left and Right */
   .selected-kit-media, .selected-kit-sounds {
     height: 100%;
     overflow-y: scroll;
@@ -209,6 +230,7 @@
       @include h1-g-background;
     }
   }
+/* Styles for Left Part of Section */
   .selected-kit-media {
     .sound-kit-soundcloud {
       .image, .artwork_image, img {
@@ -216,29 +238,75 @@
       }
     }
   }
+/* Styles for Right Part of Section */
   .selected-kit-sounds {
     .sample-list {
-      padding: 0;
-      margin: 0;
-      li {
-        color: nth($orange-list, 3);
-      }
-      li span {
-        color: nth($orange-list, 2);
-        font-family: quicksandbold;
-        font-size: 18px;
-        display: inline-block;
-        margin-top: 15px;
-        width: 190px;
-        height: 30px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-      }
-      li .play-sound {
-        margin-top: 10px;
-        font-size: 30px;
+        @include sample-sound(/*fontcolor, playcolor, ft-size, ht, margin*/);
+    }
+  }
+}
+
+.sample-list {
+  padding: 0;
+  margin: 0;
+}
+
+/*===================
+Slide 2 Styles
+*/
+
+.kit-choices {
+  border-style: solid;
+  border-color: transparentize(nth($purple-list, 5), 0.7);
+  border-width: 0 0px 4px 4px;
+  overflow-x: auto;
+  white-space: nowrap;
+  width: 100%;
+  height: 780px;
+  padding: 30px;
+  margin-top: 100px;
+}
+
+.kb-slide-2-section {
+  height: 100%;
+  overflow-y: scroll;
+  width: 378px;
+  display: inline-block;
+  white-space: normal;
+  margin-right: 50px;
+  padding: 0;
+  @include slide-section-mixin($offwhite, $height: 100%, $padding: 0);
+
+  h3 {
+    @include h3-ow-background();
+    text-indent: 10px;
+  }
+
+  .instrument-choice {
+    margin: 0;
+    > span {
+      font-family: quicksandbold;
+      font-size: 25px;
+      display: inline-block;
+      margin: 8px 0;
+      @include p-ow-background();
+    }
+  }
+
+  .sample-list {
+    /*fontcolor, playcolor, ft-size, ht, margin*/
+    @include sample-sound($fontSize: 20px, $height: 30px, $margin: 4px auto);
+    .select-sound {
+      cursor: pointer;
+      > div::before {
+        color: nth($lightblue-list, 2);
       }
     }
   }
 }
+
+
+/* Styling for the row with the filters
+This is on both of Slide1's sections */
+
+

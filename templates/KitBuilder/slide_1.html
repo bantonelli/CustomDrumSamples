@@ -1,12 +1,20 @@
+<!--
+- We are in the kitbuilder app.
+- Also within the SlideController aliased as "slideshow.
+
+- This file uses the KitFilterController
+    - as well as the SampleFilterController.
+-->
+
 {% load static %}
 
-        <div id="kb-slide-1" class="slide slide-start" ng-class="{ontop:slideshow.isSelected(1)}" ng-show="slideshow.isSelected(1)">
-            <div class="slide-container">
+        <div id="kb-slide-1" class="slide slideshow-starting-pos" ng-class="{ontop:slideshow.isSelected(1)}" ng-show="slideshow.isSelected(1)">
+            <div class="slide-width-container">
                 <div class="row">
                     <section id="kb-slide-1-section-1" class="col-xs-6">
                         <div class="kb-slide-section-container" ng-controller="KitFilterController as filter">
 
-                            <div class="row filter-row top-bar-scrolled-2">
+                            <div class="row filter-row filter-row-pocket-effect">
                                 <form class="col-xs-3">
                                     <select id="e1" data-placeholder="Select Genre">
                                         <option value=""></option>
@@ -131,7 +139,7 @@
                     <section id="kb-slide-1-section-2" class="col-xs-6">
                         <div class="kb-slide-section-container" ng-controller="SampleFilterController as filter">
 
-                            <div class="row filter-row top-bar-scrolled-2">
+                            <div class="row filter-row filter-row-pocket-effect">
                                 <form class="col-xs-4">
                                     <select id="e2" data-placeholder="Select Sample Type">
                                         <option value=""></option>
@@ -177,10 +185,10 @@
                                             <h4>Kick Drums</h4>
                                             <ul class="sample-list">
                                                 {% for o in li_list %}
-                                                <li class="row">
-                                                    <span class="col-xs-8">Sample_Name-{{ forloop.counter }}</span>
-                                                    <div class="col-xs-2 play-sound icon-play"></div>
-                                                    <div class="col-xs-2 select-sound">
+                                                <li class="row sample-sound">
+                                                    <span class="col-xs-7 sample-name">Sample_Name-{{ forloop.counter }}</span>
+                                                    <div class="col-xs-2 sample-play icon-play"></div>
+                                                    <div class="col-xs-3 select-sound">
                                                         <!-- .squaredThree -->
                                                         <div class="squaredThree">
                                                             <input type="checkbox" value="None" id="squaredThree-{{ forloop.counter }}" name="check" />
@@ -189,12 +197,7 @@
                                                         <!-- end .squaredThree -->
                                                     </div>
                                                 </li>
-
                                                 {% endfor %}
-
-
-
-
                                             </ul>
                                         </div>
                                     </div>

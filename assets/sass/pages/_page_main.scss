@@ -29,12 +29,12 @@
   opacity: 0;
 }
 
-.slide-start {
+.slideshow-starting-pos {
   -webkit-transform: translateX(100%);
   transform: translateX(100%);
 }
 
-.slide-container {
+.slide-width-container {
   margin: 0 auto;
   max-width: 1400px !important;
   width: 1400px;
