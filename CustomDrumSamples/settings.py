@@ -62,9 +62,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = '/media/'
 
 
-
-
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
@@ -91,6 +88,7 @@ INSTALLED_APPS = (
     'kitbuilder',
     'custom_quote',
     'rest_framework',
+    'userprofile'
 )
 
 MIDDLEWARE_CLASSES = (

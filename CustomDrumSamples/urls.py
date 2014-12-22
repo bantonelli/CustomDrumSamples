@@ -4,6 +4,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 import views
+import settings
 
 urlpatterns = patterns('',
     # Examples:
@@ -22,5 +23,15 @@ urlpatterns = patterns('',
     url(r'^contact/$', views.Contact.as_view()),
     url(r'^colorway/$', views.ResponsiveSiteColorway.as_view()),
 
+)
 
+
+if settings.DEBUG:
+    urlpatterns += patterns('',
+        url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+            'document_root': settings.MEDIA_ROOT,
+        }),
+        url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {
+            'document_root': settings.STATIC_ROOT,
+        }),
 )
