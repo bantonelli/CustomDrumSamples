@@ -1,15 +1,27 @@
 from django.db import models
-from decimal import Decimal
 from userprofile.models import UserProfile
+import os
+from django.conf import settings
+from django.core.files.storage import FileSystemStorage
+
+
+class OverwriteStorage(FileSystemStorage):
+
+    def get_available_name(self, name):
+        """
+        Returns a filename that's free on the target storage system, and
+        available for new content to be written to.
+        """
+        # If the filename already exists, remove it as if it was a true file system
+        if self.exists(name):
+            os.remove(os.path.join(settings.MEDIA_ROOT, name))
+        return name
+
 
 # Classes and Functions for Kit Model
 
 def upload_kit_image(instance, filename):
     return "kits/" + instance.name + "/" + filename
-
-# Create your models here.
-#class video(models.Model):
-# url = models.CharField()
 
 
 class CommonInfo(models.Model):
@@ -46,16 +58,15 @@ class KitDescription (CommonInfo):
 
 
 class Kit (CommonInfo):
-    tags = models.ManyToManyField(Tag)
     new = models.BooleanField(default=True)
     on_sale = models.BooleanField(default=False)
     soundcloud = models.CharField(max_length=200)
-    image = models.FileField(upload_to=upload_kit_image)
-    price = models.ForeignKey(Price)
+    image = models.FileField(upload_to=upload_kit_image, storage=OverwriteStorage())
+    tags = models.ManyToManyField(Tag)
     description = models.ForeignKey(KitDescription)
+    price = models.ForeignKey(Price)
     sale = models.ForeignKey(Sale)
-    choices = [1, 2, 3, 4, 5]
-    rating = models.DecimalField(max_digits=5, decimal_places=4, default=0)
+    user_rating = models.DecimalField(max_digits=5, decimal_places=4, default=0)
 
 
 # Classes and Functions for Sample Model
@@ -70,9 +81,9 @@ def upload_sample(instance, filename):
 
 class Sample(models.Model):
     name = models.CharField(max_length=50)
-    demo = models.FileField(upload_to=upload_sample_demo)
-    wav = models.FileField(upload_to=upload_sample)
-    kit = models.ForeignKey(Kit)
+    demo = models.FileField(upload_to=upload_sample_demo, storage=OverwriteStorage())
+    wav = models.FileField(upload_to=upload_sample, storage=OverwriteStorage())
+    kit = models.ForeignKey(Kit, related_name="samples")
     KICK = 'KD'
     SNARE = 'SD'
     CLAP = 'CP'
@@ -95,10 +106,32 @@ class Sample(models.Model):
 
 # Classes and Functions for Custom Kit Model
 
+
 class CustomKit(CommonInfo):
     user = models.ForeignKey(UserProfile)
     date = models.DateField(auto_now_add=True)
     samples = models.ManyToManyField(Sample)
+
+
+######## SIGNALS (for model deletion etc.)
+# Receive the pre_delete signal and delete the file associated with the model instance.
+from django.db.models.signals import pre_delete
+from django.dispatch.dispatcher import receiver
+
+
+@receiver(pre_delete, sender=Sample)
+def sample_delete(sender, instance, **kwargs):
+    # Pass false so FileField doesn't save the model.
+    instance.demo.delete(False)
+    instance.wav.delete(False)
+
+
+@receiver(pre_delete, sender=Kit)
+def kit_delete(sender, instance, **kwargs):
+    # Pass false so FileField doesn't save the model.
+    instance.image.delete(False)
+
+
 
 # class Unit (models.Model):
 #     title = models.CharField(max_length=50)
