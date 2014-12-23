@@ -6,6 +6,13 @@ from userprofile.models import UserProfile, User
 
 
 # KIT BUILDER
+class SampleDemoSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Sample
+        fields = ('name', 'demo', 'kit', 'type')
+
+
 class SampleSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -13,7 +20,7 @@ class SampleSerializer(serializers.ModelSerializer):
         fields = ('name', 'demo', 'wav', 'kit', 'type')
 
 
-class KitSerializer(serializers.ModelSerializer):
+class KitSerializerFull(serializers.ModelSerializer):
     samples = SampleSerializer(many=True, read_only=True)
 
     class Meta:
@@ -21,21 +28,48 @@ class KitSerializer(serializers.ModelSerializer):
         fields = ('name', 'new', 'on_sale', 'soundcloud', 'image', 'tags', 'description', 'price', 'sale', 'user_rating', 'samples')
 
 
+class KitSerializerLimited(serializers.ModelSerializer):
+    samples = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+
+    class Meta:
+        model = Kit
+        fields = ('name', 'new', 'on_sale', 'soundcloud', 'image', 'tags', 'description', 'price', 'sale', 'user_rating', 'samples')
+
+
+
 class CustomKitSerializer(serializers.ModelSerializer):
     samples = serializers.PrimaryKeyRelatedField(many=True)
+    user = serializers.CharField(read_only=True, source='user.user.username')
 
     class Meta:
         model = CustomKit
         fields = ('name', 'user', 'date', 'samples')
 
 
+class CustomKitPurchasedSerializer(serializers.ModelSerializer):
+    samples = SampleSerializer(many=True, read_only=True)
+    user = serializers.CharField(read_only=True, source='user.user.username')
+
+    class Meta:
+        model = CustomKit
+        fields = ('name', 'user', 'date', 'samples')
+
+
+class CustomKitSerializerCreate(serializers.ModelSerializer):
+    samples = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+
+    class Meta:
+        model = CustomKit
+        fields = ('name', 'date', 'user', 'samples')
+
+
 # USER PROFILE
 class UserProfileSerializer(serializers.ModelSerializer):
-    custom_kits = serializers.PrimaryKeyRelatedField(queryset=CustomKit.objects.all(), many=True)
+    custom_kits = CustomKitPurchasedSerializer(many=True)
 
     class Meta:
         model = UserProfile
-        fields = ('user', 'last_4_digits', 'stripe_id', 'created_at', 'updated_at', 'custom_kits')
+        fields = ('user', 'last_4_digits', 'created_at', 'updated_at', 'custom_kits')
 
 
 class UserSerializer(serializers.ModelSerializer):
