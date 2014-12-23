@@ -88,7 +88,8 @@ INSTALLED_APPS = (
     'kitbuilder',
     'custom_quote',
     'rest_framework',
-    'userprofile'
+    'userprofile',
+    'api'
 )
 
 MIDDLEWARE_CLASSES = (

@@ -2,8 +2,10 @@ __author__ = 'brandonantonelli'
 
 from rest_framework import serializers
 from kitbuilder.models import Sale, Tag, KitDescription, Kit, Sample, CustomKit
+from userprofile.models import UserProfile, User
 
 
+# KIT BUILDER
 class SampleSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -28,3 +30,17 @@ class CustomKitSerializer(serializers.ModelSerializer):
         model = CustomKit
         fields = ('name', 'user', 'date', 'samples')
 
+# USER PROFILE
+class UserProfileSerializer(serializers.ModelSerializer):
+    custom_kits = serializers.PrimaryKeyRelatedField(queryset=CustomKit.objects.all(), many=True)
+
+    class Meta:
+        model = UserProfile
+        fields = ('user', 'last_4_digits', 'stripe_id', 'created_at', 'updated_at', 'custom_kits')
+
+
+class UserSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = User
+        fields = ('id', 'username')

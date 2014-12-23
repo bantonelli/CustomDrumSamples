@@ -108,7 +108,7 @@ class Sample(models.Model):
 
 
 class CustomKit(CommonInfo):
-    user = models.ForeignKey(UserProfile)
+    user = models.ForeignKey(UserProfile, related_name='custom_kits')
     date = models.DateField(auto_now_add=True)
     samples = models.ManyToManyField(Sample)
 

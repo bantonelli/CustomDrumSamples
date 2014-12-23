@@ -14,6 +14,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include('kitbuilder.urls')),
     url(r'^', include('custom_quote.urls')),
+    url(r'^', include('api.urls')),
 
     # Main Site Navigation
     url(r'^$', views.LandingPage.as_view()),
