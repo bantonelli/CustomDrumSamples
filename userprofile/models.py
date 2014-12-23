@@ -2,10 +2,11 @@ from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
 
+
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
-    last_4_digits = models.CharField(max_length=4)
-    stripe_id = models.CharField(max_length=255)
+    last_4_digits = models.CharField(max_length=4, blank=True)
+    stripe_id = models.CharField(max_length=255, blank=True)
     subscribed = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -19,3 +20,14 @@ We are defining a new property for the User model.
     When we access the User object's profile property this code will get triggered and create a UserProfile that
     is linked to the User object.
 """
+
+
+from django.db.models.signals import post_save
+from django.dispatch.dispatcher import receiver
+
+
+@receiver(post_save, sender=User)
+def user_save(sender, instance, **kwargs):
+    if not instance.profile:
+        UserProfile(user = instance)
+
