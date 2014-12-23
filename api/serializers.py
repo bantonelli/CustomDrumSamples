@@ -14,7 +14,6 @@ class SampleSerializer(serializers.ModelSerializer):
 
 
 class KitSerializer(serializers.ModelSerializer):
-
     samples = SampleSerializer(many=True, read_only=True)
 
     class Meta:
@@ -23,12 +22,12 @@ class KitSerializer(serializers.ModelSerializer):
 
 
 class CustomKitSerializer(serializers.ModelSerializer):
-
     samples = serializers.PrimaryKeyRelatedField(many=True)
 
     class Meta:
         model = CustomKit
         fields = ('name', 'user', 'date', 'samples')
+
 
 # USER PROFILE
 class UserProfileSerializer(serializers.ModelSerializer):
@@ -40,7 +39,8 @@ class UserProfileSerializer(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
+    profile = UserProfileSerializer(read_only=True)
 
     class Meta:
         model = User
-        fields = ('id', 'username')
+        fields = ('id', 'username', 'profile')

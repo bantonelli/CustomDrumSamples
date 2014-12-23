@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 
 class UserProfile(models.Model):
-    user = models.OneToOneField(User)
+    user = models.OneToOneField(User, related_name="profile")
     last_4_digits = models.CharField(max_length=4, blank=True)
     stripe_id = models.CharField(max_length=255, blank=True)
     subscribed = models.BooleanField(default=False)
@@ -21,9 +21,9 @@ We are defining a new property for the User model.
     is linked to the User object.
 """
 
-# Access a User's profile by doing --> user_instance.userprofile
+# Access a User's profile by doing --> user_instance.profile
 # Any changes made to it have to be saved
-# use this to save--> user_instance.userprofile.save() method
+# use this to save--> user_instance.profile.save() method
 
 from django.db.models.signals import post_save
 from django.dispatch.dispatcher import receiver
