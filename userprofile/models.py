@@ -11,7 +11,7 @@ class UserProfile(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
-User.profile = property(lambda u: UserProfile.objects.get_or_create(user=u)[0])
+User.get_or_create_profile = property(lambda u: UserProfile.objects.get_or_create(user=u)[0])
 
 """
 We are defining a new property for the User model.
@@ -21,6 +21,9 @@ We are defining a new property for the User model.
     is linked to the User object.
 """
 
+# Access a User's profile by doing --> user_instance.userprofile
+# Any changes made to it have to be saved
+# use this to save--> user_instance.userprofile.save() method
 
 from django.db.models.signals import post_save
 from django.dispatch.dispatcher import receiver
@@ -28,6 +31,5 @@ from django.dispatch.dispatcher import receiver
 
 @receiver(post_save, sender=User)
 def user_save(sender, instance, **kwargs):
-    if not instance.profile:
-        UserProfile(user = instance)
+    instance.get_or_create_profile
 
