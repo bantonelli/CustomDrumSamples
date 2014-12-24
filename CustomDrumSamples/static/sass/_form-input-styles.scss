@@ -143,3 +143,16 @@ SELECT BOX STYLES
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+
+
+/**********
+TEXT INPUT STYLES
+*/
+
+.cds-text-input {
+  background-color: lighten(nth($gray-list, 6), 20);
+//  box-shadow: inset 0px 1px 1px rgba(0,0,0,0.7), 0px 1px 0px rgba(255,255,255,.9);
+  box-shadow: inset 0px 1px 1px rgba(0,0,0,0.3), 0px 1px 0px rgba(255,255,255,.3);
+  border: none;
+}
