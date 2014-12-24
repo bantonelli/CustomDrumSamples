@@ -276,8 +276,8 @@ Slide 2 Styles
     input:focus {
       outline-style: none;
       border: none;
-      background-color: transparentize(nth($lightblue-list, 3), .5);
-      box-shadow: inset 0px 1px 1px rgba(0,0,0,0.3), 0px 1px 0px rgba(255,255,255,.3), 0px 0px 3px 2px transparentize(nth($lightblue-list, 3), .8);
+      //background-color: transparentize(nth($lightblue-list, 3), .4);
+      //box-shadow: inset 0px 1px 1px rgba(0,0,0,0.3), 0px 1px 0px rgba(255,255,255,.3), 0px 0px 3px 2px transparentize(nth($lightblue-list, 3), .8);
     }
     .name-your-kit {
       font-family: $headline;
@@ -286,7 +286,6 @@ Slide 2 Styles
       width: 100%;
       line-height: 53px;
       padding-left: 10px;
-      //background-color: transparentize(nth($purple-list, 5), 0.8);
       color: nth($purple-list, 3);
       &::-webkit-input-placeholder {
         color: nth($purple-list, 3);
@@ -295,11 +294,13 @@ Slide 2 Styles
       }
       &::-moz-placeholder {
         color: nth($purple-list, 3);
-        opacity: .7;
+        //color: #ffffff;
+        opacity: 0.6;
       }
       &:-ms-input-placeholder {
         color: nth($purple-list, 3);
-        opacity: .7;
+        //color: #ffffff;
+        opacity: 0.6;
       }
     }
   }

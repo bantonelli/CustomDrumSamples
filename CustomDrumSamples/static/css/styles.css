@@ -3590,8 +3590,6 @@ Slide 2 Styles
 .kit-details form input:focus {
   outline-style: none;
   border: none;
-  background-color: rgba(14, 163, 180, 0.5);
-  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.3), 0px 1px 0px rgba(255, 255, 255, 0.3), 0px 0px 3px 2px rgba(14, 163, 180, 0.2);
 }
 .kit-details form .name-your-kit {
   font-family: "enigmaticregular";
@@ -3608,11 +3606,11 @@ Slide 2 Styles
 }
 .kit-details form .name-your-kit::-moz-placeholder {
   color: #351f54;
-  opacity: .7;
+  opacity: 0.6;
 }
 .kit-details form .name-your-kit:-ms-input-placeholder {
   color: #351f54;
-  opacity: .7;
+  opacity: 0.6;
 }
 
 .kit-choices, .discounts {
