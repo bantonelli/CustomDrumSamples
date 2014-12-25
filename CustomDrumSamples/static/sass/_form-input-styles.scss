@@ -13,7 +13,7 @@ CHECK BOX STYLES
     position: absolute;
     top: 0;
     left: 0;
-    background: nth($lightblue-list, 3);
+    background-color: lighten(nth($gray-list, 6), 20);
     box-shadow: inset 0px 1px 1px rgba(0,0,0,0.2), 0px 1px 0px rgba(255,255,255,.2);
     overflow: hidden;
     &:after {
@@ -40,6 +40,9 @@ CHECK BOX STYLES
     &:checked + label:after {
       opacity: 1;
       right: -1px;
+    }
+    &:checked + label {
+      background-color: nth($lightblue-list, 3);
     }
   }
 }

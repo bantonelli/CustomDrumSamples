@@ -8,7 +8,7 @@
 
     var tabController = app.controller("TabController", function ($rootScope) {
 
-        $rootScope.tab = 2;
+        $rootScope.tab = 1;
         this.isSelected = function (tab) {
             return tab === $rootScope.tab;
         };
