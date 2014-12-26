@@ -87,6 +87,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'kitbuilder',
     'custom_quote',
+    'oauth2_provider',
     'rest_framework',
     'userprofile',
     'api'
@@ -163,5 +164,39 @@ LOGGING = {
             'level': 'ERROR',
             'propagate': True,
         },
+    }
+}
+
+OAUTH2_PROVIDER = {
+    #this is the list of available scopes
+    #OAUTH2_PROVIDER.SCOPES parameter contains the scopes that the application will be aware of
+    #so we can use them for permission check.
+    'SCOPES': {'read': 'Read scope', 'write': 'Write scope', 'groups': 'Access to your groups'}
+}
+
+# Kit Builder Client ID = aR!omYsELvz.Jihdlfk-xUdkPpZ2f7qc9L415fV2
+# Kit Builder Client Secret = U_qMHU-cWBD58vu5DOcp3U0RO79t5zEfIdoF1Xn.E:FT_ztn2WsdAxfV_V@V0Ji?Wb=IQl:1xM!X8WTb9kIH-!!uu1PUS0XVpYr6DxwXeEgJlUFBwpS7co8xtB9!5CAC
+# use curl -X POST -d "client_id=<client_id>&client_secret=<client_secret>&grant_type=password&username=<user_name>&password=<password>" http://127.0.0.1:8000/o/token/
+
+    #curl -X POST -d 'client_id=aR!omYsELvz.Jihdlfk-xUdkPpZ2f7qc9L415fV2&client_secret=U_qMHU-cWBD58vu5DOcp3U0RO79t5zEfIdoF1Xn.E:FT_ztn2WsdAxfV_V@V0Ji?Wb=IQl:1xM!X8WTb9kIH-!!uu1PUS0XVpYr6DxwXeEgJlUFBwpS7co8xtB9!5CAC&grant_type=password&username=humbertozayas&password=123456' http://127.0.0.1:8000/o/token/
+    #this http request grants a token to any registered user of the application.
+
+
+# Temporary Access Token humbertozayas = hFAN078CjZrEyozbPg3WtnhyQqH2G1
+# Refresh Token = 6gbLXspuPIf4oziHi1wFvVeN8lTX5h
+    # use--> curl -H "Authorization: Bearer <access_token>" http://127.0.0.1:8000/api/?format=json
+    # this request is an example of how a user can access the api urls
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'oauth2_provider.ext.rest_framework.OAuth2Authentication',
+    ),
+    'DEFAULT_THROTTLE_CLASSES': (
+        'rest_framework.throttling.AnonRateThrottle',
+        'rest_framework.throttling.UserRateThrottle',
+    ),
+    'DEFAULT_THROTTLE_RATES': {
+        'anon': '100/day',
+        'user': '1000/day'
     }
 }

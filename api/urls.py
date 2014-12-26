@@ -4,6 +4,7 @@ import views
 
 urlpatterns = patterns('',
                         url(r'^api-login/', include('rest_framework.urls', namespace='rest_framework')), # User accessible
+                        url(r'^o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
                         url(r'^api/kits/$', views.KitList.as_view()), # User accessible
                         url(r'^api/kits/(?P<pk>[0-9]+)/$', views.KitDetail.as_view()),
                         url(r'^api/samples/$', views.SampleDemoList.as_view()), # User accessible
