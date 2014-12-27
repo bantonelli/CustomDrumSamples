@@ -182,9 +182,10 @@ OAUTH2_PROVIDER = {
     #this http request grants a token to any registered user of the application.
 
 
-# Temporary Access Token humbertozayas = hFAN078CjZrEyozbPg3WtnhyQqH2G1
+# Temporary Access Token humbertozayas = GDQvVzIayprssvP9rbYDmVL0rwUTM8 (latest)
 # Refresh Token = 6gbLXspuPIf4oziHi1wFvVeN8lTX5h
     # use--> curl -H "Authorization: Bearer <access_token>" http://127.0.0.1:8000/api/?format=json
+            # use--> curl -H "Authorization: Bearer GDQvVzIayprssvP9rbYDmVL0rwUTM8" http://127.0.0.1:8000/api/?format=json
     # this request is an example of how a user can access the api urls
 
 REST_FRAMEWORK = {

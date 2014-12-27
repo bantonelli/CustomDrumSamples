@@ -23,7 +23,7 @@ urlpatterns = patterns('',
     url(r'^legal/$', views.Legal.as_view()),
     url(r'^contact/$', views.Contact.as_view()),
     url(r'^colorway/$', views.ResponsiveSiteColorway.as_view()),
-
+    url(r'^test/$', views.TestView.as_view()),
 )
 
 

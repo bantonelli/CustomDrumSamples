@@ -60,7 +60,7 @@ class KitDescription (CommonInfo):
 class Kit (CommonInfo):
     new = models.BooleanField(default=True)
     on_sale = models.BooleanField(default=False)
-    soundcloud = models.CharField(max_length=200)
+    soundcloud = models.CharField(max_length=500)
     image = models.FileField(upload_to=upload_kit_image, storage=OverwriteStorage())
     tags = models.ManyToManyField(Tag)
     description = models.ForeignKey(KitDescription)

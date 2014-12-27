@@ -4,6 +4,13 @@ from django.http.response import HttpResponseRedirect
 # Create your views here.
 
 
+class TestView(View):
+    #fancy landing page
+    def get(self, request):
+        title = "Custom Drum Samples"
+        return render_to_response('test.html', locals())
+
+
 class LandingPage(View):
     #fancy landing page
     def get(self, request):

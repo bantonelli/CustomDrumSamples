@@ -6,6 +6,21 @@
 
     var app = angular.module("kitbuilder", []);
 
+    app.controller("defaultCtrl", function ($scope, $http) {
+
+        var config = {
+            headers: {
+                Authorization: "Bearer GDQvVzIayprssvP9rbYDmVL0rwUTM8"
+            }
+        }
+
+        $scope.loadData = function () {
+            $http.get("/api/kits/?format.json", config).success(function (data) {
+                $scope.products = data;
+            });
+        }
+    });
+
     var tabController = app.controller("TabController", function ($rootScope) {
 
         $rootScope.tab = 1;
