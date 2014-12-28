@@ -4,13 +4,6 @@ from django.http.response import HttpResponseRedirect
 # Create your views here.
 
 
-class TestView(View):
-    #fancy landing page
-    def get(self, request):
-        title = "Custom Drum Samples"
-        return render_to_response('test.html', locals())
-
-
 class LandingPage(View):
     #fancy landing page
     def get(self, request):
@@ -47,8 +40,15 @@ class Legal(View):
         return render_to_response('legal.html')
 
 
+#-------------- NON SITE VIEWS
 class ResponsiveSiteColorway(View):
 
     def get(self, request):
         title = "Colorway for Custom Drum Samples"
         return render_to_response('colorway.html', locals())
+
+
+class TestView(View):
+    #Learn Angular JS
+    def get(self, request):
+        return render_to_response('test.html', locals())

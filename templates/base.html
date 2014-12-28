@@ -18,22 +18,8 @@
     <script src="{% static "js/modernizr.custom.js" %}"></script>
     <script src="{% static "js/vendor/detectmobilebrowser.js" %}"></script>
     <script src="{% static "js/vendor/select2.min.js" %}"></script>
-    <script>
-    $(document).ready(function() {
-        $("#e1").select2({
-            formatNoMatches: function (term) {
-                return "Whoops!! <br> Genre Not Found!";
-            }
-        });
-
-        $("#e2").select2({
-            formatNoMatches: function (term) {
-                return "Whoops!! <br> Instrument Not Found!";
-            }
-        });
-
-    });
-    </script>
+    <script src="{% static "js/vendor/angular.min.js" %}"></script>
+    <script src="{% static "js/kitbuilder.js" %}"></script>
     <title>
 	{% block title %}
 	{{ title }}
@@ -210,8 +196,6 @@
         </div><!-- /st-content -->
     </div><!-- /st-pusher -->
 </div><!-- /st-container -->
-<script src="{% static "js/vendor/angular.min.js" %}"></script>
-<script src="{% static "js/kitbuilder.js" %}"></script>
 <script src="{% static "js/landing-page.js" %}"></script>
 <script src="{% static "js/sitewide-effects.js" %}"></script>
 <script src="{% static "js/classie.js" %}"></script>
