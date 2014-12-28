@@ -34,7 +34,7 @@ module.exports = function(grunt) {
                 tasks:['sass']
             },
             html: {
-                files:['templates/KitBuilder/*.html', 'templates/*.html']
+                files:['templates/**/*.html', 'templates/*.html']
             },
             javascript: {
                 files:['CustomDrumSamples/static/js/*.js', 'CustomDrumSamples/static/js/vendor/*.js']

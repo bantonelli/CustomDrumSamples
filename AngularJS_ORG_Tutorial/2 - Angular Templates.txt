@@ -1,0 +1,105 @@
+VIEW AND TEMPLATE:
+    The view is a projection of the model through the HTML template.
+        Whenever the model changes, Angular refreshes the appropriate binding points (updates the view).
+
+    ngRepeat Directive:
+        Angular repeater directive.
+            Tells angular to create an element for each item in the collection using the markup of element and
+            any contained elements.
+
+    ngController Directive:
+        attaches a controller to the specified element.
+
+    Expressions in {{}}:
+        Denote bindings which are referring to the application model which is set up in the applications
+        controller.
+
+    ng-app="phonecatApp":
+        Specifies name of angular module. The module contains the PhoneListCtrl.
+
+    Implicit Scope Declaration:
+        ng-app, ng-controller, ng-repeat all implicitly create scopes.
+
+
+MODEL AND CONTROLLER:
+    The data model - simple array of phones in an object literal notation.
+        The model becomes instantiated within the PhoneListCtrl.
+
+    The controller:
+        Simply a constructor function that takes a $scope parameter.
+        The $scope parameter is an instance of the Scope class. This instance is implicitly constructed via the
+        directive and passed into the controller function.
+
+    ngController Directive:
+        references the name of our controller --> PhoneListCtrl
+
+    The PhoneListCtrl:
+        attaches the phone data to the $scope that was injected into our controller function.
+
+
+SCOPE:
+    A scope can be seen as the glue which allows the template, model and controller to work together.
+    Angular uses scopes, along with the information contained in the template, data model, and controller, to
+    keep models and views separate but in sync.
+
+
+TESTS:
+    Example Unit Test of Controller defined globally:
+
+    var PhoneListCtrl = function ($scope) {
+        ...
+    }
+
+    describe('PhoneListCtrl', function() {
+        it('should create "phones" model with 3 phones, function (){
+            var scope = {};
+            // If the controller is available on the global namespace, we can instantiate it with a mock scope object.
+            var ctrl = new PhoneListCtrl(scope);
+            expect(scope.phones.length).toBe(3);
+        });
+    });
+
+
+TESTING NON-GLOBAL CONTROLLERS:
+    Example Unit Test of Controller registered to a module.
+
+    var phonecatApp = angular.module('phonecatApp', []);
+
+    phonecatApp.controller("PhoneListCtrl", function($scope){
+        $scope.phones = [
+            {'name': 'Nexus S', 'snippet': 'Fast just got faster with Nexus S.'},
+            {'name': 'Motorola XOOM with Wi-Fi', 'snippet': 'The Next, Next Generation tablet.'},
+            {'name': 'MOTOROLA XOOM', 'snippet': 'The Next, Next Generation tablet.'}
+        ]
+    });
+
+    // Angular provides a service, $controller, which will retrieve the controller by name.
+
+    describe("PhoneListCtrl", function (){
+
+        beforeEach(module('phonecatApp'));
+
+        it("should do something", inject(function ($controller){
+
+            var scope = {};
+            var ctrl = $controller("PhoneListCtrl", {$scope: scope});
+            // We can access scope directly because it is an object defined outside of the controller
+            // The controller takes a scope object passed in and stores data to it.
+            // On the web page the scope is created implicitly and then passed to the controller function.
+                // the controller function then updates that scope instance with model data.
+            expect(scope.phones.length).toBe(3);
+
+        }));
+
+    });
+
+    Explanation for the test suite:
+        1) Before each test we tell Angular to load the phonecatApp module.
+        2) We ask Angular to inject the $controller service into our test function
+        3) We use $controller to create an instance of the PhoneListCtrl.
+        4) With this instance, we verify that the phones array property on the scope contains three records.
+
+
+WRITING AND RUNNING TESTS:
+    When Karma is running it will load a new instance of chrome browser automatically.
+    *****DONT MINIMIZE THE BROWSER IT WILL SLOW THE TESTS.

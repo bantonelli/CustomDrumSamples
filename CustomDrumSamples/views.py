@@ -51,4 +51,4 @@ class ResponsiveSiteColorway(View):
 class TestView(View):
     #Learn Angular JS
     def get(self, request):
-        return render_to_response('test.html', locals())
+        return render_to_response('AngularJSLearn/test.html', locals())

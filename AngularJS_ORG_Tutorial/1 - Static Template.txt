@@ -1,0 +1,3 @@
+Create a Static HTML template first with the desired layout.
+
+This will be where Angular eventually loads in the dynamic data.
