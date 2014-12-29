@@ -34,7 +34,7 @@ module.exports = function(grunt) {
                         'bower_components/angular-route/angular-route.js'
                     ],
                     'CustomDrumSamples/static/js/dist/cds.min.js':[
-                        'cds_components/js/vendor/detectmobilebrowser',
+                        'cds_components/js/vendor/detectmobilebrowser.js',
                         'cds_components/js/vendor/modal-login-nav.js',
                         'cds_components/js/vendor/sidebarEffects.js',
                         'cds_components/js/*.js'
