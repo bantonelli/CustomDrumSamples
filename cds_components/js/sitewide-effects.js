@@ -32,7 +32,7 @@
         }
     });
 
-    if ($.browser.mobile == true) {
+    if (jQuery.browser.mobile == true) {
         // Defined in landing-page.js
         tapToTouch();
 

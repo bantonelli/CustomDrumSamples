@@ -68,9 +68,13 @@ module.exports = function(grunt) {
                 files:['templates/**/*.html', 'templates/*.html']
             },
             javascript: {
-                files:['cds_components/js/*.js', 'cds_components/js/vendor/*.js']
+                files:['cds_components/js/*.js', 'cds_components/js/vendor/*.js'],
+                tasks:['uglify']
+            },
+            css: {
+                files:['cds_components/js/*.js', 'cds_components/js/vendor/*.js'],
+                tasks:['cssmin']
             }
-
         }
     });
     grunt.loadNpmTasks('grunt-contrib-sass');
