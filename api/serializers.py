@@ -20,8 +20,16 @@ class SampleSerializer(serializers.ModelSerializer):
         fields = ('name', 'demo', 'wav', 'kit', 'type')
 
 
+class KitDescriptionSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = KitDescription
+        fields = ('selling_point1', 'selling_point2', 'selling_point3', 'author', 'date_created')
+
+
 class KitSerializerFull(serializers.ModelSerializer):
     samples = SampleSerializer(many=True, read_only=True)
+    description = KitDescriptionSerializer(read_only=True)
 
     class Meta:
         model = Kit
@@ -29,12 +37,13 @@ class KitSerializerFull(serializers.ModelSerializer):
 
 
 class KitSerializerLimited(serializers.ModelSerializer):
-    samples = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+    samples = SampleSerializer(many=True, read_only=True)
+    #samples = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+    description = KitDescriptionSerializer(read_only=True)
 
     class Meta:
         model = Kit
         fields = ('name', 'new', 'on_sale', 'soundcloud', 'image', 'tags', 'description', 'price', 'sale', 'user_rating', 'samples')
-
 
 
 class CustomKitSerializer(serializers.ModelSerializer):

@@ -37,7 +37,10 @@ module.exports = function(grunt) {
                         'cds_components/js/vendor/detectmobilebrowser.js',
                         'cds_components/js/vendor/modal-login-nav.js',
                         'cds_components/js/vendor/sidebarEffects.js',
-                        'cds_components/js/*.js'
+                        'cds_components/js/kit_test_data.js',
+                        'cds_components/js/kitbuilder.js',
+                        'cds_components/js/landing-page.js',
+                        'cds_components/js/sitewide-effects.js'
                     ]
                 }
             }
@@ -72,7 +75,7 @@ module.exports = function(grunt) {
                 tasks:['uglify']
             },
             css: {
-                files:['cds_components/js/*.js', 'cds_components/js/vendor/*.js'],
+                files:['cds_components/css/*.css'],
                 tasks:['cssmin']
             }
         }

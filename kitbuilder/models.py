@@ -21,7 +21,8 @@ class OverwriteStorage(FileSystemStorage):
 # Classes and Functions for Kit Model
 
 def upload_kit_image(instance, filename):
-    return "kits/" + instance.name + "/" + filename
+    kit_name = instance.name.replace(" ", "_").replace("'", "")
+    return "kits/" + kit_name + "/" + filename
 
 
 class CommonInfo(models.Model):
@@ -72,11 +73,13 @@ class Kit (CommonInfo):
 # Classes and Functions for Sample Model
 
 def upload_sample_demo(instance, filename):
-    return "kits/" + instance.kit.name + "/samples/demo/" + filename
+    kit_name = instance.kit.name.replace(" ", "_").replace("'", "")
+    return "kits/" + kit_name + "/samples/demo/" + filename
 
 
 def upload_sample(instance, filename):
-    return "kits/" + instance.kit.name + "/samples/wav/" + filename
+    kit_name = instance.kit.name.replace(" ", "_").replace("'", "")
+    return "kits/" + kit_name + "/samples/wav/" + filename
 
 
 class Sample(models.Model):

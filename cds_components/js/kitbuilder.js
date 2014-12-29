@@ -41,11 +41,32 @@
         };
     }]);
 
-    app.controller("KitFilterController", function () {
+    app.controller("KitFilterController", ['$rootScope', function ($rootScope) {
+        // Kit Selection
         this.tags = false;
         this.newKits = false;
         this.alphabetical = false;
         this.onSale = false;
+        this.kits = kitTestData;
+
+        // Sample Selection
+        this.description = false;
+        this.currentKit = this.kits[0];
+
+        // Finish Coding this
+        var getTags = function () {
+            for (var i = 0; i < this.kits.length; i++){
+
+            }
+        };
+
+        this.showDescription = function () {
+            this.description = !(this.description);
+        };
+
+        this.setCurrent = function (kit) {
+            this.currentKit = kit;
+        };
 
         this.showNewKits = function () {
             this.newKits = !(this.newKits);
@@ -63,15 +84,6 @@
             this.tags = !(this.tags);
         };
 
-    });
-
-    app.controller("SampleFilterController", function (){
-        this.description = false;
-
-        this.showDescription = function () {
-            this.description = !(this.description);
-        };
-
-    });
+    }]);
 
 })();
