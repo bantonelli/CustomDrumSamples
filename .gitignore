@@ -27,7 +27,7 @@ build/Release
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git-
 node_modules
-
+bower_components
 
 
 ---------------Python
@@ -87,6 +87,8 @@ docs/_build/
 # PyBuilder
 target/
 
+cdsenv
+cdsenv/*
 
 #--------------- MacOSX
 
@@ -169,4 +171,7 @@ crashlytics.properties
 crashlytics-build.properties
 
 
+#--------------- Angular Learning Stuff
+
+angular_learning_components
 

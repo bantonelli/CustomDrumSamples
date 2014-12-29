@@ -3,7 +3,7 @@
  */
 
 
-$(document).ready(function () {
+(function () {
 
 
     var tb = $('.cds-navbar');
@@ -20,14 +20,6 @@ $(document).ready(function () {
       }
     });
 
-    if (jQuery.browser.mobile == true) {
-        // Defined in landing-page.js
-        tapToTouch();
-
-        // For mobile Sidebar
-        $('.st-content').removeClass('z-index-fix');
-    }
-
     $("#e1").select2({
         formatNoMatches: function (term) {
             return "Whoops!! <br> Genre Not Found!";
@@ -40,4 +32,13 @@ $(document).ready(function () {
         }
     });
 
-});
+    if ($.browser.mobile == true) {
+        // Defined in landing-page.js
+        tapToTouch();
+
+        // For mobile Sidebar
+        $('.st-content').removeClass('z-index-fix');
+    }
+
+
+})();

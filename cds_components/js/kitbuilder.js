@@ -6,11 +6,11 @@
 
     var app = angular.module("kitbuilder", []);
 
-    app.controller("defaultCtrl", function ($scope, $http) {
+    app.controller("defaultCtrl",['$scope', '$http', function ($scope, $http) {
 
         var config = {
             headers: {
-                Authorization: "Bearer GDQvVzIayprssvP9rbYDmVL0rwUTM8"
+                Authorization: "Bearer rbY67hpqxtFEGGumpMFOQIPwsXu90p"
             }
         };
 
@@ -19,9 +19,9 @@
                 $scope.products = data;
             });
         };
-    });
+    }]);
 
-    var tabController = app.controller("TabController", function ($rootScope) {
+    app.controller("TabController", ['$rootScope', function ($rootScope) {
 
         $rootScope.tab = 1;
         this.isSelected = function (tab) {
@@ -32,14 +32,14 @@
             $rootScope.tab = tab;
         };
 
-    });
+    }]);
 
-    app.controller("SlideController", function ($rootScope){
+    app.controller("SlideController", ['$rootScope', function ($rootScope){
 
         this.isSelected = function (tab) {
             return $rootScope.tab === tab;
         };
-    });
+    }]);
 
     app.controller("KitFilterController", function () {
         this.tags = false;

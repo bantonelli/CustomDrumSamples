@@ -17,7 +17,38 @@ module.exports = function(grunt) {
                     style: 'expanded'
                 },
                 files: {                         // Dictionary of files
-                    'CustomDrumSamples/static/css/styles.css': 'CustomDrumSamples/static/sass/styles.scss'       // 'destination': 'source'
+                    'cds_components/css/styles.css': 'cds_components/sass/styles.scss'       // 'destination': 'source'
+                }
+            }
+        },
+        uglify: {
+            my_target: {
+                files: {
+                    'CustomDrumSamples/static/js/libs/libs.min.js': [
+                        'bower_components/classie/classie.js',
+                        'bower_components/jquery/dist/jquery.js',
+                        'bower_components/jquery.finger/dist/jquery.finger.js',
+                        'bower_components/select2/select2.min.js',
+                        'bower_components/angular/angular.js',
+                        'bower_components/angular-mocks/angular-mocks.js',
+                        'bower_components/angular-route/angular-route.js'
+                    ],
+                    'CustomDrumSamples/static/js/dist/cds.min.js':[
+                        'cds_components/js/vendor/detectmobilebrowser',
+                        'cds_components/js/vendor/modal-login-nav.js',
+                        'cds_components/js/vendor/sidebarEffects.js',
+                        'cds_components/js/*.js'
+                    ]
+                }
+            }
+        },
+        cssmin: {
+            target: {
+                files: {
+                    'CustomDrumSamples/static/css/styles.min.css': [
+                        'cds_components/css/select2.css',
+                        'cds_components/css/styles.css'
+                    ]
                 }
             }
         },
@@ -30,17 +61,20 @@ module.exports = function(grunt) {
             // options can also be put inside of a subtask
             // (ie: less can have its own options)
             sass: {
-                files:['CustomDrumSamples/static/sass/*.scss', 'CustomDrumSamples/static/sass/*/*.scss'],
+                files:['cds_components/sass/*.scss', 'cds_components/sass/*/*.scss'],
                 tasks:['sass']
             },
             html: {
                 files:['templates/**/*.html', 'templates/*.html']
             },
             javascript: {
-                files:['CustomDrumSamples/static/js/*.js', 'CustomDrumSamples/static/js/vendor/*.js']
+                files:['cds_components/js/*.js', 'cds_components/js/vendor/*.js']
             }
+
         }
     });
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
 };

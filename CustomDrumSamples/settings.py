@@ -31,7 +31,6 @@ STATIC_URL = '/assets/'
 # Additional locations of static files
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'CustomDrumSamples/static'),
-    os.path.join(BASE_DIR, 'KitBuilder/static'),
 )
 
 # List of finder classes that know how to find static files in
@@ -182,8 +181,8 @@ OAUTH2_PROVIDER = {
     #this http request grants a token to any registered user of the application.
 
 
-# Temporary Access Token humbertozayas = XMrPJCExlOem0cXyPTJxhGyvyZqVB8 (latest)
-# Refresh Token = CPI9GBlQ3n75EEmxB003MnX0Ubmeik (latest)
+# Temporary Access Token humbertozayas = rbY67hpqxtFEGGumpMFOQIPwsXu90p (latest)
+# Refresh Token = k4hQcoFsh7uRy21ofQQHuhfRusSBNT (latest)
     # use--> curl -H "Authorization: Bearer <access_token>" http://127.0.0.1:8000/api/?format=json
             # use--> curl -H "Authorization: Bearer XMrPJCExlOem0cXyPTJxhGyvyZqVB8" http://127.0.0.1:8000/api/?format=json
     # this request is an example of how a user can access the api urls
