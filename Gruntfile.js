@@ -25,6 +25,7 @@ module.exports = function(grunt) {
             my_target: {
                 files: {
                     'CustomDrumSamples/static/js/libs/libs.min.js': [
+                        'bower_components/modernizr/modernizr.js',
                         'bower_components/classie/classie.js',
                         'bower_components/jquery/dist/jquery.js',
                         'bower_components/jquery.finger/dist/jquery.finger.js',
