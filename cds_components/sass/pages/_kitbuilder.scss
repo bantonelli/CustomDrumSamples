@@ -77,7 +77,8 @@ and sound selection sections */
   width: 100%;
   padding: 0%;
   height: 90%;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   .sound-kit, .sound-kit-selection {
     margin-top: 2%;
     margin-bottom: 3%;
@@ -86,28 +87,12 @@ and sound selection sections */
       height: 100%;
     }
   }
-  .tag-selection, .kit-description {
-    position: absolute;
-    padding: 1.5%;
-    top: 0px;
-    left: 0;
-    right: 0;
-    opacity: 1;
-    height: auto;
-    width: 100%;
-    background-color: transparentize(nth($purple-list, 1), 0.2);
-    z-index: 2;
-    -webkit-transform: translateY(0%);
-    transform: translateY(0%);
-    -webkit-transition: all .25s ease;
-    transition: all .25s ease;
+  .tag-selection {
+    @include slide-out(translateX(140%), translateX(300%), 180px);
+    padding: 2%;
   }
-  .tag-selection.ng-hide, .kit-description.ng-hide {
-    display: block !important;
-    -webkit-transition: all .25s ease;
-    transition: all .25s ease;
-    -webkit-transform: translateY(-100%);
-    transform: translateY(-100%);
+  .kit-description {
+    @include slide-out(translateY(0%), translateY(-100%), 100%);
   }
 }
 
@@ -116,6 +101,7 @@ and sound selection sections */
   margin: 0;
   li {
     height: 40px;
+    margin-left: -20px;
   }
   .tag-name {
     font-family: $paragraph;
@@ -190,6 +176,7 @@ Broken down into two subsections (Left and Right)
 }
 
 #kitmix .fail-message{
+  font-family: $paragraph;
   position: absolute;
   top: 0;
   left: 0;
@@ -216,7 +203,7 @@ Broken down into two subsections (Left and Right)
   display: inline-block;
   vertical-align: middle;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 #kitmix.fail .fail-message{

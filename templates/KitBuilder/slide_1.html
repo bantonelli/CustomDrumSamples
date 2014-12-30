@@ -43,7 +43,22 @@
                                                 </div>
                                             </li>
                                             -->
-                                        <fieldset class="col-xs-3" ng-repeat="tag in filter.tags">
+                                        <fieldset class="col-xs-12" ng-repeat="tag in filter.tags">
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col-xs-8 tag-name">{{ tag }}</div>
+                                                    <div class="col-xs-4 select-sound">
+                                                        <!-- .squaredThree -->
+                                                        <div class="squaredThree">
+                                                            <input type="checkbox" id="squaredThree-{{ tag }}" name="check" value=".{{ tag }}"/>
+                                                            <label for="squaredThree-{{ tag }}"></label>
+                                                        </div>
+                                                        <!-- end .squaredThree -->
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </fieldset>
+                                        <fieldset class="col-xs-12" ng-repeat="tag in filter.tags">
                                             <li>
                                                 <div class="row">
                                                     <div class="col-xs-8 tag-name">{{ tag }}</div>
@@ -66,7 +81,8 @@
                                         <img ng-src="{{ '/media/' + kit.image  }}" alt="{{ kit.name }}">
                                     </div>
                                     <div class="fail-message">
-                                        <span>No items were found matching the selected filters</span>
+                                        <span>No items were found matching the selected filters. <br>
+                                            Reset and Try again!</span>
                                     </div>
                                 </div>
                             </div>

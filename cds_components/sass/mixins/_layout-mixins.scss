@@ -146,3 +146,28 @@
     }
   }
 }
+
+@mixin slide-out($translation-show, $translation-hide, $width) {
+  position: absolute;
+  padding: 1.5%;
+  top: 0px;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  height: auto;
+  width: $width;
+  background-color: transparentize(nth($purple-list, 1), 0.2);
+  z-index: 2;
+  -webkit-transform: $translation-show;
+  transform: $translation-show;
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
+
+  &.ng-hide, &.ng-hide {
+    display: block !important;
+    -webkit-transition: all .25s ease;
+    transition: all .25s ease;
+    -webkit-transform: $translation-hide;
+    transform: $translation-hide;
+  }
+}
