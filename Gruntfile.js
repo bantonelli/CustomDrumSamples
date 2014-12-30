@@ -28,6 +28,7 @@ module.exports = function(grunt) {
                         'bower_components/modernizr/modernizr.js',
                         'bower_components/classie/classie.js',
                         'bower_components/jquery/dist/jquery.js',
+                        'bower_components/mixitup/build/jquery.mixitup.min.js',
                         'bower_components/jquery.finger/dist/jquery.finger.js',
                         'bower_components/select2/select2.min.js',
                         'bower_components/angular/angular.js',

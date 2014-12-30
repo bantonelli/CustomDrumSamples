@@ -3570,6 +3570,26 @@ Broken down into two subsections (Left and Right)
   padding: 0;
 }
 
+#MixItUpContainer1 .mix {
+  display: none;
+  border-style: solid;
+  border-color: #000000;
+  padding: 10px;
+  margin: 10px;
+}
+
+#MixItUpContainer1 .mix.category-Elements {
+  color: red;
+}
+
+#MixItUpContainer1 .mix.category-Soft {
+  color: blue;
+}
+
+#kitmix .mix {
+  display: none;
+}
+
 /*===================
 Slide 2 Styles
 */

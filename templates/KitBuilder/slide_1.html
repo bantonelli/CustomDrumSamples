@@ -25,20 +25,42 @@
                                         <li class="col-xs-2 icon-tags" ng-click="filter.showTags()" ng-class="{ active:filter.tagsVisible }"></li>
                                     </ul>
                                 </div>
+                                <div class="col-xs-3 filters">
+                                    <li class="col-xs-4 filter-word">Sort:</li>
+                                    <li class="col-xs-4" data-sort="myorder:asc">Asc</li>
+                                    <li class="col-xs-4" data-sort="myorder:desc">Desc</li>
+                                </div>
                             </div>
                             <div class="row kit-row">
                                 <div class="tag-selection" ng-show="filter.tagsVisible">
                                     <ul class="row tag-list">
                                         <!-- Loop the li for Tags-->
-                                        <li class="col-xs-3" ng-repeat="tag in filter.tags">
+                                        <li class="col-xs-3">
+                                            <div class="row">
+                                                <div class="col-xs-8 tag-name">All</div>
+                                                <div class="col-xs-4 select-sound">
+                                                    <!-- .squaredThree -->
+                                                    <button class="squaredThree filter" data-filter="all">
+                                                        <!--
+                                                        <input type="checkbox" value="None" id="squaredThree-{{ tag }}" name="check" />
+                                                        <label for="squaredThree-{{ tag }}"></label>
+                                                        -->
+                                                    </button>
+                                                    <!-- end .squaredThree -->
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="col-xs-3 filter" data-filter=".{{tag}}" ng-repeat="tag in filter.tags">
                                             <div class="row">
                                                 <div class="col-xs-8 tag-name">{{ tag }}</div>
                                                 <div class="col-xs-4 select-sound">
                                                     <!-- .squaredThree -->
-                                                    <div class="squaredThree">
+                                                    <button class="squaredThree">
+                                                        <!--
                                                         <input type="checkbox" value="None" id="squaredThree-{{ tag }}" name="check" />
                                                         <label for="squaredThree-{{ tag }}"></label>
-                                                    </div>
+                                                        -->
+                                                    </button>
                                                     <!-- end .squaredThree -->
                                                 </div>
                                             </div>
@@ -46,9 +68,35 @@
                                     </ul>
                                 </div>
 
-                                <div class="col-xs-4 sound-kit" ng-repeat="kit in filter.kits" ng-click="filter.setCurrent(kit)">
-                                    <img ng-src="{{ '/media/' + kit.image  }}" alt="{{ kit.name }}">
+                                <div id="kitmix">
+                                    <div class="col-xs-4 sound-kit mix" ng-class="kit.tags" data-myorder="$index" ng-repeat="kit in filter.kits" ng-click="filter.setCurrent(kit)">
+                                        <img ng-src="{{ '/media/' + kit.image  }}" alt="{{ kit.name }}">
+                                    </div>
                                 </div>
+                                <!--
+                                <div ng-controller="DrawingsController">
+
+                                    <div class="controls">
+                                        <label>Filter:</label>
+                                        <button class="filter" data-filter="all">All</button>
+                                        <button class="filter"
+                                                data-filter=".category-{{category}}"
+                                                ng-repeat="category in categories">{{category}}</button>
+
+                                        <label>Sort:</label>
+                                        <button class="sort" data-sort="myorder:asc">Asc</button>
+                                        <button class="sort" data-sort="myorder:desc">Desc</button>
+                                    </div>
+                                    <div class="test" >
+                                        <div id="MixItUpContainer1" class="">
+                                            <div    class="mix category-{{drawing.category}}"
+                                                    data-myorder="{{drawing.value}}"
+                                                    ng-repeat="drawing in drawings">Value : {{drawing.name}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                End Added stuff -->
                             </div>
                         </div>
                     </section>
