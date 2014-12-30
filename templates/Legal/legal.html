@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="main-content" ng-controller="SlideController as slideshow">
+    {% include 'Legal/tab_1.html' %}
+    {% include 'Legal/tab_2.html' %}
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+Django==1.7.1
+django-braces==1.4.0
+django-oauth-toolkit==0.7.2
+djangorestframework==2.4.4
+oauthlib==0.7.2
+psycopg2==2.5.4
+py-bcrypt==0.4
+requests==2.5.0
+six==1.8.0
+stripe==1.19.1
+wsgiref==0.1.2

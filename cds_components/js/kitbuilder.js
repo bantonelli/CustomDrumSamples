@@ -21,27 +21,29 @@
         };
     }]);
 
-    app.controller("TabController", ['$rootScope', function ($rootScope) {
+    var tabTracker = {currentTab: 1};
 
-        $rootScope.tab = 1;
+    app.controller("TabController", ['$scope', function ($scope) {
+
         this.isSelected = function (tab) {
-            return tab === $rootScope.tab;
+            return tab === tabTracker.currentTab;
         };
 
         this.tabSelect = function (tab){
-            $rootScope.tab = tab;
+            tabTracker.currentTab = tab;
         };
 
     }]);
 
-    app.controller("SlideController", ['$rootScope', function ($rootScope){
+    app.controller("SlideController", ['$scope', function ($scope) {
 
         this.isSelected = function (tab) {
-            return $rootScope.tab === tab;
+            return tabTracker.currentTab === tab;
         };
+
     }]);
 
-    app.controller("FilterController", ['$rootScope', function ($rootScope) {
+    app.controller("FilterController", ['$scope', function ($scope) {
 
 
         // Kit Selection

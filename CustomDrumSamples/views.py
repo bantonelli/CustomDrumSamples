@@ -37,7 +37,7 @@ class Legal(View):
     #Privacy Policies
     #Terms of Usage
     def get(self, request):
-        return render_to_response('legal.html')
+        return render_to_response('Legal/legal.html')
 
 
 #-------------- NON SITE VIEWS
