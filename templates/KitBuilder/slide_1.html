@@ -17,17 +17,17 @@
 
                             <div class="row filter-row filter-row-pocket-effect">
                                 <div class="col-xs-3 filters reset-filters">
-                                    <ul class="row">
-                                        <li id="Reset" class="col-xs-12">Reset</li>
+                                    <ul class="row top-menu">
+                                        <li id="Reset" class="col-xs-12 menu-item">Reset</li>
                                     </ul>
                                 </div>
                                 <div class="col-xs-9 filters">
-                                    <ul class="row">
-                                        <li class="col-xs-2 filter-word">Filters:</li>
-                                        <li class="col-xs-2" ng-click="filter.showNewKits()" ng-class="{ active:filter.newKits }">New</li>
-                                        <li class="col-xs-2" ng-click="filter.showAlphabetical()" ng-class="{ active:filter.alphabetical }">A-Z</li>
-                                        <li class="col-xs-3" ng-click="filter.showOnSale()" ng-class="{ active:filter.onSale }">On Sale</li>
-                                        <li class="col-xs-2 icon-tags" ng-click="filter.showTags()" ng-class="{ active:filter.tagsVisible }"></li>
+                                    <ul class="row top-menu">
+                                        <li class="col-xs-2 menu-item menu-word">Filters:</li>
+                                        <li class="col-xs-2 menu-item" ng-click="filter.showNewKits()" ng-class="{ active:filter.newKits }">New</li>
+                                        <li class="col-xs-2 menu-item" ng-click="filter.showAlphabetical()" ng-class="{ active:filter.alphabetical }">A-Z</li>
+                                        <li class="col-xs-3 menu-item" ng-click="filter.showOnSale()" ng-class="{ active:filter.onSale }">On Sale</li>
+                                        <li class="col-xs-2 menu-item icon-tags" ng-click="filter.showTags()" ng-class="{ active:filter.tagsVisible }"></li>
                                     </ul>
                                 </div>
                             </div>
@@ -89,9 +89,9 @@
                                     </select>
                                 </form>
 
-                                <div class="col-xs-4 filters">
-                                    <ul class="row">
-                                        <li class="col-xs-12" ng-click="filter.showDescription()" ng-class="{active:filter.description}">Kit Description</li>
+                                <div class="col-xs-4 sample-filters">
+                                    <ul class="row top-menu">
+                                        <li class="col-xs-12 menu-item" ng-click="filter.showDescription()" ng-class="{active:filter.description}">Kit Description</li>
                                     </ul>
                                 </div>
                             </div>

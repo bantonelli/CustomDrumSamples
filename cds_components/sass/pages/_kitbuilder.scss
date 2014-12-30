@@ -54,88 +54,11 @@ Slide 1 Styles
 This is on both of Slide1's sections */
 
 .filter-row {
-  //background-color: rgba(255, 255, 255, 0.2);
-  //background-color: $offwhite;
-  height: 70px;
-  width: 100%;
-  margin-left: -15px;
-  font-family: $paragraph;
-  position: relative;
-  overflow: visible;
-//  border-style: dotted;
-//  border-color: transparentize(nth($purple-list, 5), 0.8);
-  border-style: dotted;
-  border-width: 0 0 2px 0;
-  border-color: nth($purple-list, 6);
-  > div, > a, > form {
-    height: 50px;
-    margin-top: 10px;
-  }
-  form {
-    margin: 0;
-    margin-left: 0px;
-    .select2-container {
-      color: $offwhite;
-      font-family: $paragraph;
-      margin-left: 0px;
-      margin-top: 10px;
-      height: 50px;
-      width: 115%;
-      background-image: none;
-      background-color: nth($purple-list, 4);
-      .select2-choice, .select2-choice > .select2-chosen {
-        background-image: none;
-        background-color: nth($purple-list, 4);
-        margin-top: -1px;
-        border: none;
-        border-radius: 0px;
-        margin-top: -1px;
-        padding-right: 17px;
-        font-size: 16px;
-        font-family: $paragraph;
-        text-align: center;
-        color: $offwhite;
-      }
-    }
-  }
-  ul {
-    margin: 0;
-    margin-left: 10px;
-    padding: 0;
-    overflow: hidden;
-    li {
-      display: inline-block;
-      //background-color: nth($orange-list, 2);
-      background-color: nth($purple-list, 4);
-      list-style: none;
-      //color: white;
-      color: $offwhite;
-      height: 50px;
-      font-size: 16px;
-      font-family: $paragraph;
-      text-align: center;
-      white-space: nowrap;
-      line-height: 50px;
-      margin-right: 3px;
-      cursor: pointer;
-      &:hover, &:focus {
-        background-color: nth($lightblue-list, 3);
-      }
-    }
-    li.active {
-      background-color: nth($lightblue-list, 3);
-    }
-    :first-child.filter-word {
-      background-color: transparent;
-      color: nth($purple-list, 2);
-      cursor: default;
-    }
-    :last-child {
-      &::before {
-        font-family: icomoon;
-        font-size: 30px;
-      }
-    }
+  @include menu-list();
+
+  .icon-tags::before {
+    font-family: icomoon;
+    font-size: 30px;
   }
 }
 
@@ -200,6 +123,7 @@ and sound selection sections */
     color: $offwhite;
     margin-top: 10px;
     text-align: center;
+    white-space: nowrap;
   }
 }
 
@@ -300,17 +224,8 @@ Broken down into two subsections (Left and Right)
   pointer-events: auto;
 }
 
-button.squaredThree {
-  width: 90%;
-  margin-left: 11px;
-  height: 30px;
-  background-color: lighten(nth($gray-list, 6), 20);
-  font-size: .7em;
-  font-family: quicksandbold;
-  border: none;
-  &:active{
-
-  }
+.sample-filters {
+  margin-left: 3px;
 }
 
 

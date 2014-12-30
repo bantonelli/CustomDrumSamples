@@ -3,8 +3,27 @@
 {% load static %}
 
 {% block content %}
-<div class="main-content" ng-controller="SlideController as slideshow">
-    {% include 'Legal/tab_1.html' %}
-    {% include 'Legal/tab_2.html' %}
+<div class="main-content">
+    <div class="slide">
+        <div class="container" ng-controller="TabController as tabCtrl">
+            <div class="row tab-selection">
+                <ul class="row top-menu">
+                    <li class="col-xs-2 menu-item" ng-click="tabCtrl.selectTab(1)" ng-class="{ active:tabCtrl.isSelected(1) }">
+                        Privacy Policy
+                    </li>
+                    <li class="col-xs-2 menu-item" ng-click="tabCtrl.selectTab(2)" ng-class="{ active:tabCtrl.isSelected(2) }">
+                        New
+                    </li>
+                </ul>
+            </div>
+            <div class="row">
+                {% include 'Legal/tab_1.html' %}
+            </div>
+            <div class="row">
+                {% include 'Legal/tab_2.html' %}
+            </div>
+
+        </div>
+    </div>
 </div>
 {% endblock %}

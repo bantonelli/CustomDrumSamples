@@ -646,6 +646,7 @@ hr {
 .row {
   margin-left: -15px;
   margin-right: -15px;
+  margin: 0px;
 }
 
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
@@ -3287,6 +3288,79 @@ div.color-scheme {
   padding: 0 10%;
 }
 
+.tab-selection {
+  height: 70px;
+  width: 100%;
+  margin-left: 0px;
+  font-family: "quicksandregular";
+  position: relative;
+  overflow: visible;
+  border-style: dotted;
+  border-width: 0 0 2px 0;
+  border-color: #83729a;
+}
+.tab-selection > div, .tab-selection > a, .tab-selection > form, .tab-selection > ul {
+  height: 50px;
+  margin-top: 10px;
+}
+.tab-selection form {
+  margin-left: 0px;
+}
+.tab-selection form .select2-container {
+  color: #dddddc;
+  font-family: "quicksandregular";
+  height: 50px;
+  width: 115%;
+  background-image: none;
+  background-color: #4e3571;
+}
+.tab-selection form .select2-container .select2-choice, .tab-selection form .select2-container .select2-choice > .select2-chosen {
+  background-image: none;
+  background-color: #4e3571;
+  margin-top: -1px;
+  border: none;
+  border-radius: 0px;
+  margin-top: -1px;
+  padding-right: 17px;
+  font-size: 16px;
+  font-family: "quicksandregular";
+  text-align: center;
+  color: #dddddc;
+}
+.tab-selection .top-menu {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.tab-selection .top-menu .menu-item {
+  display: inline-block;
+  background-color: #4e3571;
+  list-style: none;
+  color: #dddddc;
+  height: 50px;
+  font-size: 16px;
+  font-family: "quicksandregular";
+  text-align: center;
+  white-space: nowrap;
+  line-height: 50px;
+  margin-right: 3px;
+  cursor: pointer;
+}
+.tab-selection .top-menu .menu-item:hover, .tab-selection .top-menu .menu-item:focus {
+  background-color: #0ea3b4;
+}
+.tab-selection .top-menu .li-item.active {
+  background-color: #0ea3b4;
+}
+.tab-selection .top-menu .menu-word {
+  background-color: transparent;
+  color: #1d0e32;
+  cursor: default;
+}
+.tab-selection .top-menu .menu-word:hover {
+  background-color: transparent;
+}
+
 /*===================
 General Slide Styles
 */
@@ -3343,7 +3417,7 @@ This is on both of Slide1's sections */
 .filter-row {
   height: 70px;
   width: 100%;
-  margin-left: -15px;
+  margin-left: 0px;
   font-family: "quicksandregular";
   position: relative;
   overflow: visible;
@@ -3351,19 +3425,16 @@ This is on both of Slide1's sections */
   border-width: 0 0 2px 0;
   border-color: #83729a;
 }
-.filter-row > div, .filter-row > a, .filter-row > form {
+.filter-row > div, .filter-row > a, .filter-row > form, .filter-row > ul {
   height: 50px;
   margin-top: 10px;
 }
 .filter-row form {
-  margin: 0;
   margin-left: 0px;
 }
 .filter-row form .select2-container {
   color: #dddddc;
   font-family: "quicksandregular";
-  margin-left: 0px;
-  margin-top: 10px;
   height: 50px;
   width: 115%;
   background-image: none;
@@ -3382,13 +3453,12 @@ This is on both of Slide1's sections */
   text-align: center;
   color: #dddddc;
 }
-.filter-row ul {
+.filter-row .top-menu {
   margin: 0;
-  margin-left: 10px;
   padding: 0;
   overflow: hidden;
 }
-.filter-row ul li {
+.filter-row .top-menu .menu-item {
   display: inline-block;
   background-color: #4e3571;
   list-style: none;
@@ -3402,18 +3472,21 @@ This is on both of Slide1's sections */
   margin-right: 3px;
   cursor: pointer;
 }
-.filter-row ul li:hover, .filter-row ul li:focus {
+.filter-row .top-menu .menu-item:hover, .filter-row .top-menu .menu-item:focus {
   background-color: #0ea3b4;
 }
-.filter-row ul li.active {
+.filter-row .top-menu .li-item.active {
   background-color: #0ea3b4;
 }
-.filter-row ul :first-child.filter-word {
+.filter-row .top-menu .menu-word {
   background-color: transparent;
   color: #1d0e32;
   cursor: default;
 }
-.filter-row ul :last-child::before {
+.filter-row .top-menu .menu-word:hover {
+  background-color: transparent;
+}
+.filter-row .icon-tags::before {
   font-family: icomoon;
   font-size: 30px;
 }
@@ -3478,6 +3551,7 @@ and sound selection sections */
   color: #dddddc;
   margin-top: 10px;
   text-align: center;
+  white-space: nowrap;
 }
 
 .kit-description p {
@@ -3622,14 +3696,8 @@ Broken down into two subsections (Left and Right)
   pointer-events: auto;
 }
 
-button.squaredThree {
-  width: 90%;
-  margin-left: 11px;
-  height: 30px;
-  background-color: #cfcfcf;
-  font-size: .7em;
-  font-family: quicksandbold;
-  border: none;
+.sample-filters {
+  margin-left: 3px;
 }
 
 /*===================
