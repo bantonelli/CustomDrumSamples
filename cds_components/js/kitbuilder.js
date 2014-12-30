@@ -42,23 +42,35 @@
     }]);
 
     app.controller("KitFilterController", ['$rootScope', function ($rootScope) {
+
+
         // Kit Selection
-        this.tags = false;
+        this.tagsVisible = false;
         this.newKits = false;
         this.alphabetical = false;
         this.onSale = false;
         this.kits = kitTestData;
+        this.tagsChecked =
+
+        // Finish Coding this
+        this.getTags = function () {
+            var totalTags = [];
+            for (var kit = 0; kit < this.kits.length; kit++){
+                var tags = this.kits[kit].tags;
+                for (var tagIndex = 0; tagIndex < tags.length; tagIndex++) {
+                    if ($.inArray(tags[tagIndex], totalTags) === -1) {
+                        totalTags.push(tags[tagIndex]);
+                    }
+                }
+            }
+            return totalTags;
+        };
+
+        this.tags = this.getTags();
 
         // Sample Selection
         this.description = false;
         this.currentKit = this.kits[0];
-
-        // Finish Coding this
-        var getTags = function () {
-            for (var i = 0; i < this.kits.length; i++){
-
-            }
-        };
 
         this.showDescription = function () {
             this.description = !(this.description);
@@ -81,9 +93,17 @@
         };
 
         this.showTags = function () {
-            this.tags = !(this.tags);
+            this.tagsVisible = !(this.tagsVisible);
         };
 
     }]);
+
+    app.filter('kitfilter', function() {
+    return function(items, options ) {
+      // loop over all the options and if true ensure the car has them
+      // I cant do this for you beacause I don't know how you would store this info in the car object but it should not be difficult
+      return carMatches;
+    };
+});
 
 })();

@@ -16,44 +16,28 @@
                         <div class="kb-slide-section-container">
 
                             <div class="row filter-row filter-row-pocket-effect">
-                                <form class="col-xs-3">
-                                    <select id="e1" data-placeholder="Select Genre">
-                                        <option value=""></option>
-                                        <option value="1">Hip Hop</option>
-                                        <option value="2">Dirty South</option>
-                                        <option value="3">Jersey Club</option>
-                                        <option value="4">House</option>
-                                        <option value="5">Electronica</option>
-                                        <option value="6">Dubstep</option>
-                                        <option value="7">R&amp;B</option>
-                                        <option value="8">Drum N' Bass</option>
-                                        <option value="9">Acoustic</option>
-                                        <option value="10">Rock</option>
-                                    </select>
-                                </form>
-
                                 <div class="col-xs-9 filters">
                                     <ul class="row">
                                         <li class="col-xs-2 filter-word">Filters:</li>
                                         <li class="col-xs-2" ng-click="filter.showNewKits()" ng-class="{ active:filter.newKits }">New</li>
                                         <li class="col-xs-2" ng-click="filter.showAlphabetical()" ng-class="{ active:filter.alphabetical }">A-Z</li>
                                         <li class="col-xs-3" ng-click="filter.showOnSale()" ng-class="{ active:filter.onSale }">On Sale</li>
-                                        <li class="col-xs-2 icon-tags" ng-click="filter.showTags()" ng-class="{ active:filter.tags }"></li>
+                                        <li class="col-xs-2 icon-tags" ng-click="filter.showTags()" ng-class="{ active:filter.tagsVisible }"></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="row kit-row">
-                                <div class="tag-selection" ng-show="filter.tags">
+                                <div class="tag-selection" ng-show="filter.tagsVisible">
                                     <ul class="row tag-list">
                                         <!-- Loop the li for Tags-->
-                                        <li class="col-xs-3">
+                                        <li class="col-xs-3" ng-repeat="tag in filter.tags">
                                             <div class="row">
-                                                <div class="col-xs-8 tag-name">Tag</div>
+                                                <div class="col-xs-8 tag-name">{{ tag }}</div>
                                                 <div class="col-xs-4 select-sound">
                                                     <!-- .squaredThree -->
                                                     <div class="squaredThree">
-                                                        <input type="checkbox" value="None" id="squaredThree-tag-1" name="check" />
-                                                        <label for="squaredThree-tag-1"></label>
+                                                        <input type="checkbox" value="None" id="squaredThree-{{ tag }}" name="check" />
+                                                        <label for="squaredThree-{{ tag }}"></label>
                                                     </div>
                                                     <!-- end .squaredThree -->
                                                 </div>

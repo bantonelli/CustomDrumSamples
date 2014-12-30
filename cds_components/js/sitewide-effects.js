@@ -20,25 +20,19 @@
       }
     });
 
-    $("#e1").select2({
-        formatNoMatches: function (term) {
-            return "Whoops!! <br> Genre Not Found!";
-        }
-    });
-
     $("#e2").select2({
         formatNoMatches: function (term) {
             return "Whoops!! <br> Instrument Not Found!";
         }
     });
 
-    if (jQuery.browser.mobile == true) {
-        // Defined in landing-page.js
-        tapToTouch();
-
-        // For mobile Sidebar
-        $('.st-content').removeClass('z-index-fix');
-    }
+//    if (jQuery.browser.mobile == true) {
+//        // Defined in landing-page.js
+//        tapToTouch();
+//
+//        // For mobile Sidebar
+//        $('.st-content').removeClass('z-index-fix');
+//    }
 
 
 })();

@@ -8,8 +8,12 @@ module.exports = function(config) {
 
         // list of files / patterns to load in the browser
         files : [
-            'assets/js/libs/libs.min.js',
-            'assets/js/dist/cds.min.js',
+            'bower_components/jquery/dist/jquery.js',
+            'bower_components/angular/angular.js',
+            'bower_components/angular-mocks/angular-mocks.js',
+            'bower_components/angular-route/angular-route.js',
+            'cds_components/js/kit_test_data.js',
+            'cds_components/js/kitbuilder.js',
             'test/unit/*.js'
         ],
 
