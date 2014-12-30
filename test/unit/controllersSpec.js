@@ -4,7 +4,7 @@
 // Use command+N to generate code for test suites.
 
 
-describe("kitController", function () {
+describe("FilterController", function () {
 
     beforeEach(module('kitbuilder'));
 
@@ -15,7 +15,7 @@ describe("kitController", function () {
 
     it("should work", inject(function ($controller) {
         var scope = {};
-        var ctrl = $controller('KitFilterController', {$scope: scope});
-        expect(ctrl.tags).toContain("Hip Hop");
+        var ctrl = $controller('FilterController', {$scope: scope});
+        expect(ctrl.tags).toContain("Hip-Hop");
     }));
 });

@@ -11,11 +11,16 @@
         <div id="kb-slide-1" class="slide slideshow-starting-pos" ng-class="{ontop:slideshow.isSelected(1)}" ng-show="slideshow.isSelected(1)">
             <div class="slide-width-container">
                 {% verbatim %}
-                <div class="row" ng-controller="KitFilterController as filter">
+                <div class="row" ng-controller="FilterController as filter">
                     <section id="kb-slide-1-section-1" class="col-xs-6">
-                        <div class="kb-slide-section-container">
+                        <div id="KitFilter" class="kb-slide-section-container">
 
                             <div class="row filter-row filter-row-pocket-effect">
+                                <div class="col-xs-3 filters reset-filters">
+                                    <ul class="row">
+                                        <li id="Reset" class="col-xs-12">Reset</li>
+                                    </ul>
+                                </div>
                                 <div class="col-xs-9 filters">
                                     <ul class="row">
                                         <li class="col-xs-2 filter-word">Filters:</li>
@@ -25,46 +30,34 @@
                                         <li class="col-xs-2 icon-tags" ng-click="filter.showTags()" ng-class="{ active:filter.tagsVisible }"></li>
                                     </ul>
                                 </div>
-                                <div class="col-xs-3 filters">
-                                    <li class="col-xs-4 filter-word">Sort:</li>
-                                    <li class="col-xs-4" data-sort="myorder:asc">Asc</li>
-                                    <li class="col-xs-4" data-sort="myorder:desc">Desc</li>
-                                </div>
                             </div>
                             <div class="row kit-row">
                                 <div class="tag-selection" ng-show="filter.tagsVisible">
                                     <ul class="row tag-list">
                                         <!-- Loop the li for Tags-->
-                                        <li class="col-xs-3">
-                                            <div class="row">
-                                                <div class="col-xs-8 tag-name">All</div>
-                                                <div class="col-xs-4 select-sound">
-                                                    <!-- .squaredThree -->
-                                                    <button class="squaredThree filter" data-filter="all">
-                                                        <!--
-                                                        <input type="checkbox" value="None" id="squaredThree-{{ tag }}" name="check" />
-                                                        <label for="squaredThree-{{ tag }}"></label>
-                                                        -->
-                                                    </button>
-                                                    <!-- end .squaredThree -->
+
+                                            <!--
+                                            <li class="col-xs-3">
+                                                <div class="row">
+                                                    <button id="Reset" class="col-xs-12 tag-name">All</button>
                                                 </div>
-                                            </div>
-                                        </li>
-                                        <li class="col-xs-3 filter" data-filter=".{{tag}}" ng-repeat="tag in filter.tags">
-                                            <div class="row">
-                                                <div class="col-xs-8 tag-name">{{ tag }}</div>
-                                                <div class="col-xs-4 select-sound">
-                                                    <!-- .squaredThree -->
-                                                    <button class="squaredThree">
-                                                        <!--
-                                                        <input type="checkbox" value="None" id="squaredThree-{{ tag }}" name="check" />
-                                                        <label for="squaredThree-{{ tag }}"></label>
-                                                        -->
-                                                    </button>
-                                                    <!-- end .squaredThree -->
+                                            </li>
+                                            -->
+                                        <fieldset class="col-xs-3" ng-repeat="tag in filter.tags">
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col-xs-8 tag-name">{{ tag }}</div>
+                                                    <div class="col-xs-4 select-sound">
+                                                        <!-- .squaredThree -->
+                                                        <div class="squaredThree">
+                                                            <input type="checkbox" id="squaredThree-{{ tag }}" name="check" value=".{{ tag }}"/>
+                                                            <label for="squaredThree-{{ tag }}"></label>
+                                                        </div>
+                                                        <!-- end .squaredThree -->
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </li>
+                                            </li>
+                                        </fieldset>
                                     </ul>
                                 </div>
 
@@ -72,31 +65,10 @@
                                     <div class="col-xs-4 sound-kit mix" ng-class="kit.tags" data-myorder="$index" ng-repeat="kit in filter.kits" ng-click="filter.setCurrent(kit)">
                                         <img ng-src="{{ '/media/' + kit.image  }}" alt="{{ kit.name }}">
                                     </div>
-                                </div>
-                                <!--
-                                <div ng-controller="DrawingsController">
-
-                                    <div class="controls">
-                                        <label>Filter:</label>
-                                        <button class="filter" data-filter="all">All</button>
-                                        <button class="filter"
-                                                data-filter=".category-{{category}}"
-                                                ng-repeat="category in categories">{{category}}</button>
-
-                                        <label>Sort:</label>
-                                        <button class="sort" data-sort="myorder:asc">Asc</button>
-                                        <button class="sort" data-sort="myorder:desc">Desc</button>
-                                    </div>
-                                    <div class="test" >
-                                        <div id="MixItUpContainer1" class="">
-                                            <div    class="mix category-{{drawing.category}}"
-                                                    data-myorder="{{drawing.value}}"
-                                                    ng-repeat="drawing in drawings">Value : {{drawing.name}}
-                                            </div>
-                                        </div>
+                                    <div class="fail-message">
+                                        <span>No items were found matching the selected filters</span>
                                     </div>
                                 </div>
-                                End Added stuff -->
                             </div>
                         </div>
                     </section>

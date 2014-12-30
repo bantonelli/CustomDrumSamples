@@ -3570,24 +3570,60 @@ Broken down into two subsections (Left and Right)
   padding: 0;
 }
 
-#MixItUpContainer1 .mix {
-  display: none;
-  border-style: solid;
-  border-color: #000000;
-  padding: 10px;
-  margin: 10px;
-}
-
-#MixItUpContainer1 .mix.category-Elements {
-  color: red;
-}
-
-#MixItUpContainer1 .mix.category-Soft {
-  color: blue;
-}
-
 #kitmix .mix {
   display: none;
+}
+
+/**
+ * Fail message styles
+ */
+#kitmix {
+  height: 100%;
+}
+
+#kitmix .fail-message {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  opacity: 0;
+  color: #351f54;
+  pointer-events: none;
+  z-index: 1;
+  -webkit-transition: 150ms;
+  -moz-transition: 150ms;
+  transition: 150ms;
+}
+
+#kitmix .fail-message:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+
+#kitmix .fail-message span {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+#kitmix.fail .fail-message {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+button.squaredThree {
+  width: 90%;
+  margin-left: 11px;
+  height: 30px;
+  background-color: #cfcfcf;
+  font-size: .7em;
+  font-family: quicksandbold;
+  border: none;
 }
 
 /*===================
