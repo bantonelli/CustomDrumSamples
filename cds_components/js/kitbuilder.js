@@ -21,30 +21,29 @@
         };
     }]);
 
-    var tabTracker = {currentTab: 1};
+    app.controller("TabController", ['$rootScope', function ($rootScope) {
 
-    app.controller("TabController", ['$scope', function ($scope) {
+        $rootScope.currentTab = 1;
 
         this.isSelected = function (tab) {
-            return tab === tabTracker.currentTab;
+            return tab === $rootScope.currentTab;
         };
 
         this.tabSelect = function (tab){
-            tabTracker.currentTab = tab;
+            $rootScope.currentTab = tab;
         };
 
     }]);
 
-    app.controller("SlideController", ['$scope', function ($scope) {
+    app.controller("SlideController", ['$rootScope', function ($rootScope){
 
         this.isSelected = function (tab) {
-            return tabTracker.currentTab === tab;
+            return $rootScope.currentTab === tab;
         };
 
     }]);
 
-    app.controller("FilterController", ['$scope', function ($scope) {
-
+    app.controller("FilterController", ['$rootScope', function ($rootScope) {
 
         // Kit Selection
         this.tagsVisible = false;

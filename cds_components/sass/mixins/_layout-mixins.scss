@@ -87,12 +87,9 @@
   border-style: dotted;
   border-width: 0 0 2px 0;
   border-color: nth($purple-list, 6);
-  > div, > a, > form, > ul{
-    height: 50px;
-    margin-top: 10px;
-  }
   form {
     margin-left: 0px;
+    margin-top: 10px;
     .select2-container {
       color: $offwhite;
       font-family: $paragraph;
@@ -117,8 +114,10 @@
   }
   .top-menu {
     margin: 0;
+    margin-top: 10px;
     padding: 0;
     overflow: hidden;
+    height: 50px;
     .menu-item {
       display: inline-block;
       //background-color: nth($orange-list, 2);
@@ -138,7 +137,7 @@
         background-color: nth($lightblue-list, 3);
       }
     }
-    .li-item.active {
+    .menu-item.active {
       background-color: nth($lightblue-list, 3);
     }
     .menu-word {

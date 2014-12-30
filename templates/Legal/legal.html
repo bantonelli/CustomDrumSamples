@@ -4,25 +4,27 @@
 
 {% block content %}
 <div class="main-content">
-    <div class="slide">
-        <div class="container" ng-controller="TabController as tabCtrl">
+
+    <div class="slide legal-slide">
+        <div class="container" ng-controller="TabController as tabs">
+            {% verbatim %}
             <div class="row tab-selection">
                 <ul class="row top-menu">
-                    <li class="col-xs-2 menu-item" ng-click="tabCtrl.selectTab(1)" ng-class="{ active:tabCtrl.isSelected(1) }">
+                    <li class="col-xs-2 menu-item" ng-class="{ active:tabs.isSelected(1) }" ng-click="tabs.tabSelect(1)">
                         Privacy Policy
                     </li>
-                    <li class="col-xs-2 menu-item" ng-click="tabCtrl.selectTab(2)" ng-class="{ active:tabCtrl.isSelected(2) }">
+                    <li class="col-xs-2 menu-item" ng-class="{ active:tabs.isSelected(2) }" ng-click="tabs.tabSelect(2)">
                         New
                     </li>
                 </ul>
             </div>
+            {% endverbatim %}
             <div class="row">
                 {% include 'Legal/tab_1.html' %}
             </div>
             <div class="row">
                 {% include 'Legal/tab_2.html' %}
             </div>
-
         </div>
     </div>
 </div>
