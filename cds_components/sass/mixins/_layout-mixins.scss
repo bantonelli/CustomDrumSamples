@@ -1,3 +1,6 @@
+/* Utility Mixins
+======================================*/
+
 @mixin slide-mixin($background-color, $height: 100%) {
   background-color: $background-color;
   height: $height;
@@ -9,7 +12,14 @@
   padding: $padding;
 }
 
+@mixin border-separation-bottom() {
+  border-style: dotted;
+  border-width: 0 0 2px 0;
+  border-color: nth($purple-list, 6);
+}
 
+/* Component Mixins
+======================================*/
 @mixin sample-sound($playColor: nth($orange-list, 3), $nameColor: nth($orange-list, 2), $nameKitColor: nth($purple-list, 4), $fontSize: 18px, $height: 30px, $margin: 4px auto) {
   .sample-sound {
     color: $playColor;
@@ -80,9 +90,7 @@
   font-family: $paragraph;
   position: relative;
   overflow: visible;
-  border-style: dotted;
-  border-width: 0 0 2px 0;
-  border-color: nth($purple-list, 6);
+  @include border-separation-bottom();
   form {
     margin-left: 0px;
     margin-top: 10px;
@@ -101,7 +109,7 @@
         border-radius: 0px;
         margin-top: -1px;
         padding-right: 17px;
-        font-size: 16px;
+        font-size: 18px;
         font-family: $paragraph;
         text-align: center;
         color: $offwhite;
@@ -122,7 +130,7 @@
       //color: white;
       color: $offwhite;
       height: 50px;
-      font-size: 16px;
+      font-size: 18px;
       font-family: $paragraph;
       text-align: center;
       white-space: nowrap;
@@ -130,10 +138,12 @@
       margin-right: 3px;
       cursor: pointer;
       &:hover, &:focus {
+        color: white;
         background-color: nth($lightblue-list, 3);
       }
     }
     .menu-item.active {
+      color: white;
       background-color: nth($lightblue-list, 3);
     }
     .menu-word {
