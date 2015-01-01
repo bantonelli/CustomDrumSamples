@@ -43,22 +43,7 @@
                                                 </div>
                                             </li>
                                             -->
-                                        <fieldset class="col-xs-12" ng-repeat="tag in filter.tags">
-                                            <li>
-                                                <div class="row">
-                                                    <div class="col-xs-8 tag-name">{{ tag }}</div>
-                                                    <div class="col-xs-4 select-sound">
-                                                        <!-- .squaredThree -->
-                                                        <div class="squaredThree">
-                                                            <input type="checkbox" id="squaredThree-{{ tag }}" name="check" value=".{{ tag }}"/>
-                                                            <label for="squaredThree-{{ tag }}"></label>
-                                                        </div>
-                                                        <!-- end .squaredThree -->
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </fieldset>
-                                        <fieldset class="col-xs-12" ng-repeat="tag in filter.tags">
+                                        <fieldset class="col-xs-4" ng-repeat="tag in filter.tags">
                                             <li>
                                                 <div class="row">
                                                     <div class="col-xs-8 tag-name">{{ tag }}</div>
@@ -76,7 +61,7 @@
                                     </ul>
                                 </div>
 
-                                <div id="kitmix">
+                                <div id="kitmix" ng-click="filter.tagsVisible = false">
                                     <div class="col-xs-4 sound-kit mix" ng-class="kit.tags" data-myorder="$index" ng-repeat="kit in filter.kits" ng-click="filter.setCurrent(kit)">
                                         <img ng-src="{{ '/media/' + kit.image  }}" alt="{{ kit.name }}">
                                     </div>
@@ -117,7 +102,7 @@
                                         {{ filter.currentKit.description }}
                                     </p>
                                 </div>
-                                <div class="col-xs-6 selected-kit-media">
+                                <div class="col-xs-6 selected-kit-media" ng-click="filter.description = false">
                                     <div class="row">
                                         <div class="col-xs-12 sound-kit-selection">
                                             <h4>{{ filter.currentKit.name }}</h4>
@@ -131,7 +116,7 @@
                                     </div>
 
                                 </div>
-                                <div class="col-xs-6 selected-kit-sounds">
+                                <div class="col-xs-6 selected-kit-sounds" ng-click="filter.description = false">
                                     <div class="row">
                                         <div class="col-xs-12 sound-kit-selection">
                                             <h4>Kick Drums</h4>

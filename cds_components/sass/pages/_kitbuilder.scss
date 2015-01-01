@@ -87,12 +87,10 @@ and sound selection sections */
       height: 100%;
     }
   }
-  .tag-selection {
-    @include slide-out(translateX(140%), translateX(300%), 180px);
-    padding: 2%;
-  }
-  .kit-description {
+  .tag-selection, .kit-description {
     @include slide-out(translateY(0%), translateY(-100%), 100%);
+    //@include slide-out(translateX(140%), translateX(300%), 180px);
+    padding: 2%;
   }
 }
 

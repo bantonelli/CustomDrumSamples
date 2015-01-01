@@ -157,7 +157,7 @@
   }
 }
 
-@mixin slide-out($translation-show, $translation-hide, $width) {
+@mixin slide-out ($translation-show, $translation-hide, $width) {
   position: absolute;
   padding: 1.5%;
   top: 0px;

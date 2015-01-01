@@ -3614,31 +3614,7 @@ and sound selection sections */
   width: 100%;
   height: 100%;
 }
-.kit-row .tag-selection, .selection-row .tag-selection {
-  position: absolute;
-  padding: 1.5%;
-  top: 0px;
-  left: 0;
-  right: 0;
-  opacity: 1;
-  height: auto;
-  width: 180px;
-  background-color: rgba(6, 3, 10, 0.8);
-  z-index: 2;
-  -webkit-transform: translateX(140%);
-  transform: translateX(140%);
-  -webkit-transition: all .25s ease;
-  transition: all .25s ease;
-  padding: 2%;
-}
-.kit-row .tag-selection.ng-hide, .kit-row .tag-selection.ng-hide, .selection-row .tag-selection.ng-hide, .selection-row .tag-selection.ng-hide {
-  display: block !important;
-  -webkit-transition: all .25s ease;
-  transition: all .25s ease;
-  -webkit-transform: translateX(300%);
-  transform: translateX(300%);
-}
-.kit-row .kit-description, .selection-row .kit-description {
+.kit-row .tag-selection, .kit-row .kit-description, .selection-row .tag-selection, .selection-row .kit-description {
   position: absolute;
   padding: 1.5%;
   top: 0px;
@@ -3653,8 +3629,9 @@ and sound selection sections */
   transform: translateY(0%);
   -webkit-transition: all .25s ease;
   transition: all .25s ease;
+  padding: 2%;
 }
-.kit-row .kit-description.ng-hide, .kit-row .kit-description.ng-hide, .selection-row .kit-description.ng-hide, .selection-row .kit-description.ng-hide {
+.kit-row .tag-selection.ng-hide, .kit-row .tag-selection.ng-hide, .kit-row .kit-description.ng-hide, .kit-row .kit-description.ng-hide, .selection-row .tag-selection.ng-hide, .selection-row .tag-selection.ng-hide, .selection-row .kit-description.ng-hide, .selection-row .kit-description.ng-hide {
   display: block !important;
   -webkit-transition: all .25s ease;
   transition: all .25s ease;
